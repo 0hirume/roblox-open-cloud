@@ -1,0 +1,5508 @@
+{
+  "source": {
+    "repository": "Roblox/creator-docs",
+    "commit": "c855f3c1b274007b0b2739ed34d89325342157e0",
+    "commit_date": "2026-07-29",
+    "document": "content/en-us/reference/cloud/openapi.json"
+  },
+  "policy": {
+    "include": [
+      "non-deprecated, non-experimental operations supporting API keys or OAuth",
+      "non-deprecated unauthenticated operations marked stable or beta"
+    ],
+    "exclude": [
+      "cookie-only operations",
+      "deprecated operations",
+      "experimental operations",
+      "unauthenticated operations without a stability marker"
+    ]
+  },
+  "count": 259,
+  "operations": [
+    {
+      "domain": "analytics",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/analytics-query-api/v1/universes/{universeId}/dimension-values",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Queries dimension values for a universe.",
+      "tag": "Analytics",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.analytics:read"
+      ],
+      "id": "analytics::queries_dimension_values_for_a_universe",
+      "rust_method": "queries_dimension_values_for_a_universe",
+      "constant": "QUERIES_DIMENSION_VALUES_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "analytics",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/analytics-query-api/v1/universes/{universeId}/metrics",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Queries time series metric data for a universe.",
+      "tag": "Analytics",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.analytics:read"
+      ],
+      "id": "analytics::queries_time_series_metric_data_for_a_universe",
+      "rust_method": "queries_time_series_metric_data_for_a_universe",
+      "constant": "QUERIES_TIME_SERIES_METRIC_DATA_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "analytics",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/analytics-query-api/v1/universes/{universeId}/operations/dimension-values/{operationId}",
+      "path_parameters": [
+        "universeId",
+        "operationId"
+      ],
+      "summary": "Retrieves the result of a long-running dimension values operation.",
+      "tag": "Analytics",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.analytics:read"
+      ],
+      "id": "analytics::retrieves_the_result_of_a_long_running_dimension_values_operation",
+      "rust_method": "retrieves_the_result_of_a_long_running_dimension_values_operation",
+      "constant": "RETRIEVES_THE_RESULT_OF_A_LONG_RUNNING_DIMENSION_VALUES_OPERATION"
+    },
+    {
+      "domain": "analytics",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/analytics-query-api/v1/universes/{universeId}/operations/metrics/{operationId}",
+      "path_parameters": [
+        "universeId",
+        "operationId"
+      ],
+      "summary": "Retrieves the result of a long-running metrics query operation.",
+      "tag": "Analytics",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.analytics:read"
+      ],
+      "id": "analytics::retrieves_the_result_of_a_long_running_metrics_query_operation",
+      "rust_method": "retrieves_the_result_of_a_long_running_metrics_query_operation",
+      "constant": "RETRIEVES_THE_RESULT_OF_A_LONG_RUNNING_METRICS_QUERY_OPERATION"
+    },
+    {
+      "domain": "assets",
+      "http_method": "POST",
+      "operation_id": "Assets_ArchiveAsset",
+      "path": "/assets/v1/assets/{assetId}:archive",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "Archives the asset.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read",
+        "asset:write"
+      ],
+      "id": "assets::archives_the_asset",
+      "rust_method": "archives_the_asset",
+      "constant": "ARCHIVES_THE_ASSET"
+    },
+    {
+      "domain": "assets",
+      "http_method": "POST",
+      "operation_id": "Assets_CreateAsset",
+      "path": "/assets/v1/assets",
+      "path_parameters": [],
+      "summary": "Creates an asset with provided content and metadata.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read",
+        "asset:write"
+      ],
+      "id": "assets::creates_an_asset_with_provided_content_and_metadata",
+      "rust_method": "creates_an_asset_with_provided_content_and_metadata",
+      "constant": "CREATES_AN_ASSET_WITH_PROVIDED_CONTENT_AND_METADATA"
+    },
+    {
+      "domain": "assets",
+      "http_method": "POST",
+      "operation_id": "Cloud_GenerateSpeechAsset",
+      "path": "/cloud/v2/universes/{universe_id}:generateSpeechAsset",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Generate Speech Asset",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read",
+        "asset:write",
+        "universe:write"
+      ],
+      "id": "assets::generate_speech_asset",
+      "rust_method": "generate_speech_asset",
+      "constant": "GENERATE_SPEECH_ASSET"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "Assets_GetAssetVersion",
+      "path": "/assets/v1/assets/{assetId}/versions/{versionNumber}",
+      "path_parameters": [
+        "assetId",
+        "versionNumber"
+      ],
+      "summary": "Get Asset Version",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read"
+      ],
+      "id": "assets::get_asset_version",
+      "rust_method": "get_asset_version",
+      "constant": "GET_ASSET_VERSION"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "Assets_GetAsset",
+      "path": "/assets/v1/assets/{assetId}",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "Retrieve specific asset metadata. Include the `readMask` parameter for additional asset metadata.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read"
+      ],
+      "id": "assets::get_assets_assets_asset_id",
+      "rust_method": "get_assets_assets_asset_id",
+      "constant": "GET_ASSETS_ASSETS_ASSET_ID"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "Toolbox_GetAssetDetails",
+      "path": "/toolbox-service/v2/assets/{id}",
+      "path_parameters": [
+        "id"
+      ],
+      "summary": "Get Creator Store Asset Details",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-product:read"
+      ],
+      "id": "assets::get_creator_store_asset_details",
+      "rust_method": "get_creator_store_asset_details",
+      "constant": "GET_CREATOR_STORE_ASSET_DETAILS"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/localization-table/tables/{assetId}",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "Get table information by the assetId of the table.",
+      "tag": "Assets",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "assets::get_table_information_by_the_asset_id_of_the_table",
+      "rust_method": "get_table_information_by_the_asset_id_of_the_table",
+      "constant": "GET_TABLE_INFORMATION_BY_THE_ASSET_ID_OF_THE_TABLE"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "Assets_GetOperation",
+      "path": "/assets/v1/operations/{operationId}",
+      "path_parameters": [
+        "operationId"
+      ],
+      "summary": "Get the result of an asset creation or update.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read"
+      ],
+      "id": "assets::get_the_result_of_an_asset_creation_or_update",
+      "rust_method": "get_the_result_of_an_asset_creation_or_update",
+      "constant": "GET_THE_RESULT_OF_AN_ASSET_CREATION_OR_UPDATE"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListAssetQuotas",
+      "path": "/cloud/v2/users/{user_id}/asset-quotas",
+      "path_parameters": [
+        "user_id"
+      ],
+      "summary": "List Asset Quotas",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read"
+      ],
+      "id": "assets::list_asset_quotas",
+      "rust_method": "list_asset_quotas",
+      "constant": "LIST_ASSET_QUOTAS"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "listAssetVersions",
+      "path": "/assets/v1/assets/{assetId}/versions",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "List Asset Versions of an Asset",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read"
+      ],
+      "id": "assets::list_asset_versions_of_an_asset",
+      "rust_method": "list_asset_versions_of_an_asset",
+      "constant": "LIST_ASSET_VERSIONS_OF_AN_ASSET"
+    },
+    {
+      "domain": "assets",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-publish/v1/badges/{badgeId}/icon",
+      "path_parameters": [
+        "badgeId"
+      ],
+      "summary": "Overwrites a badge icon with a new one.",
+      "tag": "Assets",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "assets::overwrites_a_badge_icon_with_a_new_one",
+      "rust_method": "overwrites_a_badge_icon_with_a_new_one",
+      "constant": "OVERWRITES_A_BADGE_ICON_WITH_A_NEW_ONE"
+    },
+    {
+      "domain": "assets",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/asset-permissions-api/v1/assets/permissions",
+      "path_parameters": [],
+      "summary": "Grant a subject permission to multiple assets.\n            \nAuthorization is required to grant permissions to the subject and asset IDs in the request.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "asset-permissions:write"
+      ],
+      "id": "assets::patch_asset_permissions_api_assets_permissions",
+      "rust_method": "patch_asset_permissions_api_assets_permissions",
+      "constant": "PATCH_ASSET_PERMISSIONS_API_ASSETS_PERMISSIONS"
+    },
+    {
+      "domain": "assets",
+      "http_method": "POST",
+      "operation_id": "Assets_RestoreAsset",
+      "path": "/assets/v1/assets/{assetId}:restore",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "Restores an archived asset.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read",
+        "asset:write"
+      ],
+      "id": "assets::restores_an_archived_asset",
+      "rust_method": "restores_an_archived_asset",
+      "constant": "RESTORES_AN_ARCHIVED_ASSET"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/asset-delivery-api/v1/assetId/{assetId}/version/{versionNumber}",
+      "path_parameters": [
+        "assetId",
+        "versionNumber"
+      ],
+      "summary": "Retrieves an asset by its ID and version number with OpenCloud auth.",
+      "tag": "Assets",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-asset:manage"
+      ],
+      "id": "assets::retrieves_an_asset_by_its_id_and_version_number_with_open_cloud_auth",
+      "rust_method": "retrieves_an_asset_by_its_id_and_version_number_with_open_cloud_auth",
+      "constant": "RETRIEVES_AN_ASSET_BY_ITS_ID_AND_VERSION_NUMBER_WITH_OPEN_CLOUD_AUTH"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/asset-delivery-api/v1/assetId/{assetId}",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "Retrieves an asset by its ID with OpenCloud auth.",
+      "tag": "Assets",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-asset:manage"
+      ],
+      "id": "assets::retrieves_an_asset_by_its_id_with_open_cloud_auth",
+      "rust_method": "retrieves_an_asset_by_its_id_with_open_cloud_auth",
+      "constant": "RETRIEVES_AN_ASSET_BY_ITS_ID_WITH_OPEN_CLOUD_AUTH"
+    },
+    {
+      "domain": "assets",
+      "http_method": "POST",
+      "operation_id": "Assets_RollbackAssetVersion",
+      "path": "/assets/v1/assets/{assetId}/versions:rollback",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "Rollback an asset to a previous version.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read",
+        "asset:write"
+      ],
+      "id": "assets::rollback_an_asset_to_a_previous_version",
+      "rust_method": "rollback_an_asset_to_a_previous_version",
+      "constant": "ROLLBACK_AN_ASSET_TO_A_PREVIOUS_VERSION"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "Toolbox_SearchCreatorStoreAssetsDeprecated",
+      "path": "/toolbox-service/v2/assets:search",
+      "path_parameters": [],
+      "summary": "Search Creator Store Assets",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-product:read"
+      ],
+      "id": "assets::search_creator_store_assets",
+      "rust_method": "search_creator_store_assets",
+      "constant": "SEARCH_CREATOR_STORE_ASSETS"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/v1/asset-thumbnail-animated",
+      "path_parameters": [],
+      "summary": "Thumbnails asset animated.",
+      "tag": "Assets",
+      "stability": "stable",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "assets::thumbnails_asset_animated",
+      "rust_method": "thumbnails_asset_animated",
+      "constant": "THUMBNAILS_ASSET_ANIMATED"
+    },
+    {
+      "domain": "assets",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/v1/assets-thumbnail-3d",
+      "path_parameters": [],
+      "summary": "Thumbnails assets.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "thumbnail:read"
+      ],
+      "id": "assets::thumbnails_assets",
+      "rust_method": "thumbnails_assets",
+      "constant": "THUMBNAILS_ASSETS"
+    },
+    {
+      "domain": "assets",
+      "http_method": "PATCH",
+      "operation_id": "Assets_UpdateAsset",
+      "path": "/assets/v1/assets/{assetId}",
+      "path_parameters": [
+        "assetId"
+      ],
+      "summary": "Updates an asset with provided content and metadata.",
+      "tag": "Assets",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "asset:read",
+        "asset:write"
+      ],
+      "id": "assets::updates_an_asset_with_provided_content_and_metadata",
+      "rust_method": "updates_an_asset_with_provided_content_and_metadata",
+      "constant": "UPDATES_AN_ASSET_WITH_PROVIDED_CONTENT_AND_METADATA"
+    },
+    {
+      "domain": "avatars",
+      "http_method": "GET",
+      "operation_id": "Cloud_GenerateUserThumbnail",
+      "path": "/cloud/v2/users/{user_id}:generateThumbnail",
+      "path_parameters": [
+        "user_id"
+      ],
+      "summary": "Generate User Thumbnail",
+      "tag": "Avatars",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "avatars::generate_user_thumbnail",
+      "rust_method": "generate_user_thumbnail",
+      "constant": "GENERATE_USER_THUMBNAIL"
+    },
+    {
+      "domain": "avatars",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/v1/users/avatar-3d",
+      "path_parameters": [],
+      "summary": "Get Avatar 3d object for a user",
+      "tag": "Avatars",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "thumbnail:read"
+      ],
+      "id": "avatars::get_avatar_3d_object_for_a_user",
+      "rust_method": "get_avatar_3d_object_for_a_user",
+      "constant": "GET_AVATAR_3D_OBJECT_FOR_A_USER"
+    },
+    {
+      "domain": "badges",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-badges/v1/universes/{universeId}/badges",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Creates a new badge.",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe.badge:manage-and-spend-robux"
+      ],
+      "id": "badges::creates_a_new_badge",
+      "rust_method": "creates_a_new_badge",
+      "constant": "CREATES_A_NEW_BADGE"
+    },
+    {
+      "domain": "badges",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/icons/language-codes/{languageCode}",
+      "path_parameters": [
+        "badgeId",
+        "languageCode"
+      ],
+      "summary": "Delete a localized icon from a badge",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::delete_a_localized_icon_from_a_badge",
+      "rust_method": "delete_a_localized_icon_from_a_badge",
+      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_BADGE"
+    },
+    {
+      "domain": "badges",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name-description/language-codes/{languageCode}",
+      "path_parameters": [
+        "badgeId",
+        "languageCode"
+      ],
+      "summary": "Delete localized name and description of a badge",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::delete_localized_name_and_description_of_a_badge",
+      "rust_method": "delete_localized_name_and_description_of_a_badge",
+      "constant": "DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_BADGE"
+    },
+    {
+      "domain": "badges",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/icons",
+      "path_parameters": [
+        "badgeId"
+      ],
+      "summary": "Get all icons for a badge",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::get_all_icons_for_a_badge",
+      "rust_method": "get_all_icons_for_a_badge",
+      "constant": "GET_ALL_ICONS_FOR_A_BADGE"
+    },
+    {
+      "domain": "badges",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name-description",
+      "path_parameters": [
+        "badgeId"
+      ],
+      "summary": "GET /legacy-game-internationalization/v1/badges/{badgeId}/name-description",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::get_legacy_game_internationalization_v1_badges_badge_id_name_description",
+      "rust_method": "get_legacy_game_internationalization_v1_badges_badge_id_name_description",
+      "constant": "GET_LEGACY_GAME_INTERNATIONALIZATION_V1_BADGES_BADGE_ID_NAME_DESCRIPTION"
+    },
+    {
+      "domain": "badges",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/v1/badges/icons",
+      "path_parameters": [],
+      "summary": "Thumbnails badge icons.",
+      "tag": "Badges",
+      "stability": "stable",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "badges::thumbnails_badge_icons",
+      "rust_method": "thumbnails_badge_icons",
+      "constant": "THUMBNAILS_BADGE_ICONS"
+    },
+    {
+      "domain": "badges",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/icons/language-codes/{languageCode}",
+      "path_parameters": [
+        "badgeId",
+        "languageCode"
+      ],
+      "summary": "Update a badge's icon",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::update_a_badge_s_icon",
+      "rust_method": "update_a_badge_s_icon",
+      "constant": "UPDATE_A_BADGE_S_ICON"
+    },
+    {
+      "domain": "badges",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/description/language-codes/{languageCode}",
+      "path_parameters": [
+        "badgeId",
+        "languageCode"
+      ],
+      "summary": "Update localized description of a badge",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::update_localized_description_of_a_badge",
+      "rust_method": "update_localized_description_of_a_badge",
+      "constant": "UPDATE_LOCALIZED_DESCRIPTION_OF_A_BADGE"
+    },
+    {
+      "domain": "badges",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name-description/language-codes/{languageCode}",
+      "path_parameters": [
+        "badgeId",
+        "languageCode"
+      ],
+      "summary": "Update localized name and description of a badge",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::update_localized_name_and_description_of_a_badge",
+      "rust_method": "update_localized_name_and_description_of_a_badge",
+      "constant": "UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_BADGE"
+    },
+    {
+      "domain": "badges",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name/language-codes/{languageCode}",
+      "path_parameters": [
+        "badgeId",
+        "languageCode"
+      ],
+      "summary": "Update localized name of a badge",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-badge:manage"
+      ],
+      "id": "badges::update_localized_name_of_a_badge",
+      "rust_method": "update_localized_name_of_a_badge",
+      "constant": "UPDATE_LOCALIZED_NAME_OF_A_BADGE"
+    },
+    {
+      "domain": "badges",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-badges/v1/badges/{badgeId}",
+      "path_parameters": [
+        "badgeId"
+      ],
+      "summary": "Updates badge configuration.",
+      "tag": "Badges",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe.badge:write"
+      ],
+      "id": "badges::updates_badge_configuration",
+      "rust_method": "updates_badge_configuration",
+      "constant": "UPDATES_BADGE_CONFIGURATION"
+    },
+    {
+      "domain": "configs",
+      "http_method": "GET",
+      "operation_id": "CreatorConfigsPublicApi_GetConfigRepositoryFull",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/full",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Gets full config with metadata.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "configs::gets_full_config_with_metadata",
+      "rust_method": "gets_full_config_with_metadata",
+      "constant": "GETS_FULL_CONFIG_WITH_METADATA"
+    },
+    {
+      "domain": "configs",
+      "http_method": "GET",
+      "operation_id": "CreatorConfigsPublicApi_GetConfigRepositoryValues",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Gets published config values without metadata.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "configs::gets_published_config_values_without_metadata",
+      "rust_method": "gets_published_config_values_without_metadata",
+      "constant": "GETS_PUBLISHED_CONFIG_VALUES_WITHOUT_METADATA"
+    },
+    {
+      "domain": "configs",
+      "http_method": "GET",
+      "operation_id": "CreatorConfigsPublicApi_GetConfigRepositoryDraft",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/draft",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Gets the current draft.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "configs::gets_the_current_draft",
+      "rust_method": "gets_the_current_draft",
+      "constant": "GETS_THE_CURRENT_DRAFT"
+    },
+    {
+      "domain": "configs",
+      "http_method": "GET",
+      "operation_id": "CreatorConfigsPublicApi_ListRevisions",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/revisions",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Lists revision history.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "configs::lists_revision_history",
+      "rust_method": "lists_revision_history",
+      "constant": "LISTS_REVISION_HISTORY"
+    },
+    {
+      "domain": "configs",
+      "http_method": "PUT",
+      "operation_id": "CreatorConfigsPublicApi_OverwriteDraft",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/draft:overwrite",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Overwrites the entire draft with the request payload.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "configs::overwrites_the_entire_draft_with_the_request_payload",
+      "rust_method": "overwrites_the_entire_draft_with_the_request_payload",
+      "constant": "OVERWRITES_THE_ENTIRE_DRAFT_WITH_THE_REQUEST_PAYLOAD"
+    },
+    {
+      "domain": "configs",
+      "http_method": "PATCH",
+      "operation_id": "CreatorConfigsPublicApi_UpdateDraft",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/draft",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Partially updates the draft.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "configs::partially_updates_the_draft",
+      "rust_method": "partially_updates_the_draft",
+      "constant": "PARTIALLY_UPDATES_THE_DRAFT"
+    },
+    {
+      "domain": "configs",
+      "http_method": "POST",
+      "operation_id": "CreatorConfigsPublicApi_PublishDraft",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/publish",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Publishes draft changes.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "configs::publishes_draft_changes",
+      "rust_method": "publishes_draft_changes",
+      "constant": "PUBLISHES_DRAFT_CHANGES"
+    },
+    {
+      "domain": "configs",
+      "http_method": "DELETE",
+      "operation_id": "CreatorConfigsPublicApi_DeleteDraft",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/draft",
+      "path_parameters": [
+        "universeId",
+        "repository"
+      ],
+      "summary": "Resets (deletes) the current draft.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "configs::resets_deletes_the_current_draft",
+      "rust_method": "resets_deletes_the_current_draft",
+      "constant": "RESETS_DELETES_THE_CURRENT_DRAFT"
+    },
+    {
+      "domain": "configs",
+      "http_method": "POST",
+      "operation_id": "CreatorConfigsPublicApi_RestoreRevision",
+      "path": "/creator-configs-public-api/v1/configs/universes/{universeId}/repositories/{repository}/revisions/{revisionId}/restore",
+      "path_parameters": [
+        "universeId",
+        "repository",
+        "revisionId"
+      ],
+      "summary": "Stages a revert to a previous revision.",
+      "tag": "Configs",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "configs::stages_a_revert_to_a_previous_revision",
+      "rust_method": "stages_a_revert_to_a_previous_revision",
+      "constant": "STAGES_A_REVERT_TO_A_PREVIOUS_REVISION"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "POST",
+      "operation_id": "Saves_BulkDeleteSaves",
+      "path": "/toolbox-service/v1/saves:bulkDelete",
+      "path_parameters": [],
+      "summary": "Bulk deletes saves.\r\nMax of 5000 saves per request.",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-save:write"
+      ],
+      "id": "creator_store::bulk_deletes_saves_max_of_5000_saves_per_request",
+      "rust_method": "bulk_deletes_saves_max_of_5000_saves_per_request",
+      "constant": "BULK_DELETES_SAVES_MAX_OF_5000_SAVES_PER_REQUEST"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateCreatorStoreProduct",
+      "path": "/cloud/v2/creator-store-products",
+      "path_parameters": [],
+      "summary": "Create Creator Store Product",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-product:write"
+      ],
+      "id": "creator_store::create_creator_store_product",
+      "rust_method": "create_creator_store_product",
+      "constant": "CREATE_CREATOR_STORE_PRODUCT"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "POST",
+      "operation_id": "Saves_CreateSave",
+      "path": "/toolbox-service/v1/saves",
+      "path_parameters": [],
+      "summary": "Creates a save.",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-save:write"
+      ],
+      "id": "creator_store::creates_a_save",
+      "rust_method": "creates_a_save",
+      "constant": "CREATES_A_SAVE"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "DELETE",
+      "operation_id": "Saves_DeleteSave",
+      "path": "/toolbox-service/v1/saves",
+      "path_parameters": [],
+      "summary": "Deletes a save.",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-save:write"
+      ],
+      "id": "creator_store::deletes_a_save",
+      "rust_method": "deletes_a_save",
+      "constant": "DELETES_A_SAVE"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetCreatorStoreProduct",
+      "path": "/cloud/v2/creator-store-products/{creator_store_product_id}",
+      "path_parameters": [
+        "creator_store_product_id"
+      ],
+      "summary": "Get Creator Store Product",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-product:read"
+      ],
+      "id": "creator_store::get_creator_store_product",
+      "rust_method": "get_creator_store_product",
+      "constant": "GET_CREATOR_STORE_PRODUCT"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "GET",
+      "operation_id": "Saves_GetSaves",
+      "path": "/toolbox-service/v1/saves",
+      "path_parameters": [],
+      "summary": "Gets saves from a collection.",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-save:read"
+      ],
+      "id": "creator_store::gets_saves_from_a_collection",
+      "rust_method": "gets_saves_from_a_collection",
+      "constant": "GETS_SAVES_FROM_A_COLLECTION"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "POST",
+      "operation_id": "Toolbox_SearchCreatorStoreAssets",
+      "path": "/toolbox-service/v2/assets:search",
+      "path_parameters": [],
+      "summary": "Search Creator Store Assets",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-product:read"
+      ],
+      "id": "creator_store::search_creator_store_assets",
+      "rust_method": "search_creator_store_assets",
+      "constant": "SEARCH_CREATOR_STORE_ASSETS"
+    },
+    {
+      "domain": "creator_store",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateCreatorStoreProduct",
+      "path": "/cloud/v2/creator-store-products/{creator_store_product_id}",
+      "path_parameters": [
+        "creator_store_product_id"
+      ],
+      "summary": "Update Creator Store Product",
+      "tag": "Creator Store",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "creator-store-product:write"
+      ],
+      "id": "creator_store::update_creator_store_product",
+      "rust_method": "update_creator_store_product",
+      "constant": "UPDATE_CREATOR_STORE_PRODUCT"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "DELETE",
+      "operation_id": "Cloud_DeleteDataStore",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id"
+      ],
+      "summary": "Delete Data Store",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.control:delete"
+      ],
+      "id": "datastore::request_delete_data_store",
+      "rust_method": "request_delete_data_store",
+      "constant": "REQUEST_DELETE_DATA_STORE"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "DELETE",
+      "operation_id": "Cloud_DeleteDataStoreEntry__Using_Universes_DataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "entry_id"
+      ],
+      "summary": "Delete Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:delete"
+      ],
+      "id": "datastore::request_delete_data_store_id_entries_entry_id",
+      "rust_method": "request_delete_data_store_id_entries_entry_id",
+      "constant": "REQUEST_DELETE_DATA_STORE_ID_ENTRIES_ENTRY_ID"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "DELETE",
+      "operation_id": "Entries_DeleteEntryAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores/datastore/entries/entry",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Delete entry.",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:delete"
+      ],
+      "id": "datastore::request_delete_entry",
+      "rust_method": "request_delete_entry",
+      "constant": "REQUEST_DELETE_ENTRY"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "DELETE",
+      "operation_id": "Cloud_DeleteDataStoreEntry__Using_Universes_DataStores_Scopes",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/scopes/{scope_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Delete Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:delete"
+      ],
+      "id": "datastore::request_delete_scope_id_entries_entry_id",
+      "rust_method": "request_delete_scope_id_entries_entry_id",
+      "constant": "REQUEST_DELETE_SCOPE_ID_ENTRIES_ENTRY_ID"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetDataStoreEntry__Using_Universes_DataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "entry_id"
+      ],
+      "summary": "Get Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:read"
+      ],
+      "id": "datastore::request_get_data_store_id_entries_entry_id",
+      "rust_method": "request_get_data_store_id_entries_entry_id",
+      "constant": "REQUEST_GET_DATA_STORE_ID_ENTRIES_ENTRY_ID"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListDataStoreEntryRevisions__Using_Universes_DataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/entries/{entry_id}:listRevisions",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "entry_id"
+      ],
+      "summary": "List Data Store Entry Revisions",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.versions:list"
+      ],
+      "id": "datastore::request_get_data_store_id_entries_entry_id_list_revisions",
+      "rust_method": "request_get_data_store_id_entries_entry_id_list_revisions",
+      "constant": "REQUEST_GET_DATA_STORE_ID_ENTRIES_ENTRY_ID_LIST_REVISIONS"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListDataStoreEntries__Using_Universes",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/entries",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id"
+      ],
+      "summary": "List Data Store Entries",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:list"
+      ],
+      "id": "datastore::request_get_data_stores_data_store_id_entries",
+      "rust_method": "request_get_data_stores_data_store_id_entries",
+      "constant": "REQUEST_GET_DATA_STORES_DATA_STORE_ID_ENTRIES"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Entries_GetEntryAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores/datastore/entries/entry",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Get entry.",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:read"
+      ],
+      "id": "datastore::request_get_entry",
+      "rust_method": "request_get_entry",
+      "constant": "REQUEST_GET_ENTRY"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Entries_GetEntryVersionAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores/datastore/entries/entry/versions/version",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Get entry version.",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.versions:read"
+      ],
+      "id": "datastore::request_get_entry_version",
+      "rust_method": "request_get_entry_version",
+      "constant": "REQUEST_GET_ENTRY_VERSION"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetDataStoreEntry__Using_Universes_DataStores_Scopes",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/scopes/{scope_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Get Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:read"
+      ],
+      "id": "datastore::request_get_scope_id_entries_entry_id",
+      "rust_method": "request_get_scope_id_entries_entry_id",
+      "constant": "REQUEST_GET_SCOPE_ID_ENTRIES_ENTRY_ID"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListDataStoreEntryRevisions__Using_Universes_DataStores_Scopes",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/scopes/{scope_id}/entries/{entry_id}:listRevisions",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "List Data Store Entry Revisions",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.versions:list"
+      ],
+      "id": "datastore::request_get_scope_id_entries_entry_id_list_revisions",
+      "rust_method": "request_get_scope_id_entries_entry_id_list_revisions",
+      "constant": "REQUEST_GET_SCOPE_ID_ENTRIES_ENTRY_ID_LIST_REVISIONS"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListDataStoreEntries__Using_Universes_DataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/scopes/{scope_id}/entries",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "scope_id"
+      ],
+      "summary": "List Data Store Entries",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:list"
+      ],
+      "id": "datastore::request_get_scopes_scope_id_entries",
+      "rust_method": "request_get_scopes_scope_id_entries",
+      "constant": "REQUEST_GET_SCOPES_SCOPE_ID_ENTRIES"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Entries_IncrementEntryAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores/datastore/entries/entry/increment",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Increment entry",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.control:create",
+        "universe-datastores.objects:create",
+        "universe-datastores.objects:update"
+      ],
+      "id": "datastore::request_increment_entry",
+      "rust_method": "request_increment_entry",
+      "constant": "REQUEST_INCREMENT_ENTRY"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListDataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "List Data Stores",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.control:list"
+      ],
+      "id": "datastore::request_list_data_stores",
+      "rust_method": "request_list_data_stores",
+      "constant": "REQUEST_LIST_DATA_STORES"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Datastores_ListDatastoresAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List data stores in an experience",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.control:list"
+      ],
+      "id": "datastore::request_list_data_stores_in_an_experience",
+      "rust_method": "request_list_data_stores_in_an_experience",
+      "constant": "REQUEST_LIST_DATA_STORES_IN_AN_EXPERIENCE"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Entries_ListKeysAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores/datastore/entries",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List entries",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:list"
+      ],
+      "id": "datastore::request_list_entries",
+      "rust_method": "request_list_entries",
+      "constant": "REQUEST_LIST_ENTRIES"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "GET",
+      "operation_id": "Entries_ListEntryVersionsAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores/datastore/entries/entry/versions",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List entry versions",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.versions:list"
+      ],
+      "id": "datastore::request_list_entry_versions",
+      "rust_method": "request_list_entry_versions",
+      "constant": "REQUEST_LIST_ENTRY_VERSIONS"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateDataStoreEntry__Using_Universes_DataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "entry_id"
+      ],
+      "summary": "Update Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:update"
+      ],
+      "id": "datastore::request_patch_data_store_id_entries_entry_id",
+      "rust_method": "request_patch_data_store_id_entries_entry_id",
+      "constant": "REQUEST_PATCH_DATA_STORE_ID_ENTRIES_ENTRY_ID"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateDataStoreEntry__Using_Universes_DataStores_Scopes",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/scopes/{scope_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Update Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:update"
+      ],
+      "id": "datastore::request_patch_scope_id_entries_entry_id",
+      "rust_method": "request_patch_scope_id_entries_entry_id",
+      "constant": "REQUEST_PATCH_SCOPE_ID_ENTRIES_ENTRY_ID"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_IncrementDataStoreEntry__Using_Universes_DataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/entries/{entry_id}:increment",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "entry_id"
+      ],
+      "summary": "Increment Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:create",
+        "universe-datastores.objects:update"
+      ],
+      "id": "datastore::request_post_data_store_id_entries_entry_id_increment",
+      "rust_method": "request_post_data_store_id_entries_entry_id_increment",
+      "constant": "REQUEST_POST_DATA_STORE_ID_ENTRIES_ENTRY_ID_INCREMENT"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateDataStoreEntry__Using_Universes",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/entries",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id"
+      ],
+      "summary": "Create Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:create"
+      ],
+      "id": "datastore::request_post_data_stores_data_store_id_entries",
+      "rust_method": "request_post_data_stores_data_store_id_entries",
+      "constant": "REQUEST_POST_DATA_STORES_DATA_STORE_ID_ENTRIES"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_IncrementDataStoreEntry__Using_Universes_DataStores_Scopes",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/scopes/{scope_id}/entries/{entry_id}:increment",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Increment Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:create",
+        "universe-datastores.objects:update"
+      ],
+      "id": "datastore::request_post_scope_id_entries_entry_id_increment",
+      "rust_method": "request_post_scope_id_entries_entry_id_increment",
+      "constant": "REQUEST_POST_SCOPE_ID_ENTRIES_ENTRY_ID_INCREMENT"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateDataStoreEntry__Using_Universes_DataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}/scopes/{scope_id}/entries",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id",
+        "scope_id"
+      ],
+      "summary": "Create Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.objects:create"
+      ],
+      "id": "datastore::request_post_scopes_scope_id_entries",
+      "rust_method": "request_post_scopes_scope_id_entries",
+      "constant": "REQUEST_POST_SCOPES_SCOPE_ID_ENTRIES"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Entries_SetEntryAsync",
+      "path": "/datastores/v1/universes/{universeId}/standard-datastores/datastore/entries/entry",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Set entry.",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.control:create",
+        "universe-datastores.objects:create",
+        "universe-datastores.objects:update"
+      ],
+      "id": "datastore::request_set_entry",
+      "rust_method": "request_set_entry",
+      "constant": "REQUEST_SET_ENTRY"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_SnapshotDataStores",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores:snapshot",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Snapshot Data Stores",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.control:snapshot"
+      ],
+      "id": "datastore::request_snapshot_data_stores",
+      "rust_method": "request_snapshot_data_stores",
+      "constant": "REQUEST_SNAPSHOT_DATA_STORES"
+    },
+    {
+      "domain": "datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_UndeleteDataStore",
+      "path": "/cloud/v2/universes/{universe_id}/data-stores/{data_store_id}:undelete",
+      "path_parameters": [
+        "universe_id",
+        "data_store_id"
+      ],
+      "summary": "Undelete Data Store",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-datastores.control:delete"
+      ],
+      "id": "datastore::request_undelete_data_store",
+      "rust_method": "request_undelete_data_store",
+      "constant": "REQUEST_UNDELETE_DATA_STORE"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "POST",
+      "operation_id": "DeveloperProducts_CreateDeveloperProductV2",
+      "path": "/developer-products/v2/universes/{universeId}/developer-products",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Create developer product",
+      "tag": "Developer products",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "developer-product:write"
+      ],
+      "id": "developer_products::create_developer_product",
+      "rust_method": "create_developer_product",
+      "constant": "CREATE_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/icons/language-codes/{languageCode}",
+      "path_parameters": [
+        "developerProductId",
+        "languageCode"
+      ],
+      "summary": "Delete a localized icon from a developer product",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::delete_a_localized_icon_from_a_developer_product",
+      "rust_method": "delete_a_localized_icon_from_a_developer_product",
+      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name-description/language-codes/{languageCode}",
+      "path_parameters": [
+        "developerProductId",
+        "languageCode"
+      ],
+      "summary": "Delete localized name and description of a developer product",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::delete_localized_name_and_description_of_a_developer_product",
+      "rust_method": "delete_localized_name_and_description_of_a_developer_product",
+      "constant": "DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/icons",
+      "path_parameters": [
+        "developerProductId"
+      ],
+      "summary": "Get all icons for a developer product",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::get_all_icons_for_a_developer_product",
+      "rust_method": "get_all_icons_for_a_developer_product",
+      "constant": "GET_ALL_ICONS_FOR_A_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name-description",
+      "path_parameters": [
+        "developerProductId"
+      ],
+      "summary": "Get all names and descriptions of a developer product",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::get_all_names_and_descriptions_of_a_developer_product",
+      "rust_method": "get_all_names_and_descriptions_of_a_developer_product",
+      "constant": "GET_ALL_NAMES_AND_DESCRIPTIONS_OF_A_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "GET",
+      "operation_id": "DeveloperProducts_GetDeveloperProductConfigV2",
+      "path": "/developer-products/v2/universes/{universeId}/developer-products/{productId}/creator",
+      "path_parameters": [
+        "universeId",
+        "productId"
+      ],
+      "summary": "Get developer product with configuration details",
+      "tag": "Developer products",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "developer-product:read"
+      ],
+      "id": "developer_products::get_developer_product_with_configuration_details",
+      "rust_method": "get_developer_product_with_configuration_details",
+      "constant": "GET_DEVELOPER_PRODUCT_WITH_CONFIGURATION_DETAILS"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "GET",
+      "operation_id": "DeveloperProducts_ListDeveloperProductConfigsByUniverseV2",
+      "path": "/developer-products/v2/universes/{universeId}/developer-products/creator",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List developer products by universe with configuration details",
+      "tag": "Developer products",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "developer-product:read"
+      ],
+      "id": "developer_products::list_developer_products_by_universe_with_configuration_details",
+      "rust_method": "list_developer_products_by_universe_with_configuration_details",
+      "constant": "LIST_DEVELOPER_PRODUCTS_BY_UNIVERSE_WITH_CONFIGURATION_DETAILS"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/icons/language-codes/{languageCode}",
+      "path_parameters": [
+        "developerProductId",
+        "languageCode"
+      ],
+      "summary": "Update a developer product's icon",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::update_a_developer_product_s_icon",
+      "rust_method": "update_a_developer_product_s_icon",
+      "constant": "UPDATE_A_DEVELOPER_PRODUCT_S_ICON"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "PATCH",
+      "operation_id": "DeveloperProducts_UpdateDeveloperProductV2",
+      "path": "/developer-products/v2/universes/{universeId}/developer-products/{productId}",
+      "path_parameters": [
+        "universeId",
+        "productId"
+      ],
+      "summary": "Update developer product",
+      "tag": "Developer products",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "developer-product:write"
+      ],
+      "id": "developer_products::update_developer_product",
+      "rust_method": "update_developer_product",
+      "constant": "UPDATE_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/description/language-codes/{languageCode}",
+      "path_parameters": [
+        "developerProductId",
+        "languageCode"
+      ],
+      "summary": "Update localized description of a developer product",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::update_localized_description_of_a_developer_product",
+      "rust_method": "update_localized_description_of_a_developer_product",
+      "constant": "UPDATE_LOCALIZED_DESCRIPTION_OF_A_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name-description/language-codes/{languageCode}",
+      "path_parameters": [
+        "developerProductId",
+        "languageCode"
+      ],
+      "summary": "Update localized name and description of a developer product",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::update_localized_name_and_description_of_a_developer_product",
+      "rust_method": "update_localized_name_and_description_of_a_developer_product",
+      "constant": "UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "developer_products",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name/language-codes/{languageCode}",
+      "path_parameters": [
+        "developerProductId",
+        "languageCode"
+      ],
+      "summary": "Update localized name of a developer product",
+      "tag": "Developer products",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-developer-product:manage"
+      ],
+      "id": "developer_products::update_localized_name_of_a_developer_product",
+      "rust_method": "update_localized_name_of_a_developer_product",
+      "constant": "UPDATE_LOCALIZED_NAME_OF_A_DEVELOPER_PRODUCT"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "POST",
+      "operation_id": "GamePasses_CreateGamePass",
+      "path": "/game-passes/v1/universes/{universeId}/game-passes",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Create game pass",
+      "tag": "Game passes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "game-pass:write"
+      ],
+      "id": "game_passes::create_game_pass",
+      "rust_method": "create_game_pass",
+      "constant": "CREATE_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons/language-codes/{languageCode}",
+      "path_parameters": [
+        "gamePassId",
+        "languageCode"
+      ],
+      "summary": "Delete a localized icon from a game pass",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::delete_a_localized_icon_from_a_game_pass",
+      "rust_method": "delete_a_localized_icon_from_a_game_pass",
+      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description/language-codes/{languageCode}",
+      "path_parameters": [
+        "gamePassId",
+        "languageCode"
+      ],
+      "summary": "Delete localized name and description of a game pass",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::delete_localized_name_and_description_of_a_game_pass",
+      "rust_method": "delete_localized_name_and_description_of_a_game_pass",
+      "constant": "DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons",
+      "path_parameters": [
+        "gamePassId"
+      ],
+      "summary": "Get all icons for a game pass",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::get_all_icons_for_a_game_pass",
+      "rust_method": "get_all_icons_for_a_game_pass",
+      "constant": "GET_ALL_ICONS_FOR_A_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description",
+      "path_parameters": [
+        "gamePassId"
+      ],
+      "summary": "Get all names and descriptions of a game pass",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::get_all_names_and_descriptions_of_a_game_pass",
+      "rust_method": "get_all_names_and_descriptions_of_a_game_pass",
+      "constant": "GET_ALL_NAMES_AND_DESCRIPTIONS_OF_A_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "GET",
+      "operation_id": "GamePasses_GetGamePassConfig",
+      "path": "/game-passes/v1/universes/{universeId}/game-passes/{gamePassId}/creator",
+      "path_parameters": [
+        "universeId",
+        "gamePassId"
+      ],
+      "summary": "Get game pass with configuration details",
+      "tag": "Game passes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "game-pass:read"
+      ],
+      "id": "game_passes::get_game_pass_with_configuration_details",
+      "rust_method": "get_game_pass_with_configuration_details",
+      "constant": "GET_GAME_PASS_WITH_CONFIGURATION_DETAILS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "GET",
+      "operation_id": "GamePasses_ListGamePassConfigsByUniverse",
+      "path": "/game-passes/v1/universes/{universeId}/game-passes/creator",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List game passes by universe with configuration details",
+      "tag": "Game passes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "game-pass:read"
+      ],
+      "id": "game_passes::list_game_passes_by_universe_with_configuration_details",
+      "rust_method": "list_game_passes_by_universe_with_configuration_details",
+      "constant": "LIST_GAME_PASSES_BY_UNIVERSE_WITH_CONFIGURATION_DETAILS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/v1/game-passes",
+      "path_parameters": [],
+      "summary": "Thumbnails game pass icons.",
+      "tag": "Game passes",
+      "stability": "stable",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "game_passes::thumbnails_game_pass_icons",
+      "rust_method": "thumbnails_game_pass_icons",
+      "constant": "THUMBNAILS_GAME_PASS_ICONS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons/language-codes/{languageCode}",
+      "path_parameters": [
+        "gamePassId",
+        "languageCode"
+      ],
+      "summary": "Update a game pass's icon",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::update_a_game_pass_s_icon",
+      "rust_method": "update_a_game_pass_s_icon",
+      "constant": "UPDATE_A_GAME_PASS_S_ICON"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "PATCH",
+      "operation_id": "GamePasses_UpdateGamePass",
+      "path": "/game-passes/v1/universes/{universeId}/game-passes/{gamePassId}",
+      "path_parameters": [
+        "universeId",
+        "gamePassId"
+      ],
+      "summary": "Update game pass",
+      "tag": "Game passes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "game-pass:write"
+      ],
+      "id": "game_passes::update_game_pass",
+      "rust_method": "update_game_pass",
+      "constant": "UPDATE_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/description/language-codes/{languageCode}",
+      "path_parameters": [
+        "gamePassId",
+        "languageCode"
+      ],
+      "summary": "Update localized description of a game pass",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::update_localized_description_of_a_game_pass",
+      "rust_method": "update_localized_description_of_a_game_pass",
+      "constant": "UPDATE_LOCALIZED_DESCRIPTION_OF_A_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description/language-codes/{languageCode}",
+      "path_parameters": [
+        "gamePassId",
+        "languageCode"
+      ],
+      "summary": "Update localized name and description of a game pass",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::update_localized_name_and_description_of_a_game_pass",
+      "rust_method": "update_localized_name_and_description_of_a_game_pass",
+      "constant": "UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS"
+    },
+    {
+      "domain": "game_passes",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name/language-codes/{languageCode}",
+      "path_parameters": [
+        "gamePassId",
+        "languageCode"
+      ],
+      "summary": "Update localized name of a game pass",
+      "tag": "Game passes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-game-pass:manage"
+      ],
+      "id": "game_passes::update_localized_name_of_a_game_pass",
+      "rust_method": "update_localized_name_of_a_game_pass",
+      "constant": "UPDATE_LOCALIZED_NAME_OF_A_GAME_PASS"
+    },
+    {
+      "domain": "generative_ai",
+      "http_method": "POST",
+      "operation_id": "Cloud_TranslateText",
+      "path": "/cloud/v2/universes/{universe_id}:translateText",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Translate Text",
+      "tag": "Generative AI",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "generative_ai::translate_text",
+      "rust_method": "translate_text",
+      "constant": "TRANSLATE_TEXT"
+    },
+    {
+      "domain": "groups",
+      "http_method": "POST",
+      "operation_id": "Cloud_AcceptGroupJoinRequest",
+      "path": "/cloud/v2/groups/{group_id}/join-requests/{join_request_id}:accept",
+      "path_parameters": [
+        "group_id",
+        "join_request_id"
+      ],
+      "summary": "Accept Group Join Request",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:write"
+      ],
+      "id": "groups::accept_group_join_request",
+      "rust_method": "accept_group_join_request",
+      "constant": "ACCEPT_GROUP_JOIN_REQUEST"
+    },
+    {
+      "domain": "groups",
+      "http_method": "POST",
+      "operation_id": "Cloud_AssignRoleGroupMembership",
+      "path": "/cloud/v2/groups/{group_id}/memberships/{membership_id}:assignRole",
+      "path_parameters": [
+        "group_id",
+        "membership_id"
+      ],
+      "summary": "Assign Role Group Membership",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:write"
+      ],
+      "id": "groups::assign_role_group_membership",
+      "rust_method": "assign_role_group_membership",
+      "constant": "ASSIGN_ROLE_GROUP_MEMBERSHIP"
+    },
+    {
+      "domain": "groups",
+      "http_method": "POST",
+      "operation_id": "Cloud_DeclineGroupJoinRequest",
+      "path": "/cloud/v2/groups/{group_id}/join-requests/{join_request_id}:decline",
+      "path_parameters": [
+        "group_id",
+        "join_request_id"
+      ],
+      "summary": "Decline Group Join Request",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:write"
+      ],
+      "id": "groups::decline_group_join_request",
+      "rust_method": "decline_group_join_request",
+      "constant": "DECLINE_GROUP_JOIN_REQUEST"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetGroup",
+      "path": "/cloud/v2/groups/{group_id}",
+      "path_parameters": [
+        "group_id"
+      ],
+      "summary": "Get Group",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "groups::get_group",
+      "rust_method": "get_group",
+      "constant": "GET_GROUP"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetGroupRole",
+      "path": "/cloud/v2/groups/{group_id}/roles/{role_id}",
+      "path_parameters": [
+        "group_id",
+        "role_id"
+      ],
+      "summary": "Get Group Role",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:read"
+      ],
+      "id": "groups::get_group_role",
+      "rust_method": "get_group_role",
+      "constant": "GET_GROUP_ROLE"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/v1/groups/icons",
+      "path_parameters": [],
+      "summary": "Fetches thumbnail URLs for a list of groups. Ids that do not correspond to groups will be filtered out.",
+      "tag": "Groups",
+      "stability": "stable",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "groups::get_groups_icons",
+      "rust_method": "get_groups_icons",
+      "constant": "GET_GROUPS_ICONS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/user/groups/canmanage",
+      "path_parameters": [],
+      "summary": "Gets a list of Groups that a user can manage.",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::gets_a_list_of_groups_that_a_user_can_manage",
+      "rust_method": "gets_a_list_of_groups_that_a_user_can_manage",
+      "constant": "GETS_A_LIST_OF_GROUPS_THAT_A_USER_CAN_MANAGE"
+    },
+    {
+      "domain": "groups",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/groups/policies",
+      "path_parameters": [],
+      "summary": "Gets group policy info used for compliance.",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::gets_group_policy_info_used_for_compliance",
+      "rust_method": "gets_group_policy_info_used_for_compliance",
+      "constant": "GETS_GROUP_POLICY_INFO_USED_FOR_COMPLIANCE"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/user/groups/pending",
+      "path_parameters": [],
+      "summary": "Gets groups that the authenticated user has requested to join",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::gets_groups_that_the_authenticated_user_has_requested_to_join",
+      "rust_method": "gets_groups_that_the_authenticated_user_has_requested_to_join",
+      "constant": "GETS_GROUPS_THAT_THE_AUTHENTICATED_USER_HAS_REQUESTED_TO_JOIN"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/groups/{groupId}/audit-log",
+      "path_parameters": [
+        "groupId"
+      ],
+      "summary": "Gets the Group's audit log",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::gets_the_group_s_audit_log",
+      "rust_method": "gets_the_group_s_audit_log",
+      "constant": "GETS_THE_GROUP_S_AUDIT_LOG"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/groups/{groupId}/settings",
+      "path_parameters": [
+        "groupId"
+      ],
+      "summary": "Gets the Group's settings",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::gets_the_group_s_settings",
+      "rust_method": "gets_the_group_s_settings",
+      "constant": "GETS_THE_GROUP_S_SETTINGS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListGroupForumCategories",
+      "path": "/cloud/v2/groups/{group_id}/forum-categories",
+      "path_parameters": [
+        "group_id"
+      ],
+      "summary": "List Group Forum Categories",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group-forum:read"
+      ],
+      "id": "groups::list_group_forum_categories",
+      "rust_method": "list_group_forum_categories",
+      "constant": "LIST_GROUP_FORUM_CATEGORIES"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListGroupForumComments",
+      "path": "/cloud/v2/groups/{group_id}/forum-categories/{forum_category_id}/posts/{post_id}/comments",
+      "path_parameters": [
+        "group_id",
+        "forum_category_id",
+        "post_id"
+      ],
+      "summary": "List Group Forum Comments",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group-forum:read"
+      ],
+      "id": "groups::list_group_forum_comments",
+      "rust_method": "list_group_forum_comments",
+      "constant": "LIST_GROUP_FORUM_COMMENTS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListGroupForumPosts",
+      "path": "/cloud/v2/groups/{group_id}/forum-categories/{forum_category_id}/posts",
+      "path_parameters": [
+        "group_id",
+        "forum_category_id"
+      ],
+      "summary": "List Group Forum Posts",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group-forum:read"
+      ],
+      "id": "groups::list_group_forum_posts",
+      "rust_method": "list_group_forum_posts",
+      "constant": "LIST_GROUP_FORUM_POSTS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListGroupJoinRequests",
+      "path": "/cloud/v2/groups/{group_id}/join-requests",
+      "path_parameters": [
+        "group_id"
+      ],
+      "summary": "List Group Join Requests",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:read"
+      ],
+      "id": "groups::list_group_join_requests",
+      "rust_method": "list_group_join_requests",
+      "constant": "LIST_GROUP_JOIN_REQUESTS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListGroupMemberships",
+      "path": "/cloud/v2/groups/{group_id}/memberships",
+      "path_parameters": [
+        "group_id"
+      ],
+      "summary": "List Group Memberships",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "groups::list_group_memberships",
+      "rust_method": "list_group_memberships",
+      "constant": "LIST_GROUP_MEMBERSHIPS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListGroupRoles",
+      "path": "/cloud/v2/groups/{group_id}/roles",
+      "path_parameters": [
+        "group_id"
+      ],
+      "summary": "List Group Roles",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:read"
+      ],
+      "id": "groups::list_group_roles",
+      "rust_method": "list_group_roles",
+      "constant": "LIST_GROUP_ROLES"
+    },
+    {
+      "domain": "groups",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/groups/{groupId}/notification-preference",
+      "path_parameters": [
+        "groupId"
+      ],
+      "summary": "Updates the group's settings",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-user:manage"
+      ],
+      "id": "groups::patch_groups_group_id_notification_preference",
+      "rust_method": "patch_groups_group_id_notification_preference",
+      "constant": "PATCH_GROUPS_GROUP_ID_NOTIFICATION_PREFERENCE"
+    },
+    {
+      "domain": "groups",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/groups/{groupId}/settings",
+      "path_parameters": [
+        "groupId"
+      ],
+      "summary": "Updates the group's settings",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::patch_groups_group_id_settings",
+      "rust_method": "patch_groups_group_id_settings",
+      "constant": "PATCH_GROUPS_GROUP_ID_SETTINGS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/groups/{groupId}/status",
+      "path_parameters": [
+        "groupId"
+      ],
+      "summary": "Sets group status",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::sets_group_status",
+      "rust_method": "sets_group_status",
+      "constant": "SETS_GROUP_STATUS"
+    },
+    {
+      "domain": "groups",
+      "http_method": "POST",
+      "operation_id": "Cloud_UnassignRoleGroupMembership",
+      "path": "/cloud/v2/groups/{group_id}/memberships/{membership_id}:unassignRole",
+      "path_parameters": [
+        "group_id",
+        "membership_id"
+      ],
+      "summary": "Unassign Role Group Membership",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:write"
+      ],
+      "id": "groups::unassign_role_group_membership",
+      "rust_method": "unassign_role_group_membership",
+      "constant": "UNASSIGN_ROLE_GROUP_MEMBERSHIP"
+    },
+    {
+      "domain": "groups",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateGroupMembership",
+      "path": "/cloud/v2/groups/{group_id}/memberships/{membership_id}",
+      "path_parameters": [
+        "group_id",
+        "membership_id"
+      ],
+      "summary": "Update Group Membership",
+      "tag": "Groups",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "group:write"
+      ],
+      "id": "groups::update_group_membership",
+      "rust_method": "update_group_membership",
+      "constant": "UPDATE_GROUP_MEMBERSHIP"
+    },
+    {
+      "domain": "groups",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-groups/v1/groups/{groupId}/description",
+      "path_parameters": [
+        "groupId"
+      ],
+      "summary": "Updates the groups description",
+      "tag": "Groups",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-group:manage"
+      ],
+      "id": "groups::updates_the_groups_description",
+      "rust_method": "updates_the_groups_description",
+      "constant": "UPDATES_THE_GROUPS_DESCRIPTION"
+    },
+    {
+      "domain": "interactions",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-followings/v1/users/{userId}/universes/{universeId}",
+      "path_parameters": [
+        "userId",
+        "universeId"
+      ],
+      "summary": "Deletes the following between a user with userId and universe with universeId",
+      "tag": "Interactions",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe.following:write"
+      ],
+      "id": "interactions::delete_user_id_universes_universe_id",
+      "rust_method": "delete_user_id_universes_universe_id",
+      "constant": "DELETE_USER_ID_UNIVERSES_UNIVERSE_ID"
+    },
+    {
+      "domain": "interactions",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-followings/v1/users/{userId}/universes/{universeId}/status",
+      "path_parameters": [
+        "userId",
+        "universeId"
+      ],
+      "summary": "Gets the status of a following relationship between a user and a universe.",
+      "tag": "Interactions",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe.following:read"
+      ],
+      "id": "interactions::get_universes_universe_id_status",
+      "rust_method": "get_universes_universe_id_status",
+      "constant": "GET_UNIVERSES_UNIVERSE_ID_STATUS"
+    },
+    {
+      "domain": "interactions",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-followings/v1/users/{userId}/universes",
+      "path_parameters": [
+        "userId"
+      ],
+      "summary": "Gets all the followings between a user with userId and universes",
+      "tag": "Interactions",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe.following:read"
+      ],
+      "id": "interactions::gets_all_the_followings_between_a_user_with_user_id_and_universes",
+      "rust_method": "gets_all_the_followings_between_a_user_with_user_id_and_universes",
+      "constant": "GETS_ALL_THE_FOLLOWINGS_BETWEEN_A_USER_WITH_USER_ID_AND_UNIVERSES"
+    },
+    {
+      "domain": "interactions",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-followings/v2/users/{userId}/universes",
+      "path_parameters": [
+        "userId"
+      ],
+      "summary": "Gets all universes followed by a user.",
+      "tag": "Interactions",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe.following:read"
+      ],
+      "id": "interactions::gets_all_universes_followed_by_a_user",
+      "rust_method": "gets_all_universes_followed_by_a_user",
+      "constant": "GETS_ALL_UNIVERSES_FOLLOWED_BY_A_USER"
+    },
+    {
+      "domain": "interactions",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-followings/v1/users/{userId}/universes/{universeId}",
+      "path_parameters": [
+        "userId",
+        "universeId"
+      ],
+      "summary": "Creates the following between a user with userId and universe with universeId",
+      "tag": "Interactions",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe.following:write"
+      ],
+      "id": "interactions::post_user_id_universes_universe_id",
+      "rust_method": "post_user_id_universes_universe_id",
+      "constant": "POST_USER_ID_UNIVERSES_UNIVERSE_ID"
+    },
+    {
+      "domain": "inventory",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListInventoryItems",
+      "path": "/cloud/v2/users/{user_id}/inventory-items",
+      "path_parameters": [
+        "user_id"
+      ],
+      "summary": "List Inventory Items",
+      "tag": "Inventories",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "user.inventory-item:read"
+      ],
+      "id": "inventory::list_inventory_items",
+      "rust_method": "list_inventory_items",
+      "constant": "LIST_INVENTORY_ITEMS"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "Add or remove supported languages for a game.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::add_or_remove_supported_languages_for_a_game",
+      "rust_method": "add_or_remove_supported_languages_for_a_game",
+      "constant": "ADD_OR_REMOVE_SUPPORTED_LANGUAGES_FOR_A_GAME"
+    },
+    {
+      "domain": "localization",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-icon/games/{gameId}/language-codes/{languageCode}",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Delete a localized icon from a game",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::delete_a_localized_icon_from_a_game",
+      "rust_method": "delete_a_localized_icon_from_a_game",
+      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_GAME"
+    },
+    {
+      "domain": "localization",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/images/{imageId}",
+      "path_parameters": [
+        "gameId",
+        "languageCode",
+        "imageId"
+      ],
+      "summary": "Deletes the game thumbnail.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::deletes_the_game_thumbnail",
+      "rust_method": "deletes_the_game_thumbnail",
+      "constant": "DELETES_THE_GAME_THUMBNAIL"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/languages/{languageCode}/automatic-translation-status",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Enable or disable automatic translation for a game and language.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::enable_or_disable_automatic_translation_for_a_game_and_language",
+      "rust_method": "enable_or_disable_automatic_translation_for_a_game_and_language",
+      "constant": "ENABLE_OR_DISABLE_AUTOMATIC_TRANSLATION_FOR_A_GAME_AND_LANGUAGE"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/languages/{languageCode}/image-translation-status",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Enable or disable image translation for a game and language.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "localization::enable_or_disable_image_translation_for_a_game_and_language",
+      "rust_method": "enable_or_disable_image_translation_for_a_game_and_language",
+      "constant": "ENABLE_OR_DISABLE_IMAGE_TRANSLATION_FOR_A_GAME_AND_LANGUAGE"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-icon/games/{gameId}",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "Get all icons for a game",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::get_all_icons_for_a_game",
+      "rust_method": "get_all_icons_for_a_game",
+      "constant": "GET_ALL_ICONS_FOR_A_GAME"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/localization-table/limits",
+      "path_parameters": [],
+      "summary": "Get limits for translation table entries operations",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::get_limits_for_translation_table_entries_operations",
+      "rust_method": "get_limits_for_translation_table_entries_operations",
+      "constant": "GET_LIMITS_FOR_TRANSLATION_TABLE_ENTRIES_OPERATIONS"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/localization-table/tables/{tableId}",
+      "path_parameters": [
+        "tableId"
+      ],
+      "summary": "Get table information by the id of the table.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::get_table_information_by_the_id_of_the_table",
+      "rust_method": "get_table_information_by_the_id_of_the_table",
+      "constant": "GET_TABLE_INFORMATION_BY_THE_ID_OF_THE_TABLE"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/automatic-translation-status",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "Get the automatic translation status of supported languages for a game.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::get_the_automatic_translation_status_of_supported_languages_for_a_game",
+      "rust_method": "get_the_automatic_translation_status_of_supported_languages_for_a_game",
+      "constant": "GET_THE_AUTOMATIC_TRANSLATION_STATUS_OF_SUPPORTED_LANGUAGES_FOR_A_GAME"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/universe-display-info-automatic-translation-settings",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "Get UniverseDisplayInfo automatic translation settings.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::get_universe_display_info_automatic_translation_settings",
+      "rust_method": "get_universe_display_info_automatic_translation_settings",
+      "constant": "GET_UNIVERSE_DISPLAY_INFO_AUTOMATIC_TRANSLATION_SETTINGS"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/localization-table/tables/{tableId}/entries",
+      "path_parameters": [
+        "tableId"
+      ],
+      "summary": "Gets a batch of entries for a table.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::gets_a_batch_of_entries_for_a_table",
+      "rust_method": "gets_a_batch_of_entries_for_a_table",
+      "constant": "GETS_A_BATCH_OF_ENTRIES_FOR_A_TABLE"
+    },
+    {
+      "domain": "localization",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/name-description/games/translation-history",
+      "path_parameters": [],
+      "summary": "Gets the history for name or description in a provided language.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::gets_the_history_for_name_or_description_in_a_provided_language",
+      "rust_method": "gets_the_history_for_name_or_description_in_a_provided_language",
+      "constant": "GETS_THE_HISTORY_FOR_NAME_OR_DESCRIPTION_IN_A_PROVIDED_LANGUAGE"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/localization-table/tables/{tableId}/entry-count",
+      "path_parameters": [
+        "tableId"
+      ],
+      "summary": "Gets the number of entries in the specified table",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::gets_the_number_of_entries_in_the_specified_table",
+      "rust_method": "gets_the_number_of_entries_in_the_specified_table",
+      "constant": "GETS_THE_NUMBER_OF_ENTRIES_IN_THE_SPECIFIED_TABLE"
+    },
+    {
+      "domain": "localization",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/localization-table/tables/{tableId}/entries/translation-history",
+      "path_parameters": [
+        "tableId"
+      ],
+      "summary": "Gets the translation history for each entry passed in.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::gets_the_translation_history_for_each_entry_passed_in",
+      "rust_method": "gets_the_translation_history_for_each_entry_passed_in",
+      "constant": "GETS_THE_TRANSLATION_HISTORY_FOR_EACH_ENTRY_PASSED_IN"
+    },
+    {
+      "domain": "localization",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/autolocalization/metadata",
+      "path_parameters": [],
+      "summary": "Metadata for AutoLocalization Configuration",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::metadata_for_auto_localization_configuration",
+      "rust_method": "metadata_for_auto_localization_configuration",
+      "constant": "METADATA_FOR_AUTO_LOCALIZATION_CONFIGURATION"
+    },
+    {
+      "domain": "localization",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/images/order",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Orders the specified image Ids for the game thumbnails.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::orders_the_specified_image_ids_for_the_game_thumbnails",
+      "rust_method": "orders_the_specified_image_ids_for_the_game_thumbnails",
+      "constant": "ORDERS_THE_SPECIFIED_IMAGE_IDS_FOR_THE_GAME_THUMBNAILS"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/languages/{languageCode}/universe-display-info-automatic-translation-settings",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Update the switch which controls if the UniverseDisplayInformation should be automatically translated.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::patch_language_code_universe_display_info_automatic_translation_settings",
+      "rust_method": "patch_language_code_universe_display_info_automatic_translation_settings",
+      "constant": "PATCH_LANGUAGE_CODE_UNIVERSE_DISPLAY_INFO_AUTOMATIC_TRANSLATION_SETTINGS"
+    },
+    {
+      "domain": "localization",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/autolocalization/games/{gameId}/autolocalizationtable",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "POST /legacy-localization-tables/v1/autolocalization/games/{gameId}/autolocalizationtable",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::post_games_game_id_autolocalizationtable",
+      "rust_method": "post_games_game_id_autolocalizationtable",
+      "constant": "POST_GAMES_GAME_ID_AUTOLOCALIZATIONTABLE"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/autolocalization/games/{gameId}/settings",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "Sets a game's auto-localization related settings",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::sets_a_game_s_auto_localization_related_settings",
+      "rust_method": "sets_a_game_s_auto_localization_related_settings",
+      "constant": "SETS_A_GAME_S_AUTO_LOCALIZATION_RELATED_SETTINGS"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/source-language/games/{gameId}",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "Sets the source language of a game",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::sets_the_source_language_of_a_game",
+      "rust_method": "sets_the_source_language_of_a_game",
+      "constant": "SETS_THE_SOURCE_LANGUAGE_OF_A_GAME"
+    },
+    {
+      "domain": "localization",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-icon/games/{gameId}/language-codes/{languageCode}",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Update a game's icon",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::update_a_game_s_icon",
+      "rust_method": "update_a_game_s_icon",
+      "constant": "UPDATE_A_GAME_S_ICON"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/name-description/games/{gameId}",
+      "path_parameters": [
+        "gameId"
+      ],
+      "summary": "Updates a game's name and/or description in multiple languages.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::updates_a_game_s_name_and_or_description_in_multiple_languages",
+      "rust_method": "updates_a_game_s_name_and_or_description_in_multiple_languages",
+      "constant": "UPDATES_A_GAME_S_NAME_AND_OR_DESCRIPTION_IN_MULTIPLE_LANGUAGES"
+    },
+    {
+      "domain": "localization",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/alt-text",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Updates the game thumbnail alt text.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::updates_the_game_thumbnail_alt_text",
+      "rust_method": "updates_the_game_thumbnail_alt_text",
+      "constant": "UPDATES_THE_GAME_THUMBNAIL_ALT_TEXT"
+    },
+    {
+      "domain": "localization",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-localization-tables/v1/localization-table/tables/{tableId}",
+      "path_parameters": [
+        "tableId"
+      ],
+      "summary": "Updates the tables contents based on what is provided.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::updates_the_tables_contents_based_on_what_is_provided",
+      "rust_method": "updates_the_tables_contents_based_on_what_is_provided",
+      "constant": "UPDATES_THE_TABLES_CONTENTS_BASED_ON_WHAT_IS_PROVIDED"
+    },
+    {
+      "domain": "localization",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/image",
+      "path_parameters": [
+        "gameId",
+        "languageCode"
+      ],
+      "summary": "Uploads the game thumbnail.",
+      "tag": "Localization",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "localization::uploads_the_game_thumbnail",
+      "rust_method": "uploads_the_game_thumbnail",
+      "constant": "UPLOADS_THE_GAME_THUMBNAIL"
+    },
+    {
+      "domain": "luau",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateLuauExecutionSessionTaskBinaryInput",
+      "path": "/cloud/v2/universes/{universe_id}/luau-execution-session-task-binary-inputs",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Create Luau Execution Session Task Binary Input",
+      "tag": "Luau Execution",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.luau-execution-session:write"
+      ],
+      "id": "luau::create_luau_execution_session_task_binary_input",
+      "rust_method": "create_luau_execution_session_task_binary_input",
+      "constant": "CREATE_LUAU_EXECUTION_SESSION_TASK_BINARY_INPUT"
+    },
+    {
+      "domain": "luau",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetLuauExecutionSessionTask",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/versions/{version_id}/luau-execution-sessions/{luau_execution_session_id}/tasks/{task_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "version_id",
+        "luau_execution_session_id",
+        "task_id"
+      ],
+      "summary": "Get Luau Execution Session Task",
+      "tag": "Luau Execution",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.luau-execution-session:read",
+        "universe.place.luau-execution-session:write"
+      ],
+      "id": "luau::get_luau_execution_session_task",
+      "rust_method": "get_luau_execution_session_task",
+      "constant": "GET_LUAU_EXECUTION_SESSION_TASK"
+    },
+    {
+      "domain": "luau",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListLuauExecutionSessionTaskLogs",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/versions/{version_id}/luau-execution-sessions/{luau_execution_session_id}/tasks/{task_id}/logs",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "version_id",
+        "luau_execution_session_id",
+        "task_id"
+      ],
+      "summary": "List Luau Execution Session Task Logs",
+      "tag": "Luau Execution",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.luau-execution-session:read",
+        "universe.place.luau-execution-session:write"
+      ],
+      "id": "luau::list_luau_execution_session_task_logs",
+      "rust_method": "list_luau_execution_session_task_logs",
+      "constant": "LIST_LUAU_EXECUTION_SESSION_TASK_LOGS"
+    },
+    {
+      "domain": "luau",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateLuauExecutionSessionTask__Using_Universes",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/luau-execution-session-tasks",
+      "path_parameters": [
+        "universe_id",
+        "place_id"
+      ],
+      "summary": "Create Luau Execution Session Task",
+      "tag": "Luau Execution",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.luau-execution-session:write"
+      ],
+      "id": "luau::post_places_place_id_luau_execution_session_tasks",
+      "rust_method": "post_places_place_id_luau_execution_session_tasks",
+      "constant": "POST_PLACES_PLACE_ID_LUAU_EXECUTION_SESSION_TASKS"
+    },
+    {
+      "domain": "luau",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateLuauExecutionSessionTask__Using_Universes_Places",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/versions/{version_id}/luau-execution-session-tasks",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "version_id"
+      ],
+      "summary": "Create Luau Execution Session Task",
+      "tag": "Luau Execution",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.luau-execution-session:write"
+      ],
+      "id": "luau::post_versions_version_id_luau_execution_session_tasks",
+      "rust_method": "post_versions_version_id_luau_execution_session_tasks",
+      "constant": "POST_VERSIONS_VERSION_ID_LUAU_EXECUTION_SESSION_TASKS"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/player-attribute",
+      "path_parameters": [],
+      "summary": "Create a PlayerAttributeDefinition.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::create_a_player_attribute_definition",
+      "rust_method": "create_a_player_attribute_definition",
+      "constant": "CREATE_A_PLAYER_ATTRIBUTE_DEFINITION"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/server-attribute",
+      "path_parameters": [],
+      "summary": "Create a ServerAttributeDefinition.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::create_a_server_attribute_definition",
+      "rust_method": "create_a_server_attribute_definition",
+      "constant": "CREATE_A_SERVER_ATTRIBUTE_DEFINITION"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration",
+      "path_parameters": [],
+      "summary": "Creates a matchmaking scoring configuration.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::creates_a_matchmaking_scoring_configuration",
+      "rust_method": "creates_a_matchmaking_scoring_configuration",
+      "constant": "CREATES_A_MATCHMAKING_SCORING_CONFIGURATION"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/{scoringConfigurationId}/signals",
+      "path_parameters": [
+        "scoringConfigurationId"
+      ],
+      "summary": "Creates a matchmaking scoring configuration signal.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::creates_a_matchmaking_scoring_configuration_signal",
+      "rust_method": "creates_a_matchmaking_scoring_configuration_signal",
+      "constant": "CREATES_A_MATCHMAKING_SCORING_CONFIGURATION_SIGNAL"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/player-attribute/{attributeId}",
+      "path_parameters": [
+        "attributeId"
+      ],
+      "summary": "Delete the PlayerAttributeDefinition specified by attributeId.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::delete_the_player_attribute_definition_specified_by_attribute_id",
+      "rust_method": "delete_the_player_attribute_definition_specified_by_attribute_id",
+      "constant": "DELETE_THE_PLAYER_ATTRIBUTE_DEFINITION_SPECIFIED_BY_ATTRIBUTE_ID"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/server-attribute/{attributeId}",
+      "path_parameters": [
+        "attributeId"
+      ],
+      "summary": "Delete the ServerAttributeDefinition specified by attributeId.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::delete_the_server_attribute_definition_specified_by_attribute_id",
+      "rust_method": "delete_the_server_attribute_definition_specified_by_attribute_id",
+      "constant": "DELETE_THE_SERVER_ATTRIBUTE_DEFINITION_SPECIFIED_BY_ATTRIBUTE_ID"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/{scoringConfigurationId}",
+      "path_parameters": [
+        "scoringConfigurationId"
+      ],
+      "summary": "Deletes a matchmaking scoring configuration.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::deletes_a_matchmaking_scoring_configuration",
+      "rust_method": "deletes_a_matchmaking_scoring_configuration",
+      "constant": "DELETES_A_MATCHMAKING_SCORING_CONFIGURATION"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/{scoringConfigurationId}/signals/{signalName}",
+      "path_parameters": [
+        "scoringConfigurationId",
+        "signalName"
+      ],
+      "summary": "Deletes a matchmaking scoring configuration custom signal.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::deletes_a_matchmaking_scoring_configuration_custom_signal",
+      "rust_method": "deletes_a_matchmaking_scoring_configuration_custom_signal",
+      "constant": "DELETES_A_MATCHMAKING_SCORING_CONFIGURATION_CUSTOM_SIGNAL"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/game-instances/forecast-update",
+      "path_parameters": [],
+      "summary": "Forecast the outcome of launching an update",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::forecast_the_outcome_of_launching_an_update",
+      "rust_method": "forecast_the_outcome_of_launching_an_update",
+      "constant": "FORECAST_THE_OUTCOME_OF_LAUNCHING_AN_UPDATE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/default-weights",
+      "path_parameters": [],
+      "summary": "GET /matchmaking-api/v1/matchmaking/scoring-configuration/default-weights",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::get_matchmaking_api_v1_matchmaking_scoring_configuration_default_weights",
+      "rust_method": "get_matchmaking_api_v1_matchmaking_scoring_configuration_default_weights",
+      "constant": "GET_MATCHMAKING_API_V1_MATCHMAKING_SCORING_CONFIGURATION_DEFAULT_WEIGHTS"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/generate-mock-servers",
+      "path_parameters": [],
+      "summary": "GET /matchmaking-api/v1/matchmaking/scoring-configuration/generate-mock-servers",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::get_matchmaking_scoring_configuration_generate_mock_servers",
+      "rust_method": "get_matchmaking_scoring_configuration_generate_mock_servers",
+      "constant": "GET_MATCHMAKING_SCORING_CONFIGURATION_GENERATE_MOCK_SERVERS"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/{scoringConfigurationId}",
+      "path_parameters": [
+        "scoringConfigurationId"
+      ],
+      "summary": "Updates a matchmaking scoring configuration.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::get_matchmaking_scoring_configuration_scoring_configuration_id",
+      "rust_method": "get_matchmaking_scoring_configuration_scoring_configuration_id",
+      "constant": "GET_MATCHMAKING_SCORING_CONFIGURATION_SCORING_CONFIGURATION_ID"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/client-status",
+      "path_parameters": [],
+      "summary": "Get the client-status",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::get_the_client_status",
+      "rust_method": "get_the_client_status",
+      "constant": "GET_THE_CLIENT_STATUS"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/game-instances/get-update-status",
+      "path_parameters": [],
+      "summary": "Get the rollout status of an update",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::get_the_rollout_status_of_an_update",
+      "rust_method": "get_the_rollout_status_of_an_update",
+      "constant": "GET_THE_ROLLOUT_STATUS_OF_AN_UPDATE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/universe/{universeId}/feature-flags",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Gets feature flags for a customized matchmaking for a given universe.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::gets_feature_flags_for_a_customized_matchmaking_for_a_given_universe",
+      "rust_method": "gets_feature_flags_for_a_customized_matchmaking_for_a_given_universe",
+      "constant": "GETS_FEATURE_FLAGS_FOR_A_CUSTOMIZED_MATCHMAKING_FOR_A_GIVEN_UNIVERSE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/game-instances/launch-update",
+      "path_parameters": [],
+      "summary": "Launch a game update",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::launch_a_game_update",
+      "rust_method": "launch_a_game_update",
+      "constant": "LAUNCH_A_GAME_UPDATE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configurations/{universeId}",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List all matchmaking scoring configurations for a universe.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::list_all_matchmaking_scoring_configurations_for_a_universe",
+      "rust_method": "list_all_matchmaking_scoring_configurations_for_a_universe",
+      "constant": "LIST_ALL_MATCHMAKING_SCORING_CONFIGURATIONS_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configurations/{universeId}/places",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List all places with a matchmaking scoring configuration for a universe.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::list_all_places_with_a_matchmaking_scoring_configuration_for_a_universe",
+      "rust_method": "list_all_places_with_a_matchmaking_scoring_configuration_for_a_universe",
+      "constant": "LIST_ALL_PLACES_WITH_A_MATCHMAKING_SCORING_CONFIGURATION_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/player-attributes/{universeId}",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List all PlayerAttributeDefinitions of a universe.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::list_all_player_attribute_definitions_of_a_universe",
+      "rust_method": "list_all_player_attribute_definitions_of_a_universe",
+      "constant": "LIST_ALL_PLAYER_ATTRIBUTE_DEFINITIONS_OF_A_UNIVERSE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/server-attributes/{universeId}",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List all ServerAttributeDefinitions of a universe.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::list_all_server_attribute_definitions_of_a_universe",
+      "rust_method": "list_all_server_attribute_definitions_of_a_universe",
+      "constant": "LIST_ALL_SERVER_ATTRIBUTE_DEFINITIONS_OF_A_UNIVERSE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/{scoringConfigurationId}",
+      "path_parameters": [
+        "scoringConfigurationId"
+      ],
+      "summary": "Updates a matchmaking scoring configuration.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::patch_matchmaking_scoring_configuration_scoring_configuration_id",
+      "rust_method": "patch_matchmaking_scoring_configuration_scoring_configuration_id",
+      "constant": "PATCH_MATCHMAKING_SCORING_CONFIGURATION_SCORING_CONFIGURATION_ID"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/place/{placeId}",
+      "path_parameters": [
+        "placeId"
+      ],
+      "summary": "Removes the matchmaking scoring configuration for a place.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::removes_the_matchmaking_scoring_configuration_for_a_place",
+      "rust_method": "removes_the_matchmaking_scoring_configuration_for_a_place",
+      "constant": "REMOVES_THE_MATCHMAKING_SCORING_CONFIGURATION_FOR_A_PLACE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/client-status",
+      "path_parameters": [],
+      "summary": "Set the client-status",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::set_the_client_status",
+      "rust_method": "set_the_client_status",
+      "constant": "SET_THE_CLIENT_STATUS"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/place",
+      "path_parameters": [],
+      "summary": "Sets a matchmaking scoring configuration for a place.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::sets_a_matchmaking_scoring_configuration_for_a_place",
+      "rust_method": "sets_a_matchmaking_scoring_configuration_for_a_place",
+      "constant": "SETS_A_MATCHMAKING_SCORING_CONFIGURATION_FOR_A_PLACE"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/player-attribute/{attributeId}",
+      "path_parameters": [
+        "attributeId"
+      ],
+      "summary": "Update the PlayerAttributeDefinition specified by attributeId.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::update_the_player_attribute_definition_specified_by_attribute_id",
+      "rust_method": "update_the_player_attribute_definition_specified_by_attribute_id",
+      "constant": "UPDATE_THE_PLAYER_ATTRIBUTE_DEFINITION_SPECIFIED_BY_ATTRIBUTE_ID"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/server-attribute/{attributeId}",
+      "path_parameters": [
+        "attributeId"
+      ],
+      "summary": "Update the ServerAttributeDefinition specified by attributeId.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::update_the_server_attribute_definition_specified_by_attribute_id",
+      "rust_method": "update_the_server_attribute_definition_specified_by_attribute_id",
+      "constant": "UPDATE_THE_SERVER_ATTRIBUTE_DEFINITION_SPECIFIED_BY_ATTRIBUTE_ID"
+    },
+    {
+      "domain": "matchmaking",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/matchmaking-api/v1/matchmaking/scoring-configuration/{scoringConfigurationId}/signals/{signalName}",
+      "path_parameters": [
+        "scoringConfigurationId",
+        "signalName"
+      ],
+      "summary": "Updates a matchmaking scoring configuration signal.",
+      "tag": "Matchmaking",
+      "stability": "beta",
+      "api_key": false,
+      "oauth": false,
+      "unauthenticated": true,
+      "scopes": [],
+      "id": "matchmaking::updates_a_matchmaking_scoring_configuration_signal",
+      "rust_method": "updates_a_matchmaking_scoring_configuration_signal",
+      "constant": "UPDATES_A_MATCHMAKING_SCORING_CONFIGURATION_SIGNAL"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateMemoryStoreQueueItem",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/queues/{queue_id}/items",
+      "path_parameters": [
+        "universe_id",
+        "queue_id"
+      ],
+      "summary": "Create Memory Store Queue Item",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.queue:add"
+      ],
+      "id": "memory_store::request_create_memory_store_queue_item",
+      "rust_method": "request_create_memory_store_queue_item",
+      "constant": "REQUEST_CREATE_MEMORY_STORE_QUEUE_ITEM"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateMemoryStoreSortedMapItem",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/sorted-maps/{sorted_map_id}/items",
+      "path_parameters": [
+        "universe_id",
+        "sorted_map_id"
+      ],
+      "summary": "Create Memory Store Sorted Map Item",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.sorted-map:write"
+      ],
+      "id": "memory_store::request_create_memory_store_sorted_map_item",
+      "rust_method": "request_create_memory_store_sorted_map_item",
+      "constant": "REQUEST_CREATE_MEMORY_STORE_SORTED_MAP_ITEM"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "DELETE",
+      "operation_id": "Cloud_DeleteMemoryStoreSortedMapItem",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/sorted-maps/{sorted_map_id}/items/{item_id}",
+      "path_parameters": [
+        "universe_id",
+        "sorted_map_id",
+        "item_id"
+      ],
+      "summary": "Delete Memory Store Sorted Map Item",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.sorted-map:write"
+      ],
+      "id": "memory_store::request_delete_memory_store_sorted_map_item",
+      "rust_method": "request_delete_memory_store_sorted_map_item",
+      "constant": "REQUEST_DELETE_MEMORY_STORE_SORTED_MAP_ITEM"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "POST",
+      "operation_id": "Cloud_DiscardMemoryStoreQueueItems",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/queues/{queue_id}/items:discard",
+      "path_parameters": [
+        "universe_id",
+        "queue_id"
+      ],
+      "summary": "Discard Memory Store Queue Items",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.queue:discard"
+      ],
+      "id": "memory_store::request_discard_memory_store_queue_items",
+      "rust_method": "request_discard_memory_store_queue_items",
+      "constant": "REQUEST_DISCARD_MEMORY_STORE_QUEUE_ITEMS"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "POST",
+      "operation_id": "Cloud_FlushMemoryStore",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store:flush",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Flush Memory Store",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store:flush"
+      ],
+      "id": "memory_store::request_flush_memory_store",
+      "rust_method": "request_flush_memory_store",
+      "constant": "REQUEST_FLUSH_MEMORY_STORE"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetMemoryStoreFlushOperation",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/operations/{operation_id}",
+      "path_parameters": [
+        "universe_id",
+        "operation_id"
+      ],
+      "summary": "Get Memory Store Flush Operation",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "memory_store::request_get_memory_store_flush_operation",
+      "rust_method": "request_get_memory_store_flush_operation",
+      "constant": "REQUEST_GET_MEMORY_STORE_FLUSH_OPERATION"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetMemoryStoreSortedMapItem",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/sorted-maps/{sorted_map_id}/items/{item_id}",
+      "path_parameters": [
+        "universe_id",
+        "sorted_map_id",
+        "item_id"
+      ],
+      "summary": "Get Memory Store Sorted Map Item",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.sorted-map:read"
+      ],
+      "id": "memory_store::request_get_memory_store_sorted_map_item",
+      "rust_method": "request_get_memory_store_sorted_map_item",
+      "constant": "REQUEST_GET_MEMORY_STORE_SORTED_MAP_ITEM"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListMemoryStoreSortedMapItems",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/sorted-maps/{sorted_map_id}/items",
+      "path_parameters": [
+        "universe_id",
+        "sorted_map_id"
+      ],
+      "summary": "List Memory Store Sorted Map Items",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.sorted-map:read"
+      ],
+      "id": "memory_store::request_list_memory_store_sorted_map_items",
+      "rust_method": "request_list_memory_store_sorted_map_items",
+      "constant": "REQUEST_LIST_MEMORY_STORE_SORTED_MAP_ITEMS"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "GET",
+      "operation_id": "Cloud_ReadMemoryStoreQueueItems",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/queues/{queue_id}/items:read",
+      "path_parameters": [
+        "universe_id",
+        "queue_id"
+      ],
+      "summary": "Read Memory Store Queue Items",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.queue:dequeue"
+      ],
+      "id": "memory_store::request_read_memory_store_queue_items",
+      "rust_method": "request_read_memory_store_queue_items",
+      "constant": "REQUEST_READ_MEMORY_STORE_QUEUE_ITEMS"
+    },
+    {
+      "domain": "memory_store",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateMemoryStoreSortedMapItem",
+      "path": "/cloud/v2/universes/{universe_id}/memory-store/sorted-maps/{sorted_map_id}/items/{item_id}",
+      "path_parameters": [
+        "universe_id",
+        "sorted_map_id",
+        "item_id"
+      ],
+      "summary": "Update Memory Store Sorted Map Item",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "memory-store.sorted-map:write"
+      ],
+      "id": "memory_store::request_update_memory_store_sorted_map_item",
+      "rust_method": "request_update_memory_store_sorted_map_item",
+      "constant": "REQUEST_UPDATE_MEMORY_STORE_SORTED_MAP_ITEM"
+    },
+    {
+      "domain": "messaging",
+      "http_method": "POST",
+      "operation_id": "Cloud_PublishUniverseMessage",
+      "path": "/cloud/v2/universes/{universe_id}:publishMessage",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Publish Universe Message",
+      "tag": "Universes",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-messaging-service:publish"
+      ],
+      "id": "messaging::request_publish_universe_message",
+      "rust_method": "request_publish_universe_message",
+      "constant": "REQUEST_PUBLISH_UNIVERSE_MESSAGE"
+    },
+    {
+      "domain": "notifications",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateUserNotification",
+      "path": "/cloud/v2/users/{user_id}/notifications",
+      "path_parameters": [
+        "user_id"
+      ],
+      "summary": "Create User Notification",
+      "tag": "Notifications",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "user.user-notification:write"
+      ],
+      "id": "notifications::create_user_notification",
+      "rust_method": "create_user_notification",
+      "constant": "CREATE_USER_NOTIFICATION"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_CreateOrderedDataStoreEntry",
+      "path": "/cloud/v2/universes/{universe_id}/ordered-data-stores/{ordered_data_store_id}/scopes/{scope_id}/entries",
+      "path_parameters": [
+        "universe_id",
+        "ordered_data_store_id",
+        "scope_id"
+      ],
+      "summary": "Create Ordered Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_create_ordered_data_store_entry",
+      "rust_method": "request_create_ordered_data_store_entry",
+      "constant": "REQUEST_CREATE_ORDERED_DATA_STORE_ENTRY"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "DELETE",
+      "operation_id": "Cloud_DeleteOrderedDataStoreEntry",
+      "path": "/cloud/v2/universes/{universe_id}/ordered-data-stores/{ordered_data_store_id}/scopes/{scope_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "ordered_data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Delete Ordered Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_delete_ordered_data_store_entry",
+      "rust_method": "request_delete_ordered_data_store_entry",
+      "constant": "REQUEST_DELETE_ORDERED_DATA_STORE_ENTRY"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "DELETE",
+      "operation_id": "OrderedDataStores_DeleteEntry",
+      "path": "/ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}",
+      "path_parameters": [
+        "universeId",
+        "orderedDataStore",
+        "scope",
+        "entry"
+      ],
+      "summary": "DELETE /ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_delete_scope_entries_entry",
+      "rust_method": "request_delete_scope_entries_entry",
+      "constant": "REQUEST_DELETE_SCOPE_ENTRIES_ENTRY"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetOrderedDataStoreEntry",
+      "path": "/cloud/v2/universes/{universe_id}/ordered-data-stores/{ordered_data_store_id}/scopes/{scope_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "ordered_data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Get Ordered Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:read"
+      ],
+      "id": "ordered_datastore::request_get_ordered_data_store_entry",
+      "rust_method": "request_get_ordered_data_store_entry",
+      "constant": "REQUEST_GET_ORDERED_DATA_STORE_ENTRY"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "GET",
+      "operation_id": "OrderedDataStores_GetEntry",
+      "path": "/ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}",
+      "path_parameters": [
+        "universeId",
+        "orderedDataStore",
+        "scope",
+        "entry"
+      ],
+      "summary": "GET /ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:read"
+      ],
+      "id": "ordered_datastore::request_get_scope_entries_entry",
+      "rust_method": "request_get_scope_entries_entry",
+      "constant": "REQUEST_GET_SCOPE_ENTRIES_ENTRY"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "GET",
+      "operation_id": "OrderedDataStores_ListEntries",
+      "path": "/ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries",
+      "path_parameters": [
+        "universeId",
+        "orderedDataStore",
+        "scope"
+      ],
+      "summary": "GET /ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:read"
+      ],
+      "id": "ordered_datastore::request_get_scopes_scope_entries",
+      "rust_method": "request_get_scopes_scope_entries",
+      "constant": "REQUEST_GET_SCOPES_SCOPE_ENTRIES"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "POST",
+      "operation_id": "Cloud_IncrementOrderedDataStoreEntry",
+      "path": "/cloud/v2/universes/{universe_id}/ordered-data-stores/{ordered_data_store_id}/scopes/{scope_id}/entries/{entry_id}:increment",
+      "path_parameters": [
+        "universe_id",
+        "ordered_data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Increment Ordered Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_increment_ordered_data_store_entry",
+      "rust_method": "request_increment_ordered_data_store_entry",
+      "constant": "REQUEST_INCREMENT_ORDERED_DATA_STORE_ENTRY"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListOrderedDataStoreEntries",
+      "path": "/cloud/v2/universes/{universe_id}/ordered-data-stores/{ordered_data_store_id}/scopes/{scope_id}/entries",
+      "path_parameters": [
+        "universe_id",
+        "ordered_data_store_id",
+        "scope_id"
+      ],
+      "summary": "List Ordered Data Store Entries",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:read"
+      ],
+      "id": "ordered_datastore::request_list_ordered_data_store_entries",
+      "rust_method": "request_list_ordered_data_store_entries",
+      "constant": "REQUEST_LIST_ORDERED_DATA_STORE_ENTRIES"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "PATCH",
+      "operation_id": "OrderedDataStores_UpdateEntry",
+      "path": "/ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}",
+      "path_parameters": [
+        "universeId",
+        "orderedDataStore",
+        "scope",
+        "entry"
+      ],
+      "summary": "PATCH /ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_patch_scope_entries_entry",
+      "rust_method": "request_patch_scope_entries_entry",
+      "constant": "REQUEST_PATCH_SCOPE_ENTRIES_ENTRY"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "POST",
+      "operation_id": "OrderedDataStores_IncrementEntry",
+      "path": "/ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}:increment",
+      "path_parameters": [
+        "universeId",
+        "orderedDataStore",
+        "scope",
+        "entry"
+      ],
+      "summary": "POST /ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries/{entry}:increment",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_post_scope_entries_entry_increment",
+      "rust_method": "request_post_scope_entries_entry_increment",
+      "constant": "REQUEST_POST_SCOPE_ENTRIES_ENTRY_INCREMENT"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "POST",
+      "operation_id": "OrderedDataStores_CreateEntry",
+      "path": "/ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries",
+      "path_parameters": [
+        "universeId",
+        "orderedDataStore",
+        "scope"
+      ],
+      "summary": "POST /ordered-data-stores/v1/universes/{universeId}/orderedDataStores/{orderedDataStore}/scopes/{scope}/entries",
+      "tag": "Data and memory stores",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_post_scopes_scope_entries",
+      "rust_method": "request_post_scopes_scope_entries",
+      "constant": "REQUEST_POST_SCOPES_SCOPE_ENTRIES"
+    },
+    {
+      "domain": "ordered_datastore",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateOrderedDataStoreEntry",
+      "path": "/cloud/v2/universes/{universe_id}/ordered-data-stores/{ordered_data_store_id}/scopes/{scope_id}/entries/{entry_id}",
+      "path_parameters": [
+        "universe_id",
+        "ordered_data_store_id",
+        "scope_id",
+        "entry_id"
+      ],
+      "summary": "Update Ordered Data Store Entry",
+      "tag": "Data and memory stores",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.ordered-data-store.scope.entry:write"
+      ],
+      "id": "ordered_datastore::request_update_ordered_data_store_entry",
+      "rust_method": "request_update_ordered_data_store_entry",
+      "constant": "REQUEST_UPDATE_ORDERED_DATA_STORE_ENTRY"
+    },
+    {
+      "domain": "places",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-develop/v2/teamtest/{placeId}",
+      "path_parameters": [
+        "placeId"
+      ],
+      "summary": "Close a game instance that is being used for team testing",
+      "tag": "Places",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-team-collaboration:manage"
+      ],
+      "id": "places::close_a_game_instance_that_is_being_used_for_team_testing",
+      "rust_method": "close_a_game_instance_that_is_being_used_for_team_testing",
+      "constant": "CLOSE_A_GAME_INSTANCE_THAT_IS_BEING_USED_FOR_TEAM_TESTING"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetInstance",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/instances/{instance_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "instance_id"
+      ],
+      "summary": "Get Instance",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.instance:read"
+      ],
+      "id": "places::get_instance",
+      "rust_method": "get_instance",
+      "constant": "GET_INSTANCE"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetPlace",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id"
+      ],
+      "summary": "Get Place",
+      "tag": "Places",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "places::get_place",
+      "rust_method": "get_place",
+      "constant": "GET_PLACE"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetUpdateInstanceOperation",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/instances/{instance_id}/operations/{operation_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "instance_id",
+        "operation_id"
+      ],
+      "summary": "Get Update Instance Operation",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "places::get_update_instance_operation",
+      "rust_method": "get_update_instance_operation",
+      "constant": "GET_UPDATE_INSTANCE_OPERATION"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "GameServers_GetFilterOptions",
+      "path": "/server-management/v1/universes/{universeId}/places/{placeId}/game-servers:filter-options",
+      "path_parameters": [
+        "universeId",
+        "placeId"
+      ],
+      "summary": "Gets available filter options for game servers.",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "places::gets_available_filter_options_for_game_servers",
+      "rust_method": "gets_available_filter_options_for_game_servers",
+      "constant": "GETS_AVAILABLE_FILTER_OPTIONS_FOR_GAME_SERVERS"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListInstanceChildren",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/instances/{instance_id}:listChildren",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "instance_id"
+      ],
+      "summary": "List Instance Children",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.instance:read"
+      ],
+      "id": "places::list_instance_children",
+      "rust_method": "list_instance_children",
+      "constant": "LIST_INSTANCE_CHILDREN"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/places/{placeId}/teamcreate/active_session/members",
+      "path_parameters": [
+        "placeId"
+      ],
+      "summary": "List of users in the active Team Create session",
+      "tag": "Places",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-team-collaboration:manage"
+      ],
+      "id": "places::list_of_users_in_the_active_team_create_session",
+      "rust_method": "list_of_users_in_the_active_team_create_session",
+      "constant": "LIST_OF_USERS_IN_THE_ACTIVE_TEAM_CREATE_SESSION"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "GameServers_ListGameServerLogs",
+      "path": "/server-management/v1/universes/{universeId}/places/{placeId}/versions/{versionNumber}/game-servers/{jobId}/logs",
+      "path_parameters": [
+        "universeId",
+        "placeId",
+        "versionNumber",
+        "jobId"
+      ],
+      "summary": "Lists game server logs for a specific server job id",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "places::lists_game_server_logs_for_a_specific_server_job_id",
+      "rust_method": "lists_game_server_logs_for_a_specific_server_job_id",
+      "constant": "LISTS_GAME_SERVER_LOGS_FOR_A_SPECIFIC_SERVER_JOB_ID"
+    },
+    {
+      "domain": "places",
+      "http_method": "GET",
+      "operation_id": "GameServers_ListGameServers",
+      "path": "/server-management/v1/universes/{universeId}/places/{placeId}/versions/{versionNumber}/game-servers",
+      "path_parameters": [
+        "universeId",
+        "placeId",
+        "versionNumber"
+      ],
+      "summary": "Lists game servers for a specific place version.",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "places::lists_game_servers_for_a_specific_place_version",
+      "rust_method": "lists_game_servers_for_a_specific_place_version",
+      "constant": "LISTS_GAME_SERVERS_FOR_A_SPECIFIC_PLACE_VERSION"
+    },
+    {
+      "domain": "places",
+      "http_method": "POST",
+      "operation_id": "Places_CreatePlaceVersionApiKey",
+      "path": "/universes/v1/{universeId}/places/{placeId}/versions",
+      "path_parameters": [
+        "universeId",
+        "placeId"
+      ],
+      "summary": "POST /universes/v1/{universeId}/places/{placeId}/versions",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-places:write"
+      ],
+      "id": "places::post_universes_v1_universe_id_places_place_id_versions",
+      "rust_method": "post_universes_v1_universe_id_places_place_id_versions",
+      "constant": "POST_UNIVERSES_V1_UNIVERSE_ID_PLACES_PLACE_ID_VERSIONS"
+    },
+    {
+      "domain": "places",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateInstance",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/instances/{instance_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "instance_id"
+      ],
+      "summary": "Update Instance",
+      "tag": "Places",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": false,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place.instance:write"
+      ],
+      "id": "places::update_instance",
+      "rust_method": "update_instance",
+      "constant": "UPDATE_INSTANCE"
+    },
+    {
+      "domain": "places",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdatePlace",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id"
+      ],
+      "summary": "Update Place",
+      "tag": "Places",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.place:write"
+      ],
+      "id": "places::update_place",
+      "rust_method": "update_place",
+      "constant": "UPDATE_PLACE"
+    },
+    {
+      "domain": "restrictions",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetUserRestriction__Using_Universes_Places",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/user-restrictions/{user_restriction_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "user_restriction_id"
+      ],
+      "summary": "Get User Restriction",
+      "tag": "Bans and blocks",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.user-restriction:read"
+      ],
+      "id": "restrictions::get_place_id_user_restrictions_user_restriction_id",
+      "rust_method": "get_place_id_user_restrictions_user_restriction_id",
+      "constant": "GET_PLACE_ID_USER_RESTRICTIONS_USER_RESTRICTION_ID"
+    },
+    {
+      "domain": "restrictions",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListUserRestrictions__Using_Universes",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/user-restrictions",
+      "path_parameters": [
+        "universe_id",
+        "place_id"
+      ],
+      "summary": "List User Restrictions",
+      "tag": "Bans and blocks",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.user-restriction:read"
+      ],
+      "id": "restrictions::get_places_place_id_user_restrictions",
+      "rust_method": "get_places_place_id_user_restrictions",
+      "constant": "GET_PLACES_PLACE_ID_USER_RESTRICTIONS"
+    },
+    {
+      "domain": "restrictions",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetUserRestriction__Using_Universes",
+      "path": "/cloud/v2/universes/{universe_id}/user-restrictions/{user_restriction_id}",
+      "path_parameters": [
+        "universe_id",
+        "user_restriction_id"
+      ],
+      "summary": "Get User Restriction",
+      "tag": "Bans and blocks",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.user-restriction:read"
+      ],
+      "id": "restrictions::get_universe_id_user_restrictions_user_restriction_id",
+      "rust_method": "get_universe_id_user_restrictions_user_restriction_id",
+      "constant": "GET_UNIVERSE_ID_USER_RESTRICTIONS_USER_RESTRICTION_ID"
+    },
+    {
+      "domain": "restrictions",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListUserRestrictions",
+      "path": "/cloud/v2/universes/{universe_id}/user-restrictions",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "List User Restrictions",
+      "tag": "Bans and blocks",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.user-restriction:read"
+      ],
+      "id": "restrictions::get_universes_universe_id_user_restrictions",
+      "rust_method": "get_universes_universe_id_user_restrictions",
+      "constant": "GET_UNIVERSES_UNIVERSE_ID_USER_RESTRICTIONS"
+    },
+    {
+      "domain": "restrictions",
+      "http_method": "GET",
+      "operation_id": "Cloud_ListUserRestrictionLogs",
+      "path": "/cloud/v2/universes/{universe_id}/user-restrictions:listLogs",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "List User Restriction Logs",
+      "tag": "Bans and blocks",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.user-restriction:read"
+      ],
+      "id": "restrictions::list_user_restriction_logs",
+      "rust_method": "list_user_restriction_logs",
+      "constant": "LIST_USER_RESTRICTION_LOGS"
+    },
+    {
+      "domain": "restrictions",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateUserRestriction__Using_Universes_Places",
+      "path": "/cloud/v2/universes/{universe_id}/places/{place_id}/user-restrictions/{user_restriction_id}",
+      "path_parameters": [
+        "universe_id",
+        "place_id",
+        "user_restriction_id"
+      ],
+      "summary": "Update User Restriction",
+      "tag": "Bans and blocks",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.user-restriction:write"
+      ],
+      "id": "restrictions::patch_place_id_user_restrictions_user_restriction_id",
+      "rust_method": "patch_place_id_user_restrictions_user_restriction_id",
+      "constant": "PATCH_PLACE_ID_USER_RESTRICTIONS_USER_RESTRICTION_ID"
+    },
+    {
+      "domain": "restrictions",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateUserRestriction__Using_Universes",
+      "path": "/cloud/v2/universes/{universe_id}/user-restrictions/{user_restriction_id}",
+      "path_parameters": [
+        "universe_id",
+        "user_restriction_id"
+      ],
+      "summary": "Update User Restriction",
+      "tag": "Bans and blocks",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.user-restriction:write"
+      ],
+      "id": "restrictions::patch_universe_id_user_restrictions_user_restriction_id",
+      "rust_method": "patch_universe_id_user_restrictions_user_restriction_id",
+      "constant": "PATCH_UNIVERSE_ID_USER_RESTRICTIONS_USER_RESTRICTION_ID"
+    },
+    {
+      "domain": "secrets",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/cloud/v2/universes/{universeId}/secrets",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Create Secret",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.secret:write"
+      ],
+      "id": "secrets::create_secret",
+      "rust_method": "create_secret",
+      "constant": "CREATE_SECRET"
+    },
+    {
+      "domain": "secrets",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/cloud/v2/universes/{universeId}/secrets/{secretId}",
+      "path_parameters": [
+        "universeId",
+        "secretId"
+      ],
+      "summary": "Delete Secret",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.secret:write"
+      ],
+      "id": "secrets::delete_secret",
+      "rust_method": "delete_secret",
+      "constant": "DELETE_SECRET"
+    },
+    {
+      "domain": "secrets",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/cloud/v2/universes/{universeId}/secrets/public-key",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Get Public Key",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.secret:read"
+      ],
+      "id": "secrets::get_public_key",
+      "rust_method": "get_public_key",
+      "constant": "GET_PUBLIC_KEY"
+    },
+    {
+      "domain": "secrets",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/cloud/v2/universes/{universeId}/secrets",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List Secrets",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.secret:read"
+      ],
+      "id": "secrets::list_secrets",
+      "rust_method": "list_secrets",
+      "constant": "LIST_SECRETS"
+    },
+    {
+      "domain": "secrets",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/cloud/v2/universes/{universeId}/secrets/{secretId}",
+      "path_parameters": [
+        "universeId",
+        "secretId"
+      ],
+      "summary": "Update Secret",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.secret:write"
+      ],
+      "id": "secrets::update_secret",
+      "rust_method": "update_secret",
+      "constant": "UPDATE_SECRET"
+    },
+    {
+      "domain": "subscriptions",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetSubscription",
+      "path": "/cloud/v2/universes/{universe_id}/subscription-products/{subscription_product_id}/subscriptions/{subscription_id}",
+      "path_parameters": [
+        "universe_id",
+        "subscription_product_id",
+        "subscription_id"
+      ],
+      "summary": "Get Subscription",
+      "tag": "Users",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe.subscription-product.subscription:read",
+        "universe:write"
+      ],
+      "id": "subscriptions::get_subscription",
+      "rust_method": "get_subscription",
+      "constant": "GET_SUBSCRIPTION"
+    },
+    {
+      "domain": "team_create",
+      "http_method": "PATCH",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/{universeId}/teamcreate",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Edit team create settings for a universe.",
+      "tag": "Team Create",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-team-collaboration:manage"
+      ],
+      "id": "team_create::edit_team_create_settings_for_a_universe",
+      "rust_method": "edit_team_create_settings_for_a_universe",
+      "constant": "EDIT_TEAM_CREATE_SETTINGS_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "team_create",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/{universeId}/teamcreate",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Gets TeamCreate settings for an Roblox.Platform.Universes.IUniverse.",
+      "tag": "Team Create",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-team-collaboration:manage"
+      ],
+      "id": "team_create::gets_team_create_settings_for_an_roblox_platform_universes_i_universe",
+      "rust_method": "gets_team_create_settings_for_an_roblox_platform_universes_i_universe",
+      "constant": "GETS_TEAM_CREATE_SETTINGS_FOR_AN_ROBLOX_PLATFORM_UNIVERSES_I_UNIVERSE"
+    },
+    {
+      "domain": "team_create",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/multiget/teamcreate",
+      "path_parameters": [],
+      "summary": "Gets TeamCreate settings for multiple universes specified by Ids",
+      "tag": "Team Create",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-team-collaboration:manage"
+      ],
+      "id": "team_create::gets_team_create_settings_for_multiple_universes_specified_by_ids",
+      "rust_method": "gets_team_create_settings_for_multiple_universes_specified_by_ids",
+      "constant": "GETS_TEAM_CREATE_SETTINGS_FOR_MULTIPLE_UNIVERSES_SPECIFIED_BY_IDS"
+    },
+    {
+      "domain": "team_create",
+      "http_method": "DELETE",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/{universeId}/teamcreate/memberships",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Removes a user from a TeamCreate permissions list.",
+      "tag": "Team Create",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-team-collaboration:manage"
+      ],
+      "id": "team_create::removes_a_user_from_a_team_create_permissions_list",
+      "rust_method": "removes_a_user_from_a_team_create_permissions_list",
+      "constant": "REMOVES_A_USER_FROM_A_TEAM_CREATE_PERMISSIONS_LIST"
+    },
+    {
+      "domain": "thumbnails",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/v1/users/outfit-3d",
+      "path_parameters": [],
+      "summary": "Get 3d object for an outfit",
+      "tag": "Thumbnails",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "thumbnail:read"
+      ],
+      "id": "thumbnails::get_3d_object_for_an_outfit",
+      "rust_method": "get_3d_object_for_an_outfit",
+      "constant": "GET_3D_OBJECT_FOR_AN_OUTFIT"
+    },
+    {
+      "domain": "universe",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/{universeId}/activate",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Activates a universes.",
+      "tag": "Universes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "universe::request_activates_a_universes",
+      "rust_method": "request_activates_a_universes",
+      "constant": "REQUEST_ACTIVATES_A_UNIVERSES"
+    },
+    {
+      "domain": "universe",
+      "http_method": "POST",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/{universeId}/deactivate",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Deactivates a universe.",
+      "tag": "Universes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "universe::request_deactivates_a_universe",
+      "rust_method": "request_deactivates_a_universe",
+      "constant": "REQUEST_DEACTIVATES_A_UNIVERSE"
+    },
+    {
+      "domain": "universe",
+      "http_method": "GET",
+      "operation_id": "Restarts_ForecastRestart",
+      "path": "/server-management/v1/universes/{universeId}/restarts:forecast",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Forecast the impact of restarting game servers for a universe.",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "universe::request_forecast_the_impact_of_restarting_game_servers_for_a_universe",
+      "rust_method": "request_forecast_the_impact_of_restarting_game_servers_for_a_universe",
+      "constant": "REQUEST_FORECAST_THE_IMPACT_OF_RESTARTING_GAME_SERVERS_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "universe",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetUniverse",
+      "path": "/cloud/v2/universes/{universe_id}",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Get Universe",
+      "tag": "Universes",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "universe::request_get_universe",
+      "rust_method": "request_get_universe",
+      "constant": "REQUEST_GET_UNIVERSE"
+    },
+    {
+      "domain": "universe",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/multiget/permissions",
+      "path_parameters": [],
+      "summary": "Returns an array of granted and declined permissions related to the universes with the ids in ids for the authenticated user.",
+      "tag": "Universes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "universe::request_get_universes_multiget_permissions",
+      "rust_method": "request_get_universes_multiget_permissions",
+      "constant": "REQUEST_GET_UNIVERSES_MULTIGET_PERMISSIONS"
+    },
+    {
+      "domain": "universe",
+      "http_method": "GET",
+      "operation_id": "",
+      "path": "/legacy-develop/v1/universes/{universeId}/permissions",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Returns list of granted and declined permissions related to the universe with the id universeId for authenticated user",
+      "tag": "Universes",
+      "stability": "legacy-beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "legacy-universe:manage"
+      ],
+      "id": "universe::request_get_universes_universe_id_permissions",
+      "rust_method": "request_get_universes_universe_id_permissions",
+      "constant": "REQUEST_GET_UNIVERSES_UNIVERSE_ID_PERMISSIONS"
+    },
+    {
+      "domain": "universe",
+      "http_method": "POST",
+      "operation_id": "Restarts_LaunchRestart",
+      "path": "/server-management/v1/universes/{universeId}/restarts",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "Launch a game server restart for a universe.",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "universe::request_launch_a_game_server_restart_for_a_universe",
+      "rust_method": "request_launch_a_game_server_restart_for_a_universe",
+      "constant": "REQUEST_LAUNCH_A_GAME_SERVER_RESTART_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "universe",
+      "http_method": "GET",
+      "operation_id": "Restarts_ListRestartStatuses",
+      "path": "/server-management/v1/universes/{universeId}/restarts",
+      "path_parameters": [
+        "universeId"
+      ],
+      "summary": "List restart statuses for a universe.",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:read"
+      ],
+      "id": "universe::request_list_restart_statuses_for_a_universe",
+      "rust_method": "request_list_restart_statuses_for_a_universe",
+      "constant": "REQUEST_LIST_RESTART_STATUSES_FOR_A_UNIVERSE"
+    },
+    {
+      "domain": "universe",
+      "http_method": "POST",
+      "operation_id": "CrossServerMessaging_Publish",
+      "path": "/messaging-service/v1/universes/{universeId}/topics/{topic}",
+      "path_parameters": [
+        "universeId",
+        "topic"
+      ],
+      "summary": "Publish a cross-server message to a universe",
+      "tag": "Universes",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe-messaging-service:publish"
+      ],
+      "id": "universe::request_publish_a_cross_server_message_to_a_universe",
+      "rust_method": "request_publish_a_cross_server_message_to_a_universe",
+      "constant": "REQUEST_PUBLISH_A_CROSS_SERVER_MESSAGE_TO_A_UNIVERSE"
+    },
+    {
+      "domain": "universe",
+      "http_method": "POST",
+      "operation_id": "Cloud_RestartUniverseServers",
+      "path": "/cloud/v2/universes/{universe_id}:restartServers",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Restart Universe Servers",
+      "tag": "Universes",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "universe::request_restart_universe_servers",
+      "rust_method": "request_restart_universe_servers",
+      "constant": "REQUEST_RESTART_UNIVERSE_SERVERS"
+    },
+    {
+      "domain": "universe",
+      "http_method": "PATCH",
+      "operation_id": "Cloud_UpdateUniverse",
+      "path": "/cloud/v2/universes/{universe_id}",
+      "path_parameters": [
+        "universe_id"
+      ],
+      "summary": "Update Universe",
+      "tag": "Universes",
+      "stability": "stable",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "universe:write"
+      ],
+      "id": "universe::request_update_universe",
+      "rust_method": "request_update_universe",
+      "constant": "REQUEST_UPDATE_UNIVERSE"
+    },
+    {
+      "domain": "users",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetUser",
+      "path": "/cloud/v2/users/{user_id}",
+      "path_parameters": [
+        "user_id"
+      ],
+      "summary": "Get User",
+      "tag": "Users",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [
+        "user.advanced:read",
+        "user.social:read"
+      ],
+      "id": "users::get_user",
+      "rust_method": "get_user",
+      "constant": "GET_USER"
+    },
+    {
+      "domain": "users",
+      "http_method": "GET",
+      "operation_id": "Cloud_GetUserThumbnailGenerationOperation",
+      "path": "/cloud/v2/users/{user_id}/operations/{operation_id}",
+      "path_parameters": [
+        "user_id",
+        "operation_id"
+      ],
+      "summary": "Get User Thumbnail Generation Operation",
+      "tag": "Users",
+      "stability": "beta",
+      "api_key": true,
+      "oauth": true,
+      "unauthenticated": false,
+      "scopes": [],
+      "id": "users::get_user_thumbnail_generation_operation",
+      "rust_method": "get_user_thumbnail_generation_operation",
+      "constant": "GET_USER_THUMBNAIL_GENERATION_OPERATION"
+    }
+  ]
+}

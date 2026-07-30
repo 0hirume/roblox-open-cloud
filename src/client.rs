@@ -4,12 +4,11 @@ use bytes::Bytes;
 use percent_encoding::{AsciiSet, NON_ALPHANUMERIC};
 use reqwest::header::HeaderMap;
 use reqwest::{Method, RequestBuilder, StatusCode};
-use serde::Serialize;
 use serde::de::DeserializeOwned;
 use url::Url;
 
 use crate::auth::Credentials;
-use crate::error::{Result, check_status};
+use crate::error::{Error, Result, check_status};
 use crate::operation::{Endpoint, HttpMethod, OperationRequest};
 
 const DEFAULT_BASE_URL: &str = "https://apis.roblox.com/";
@@ -19,27 +18,6 @@ const PATH_SEGMENT: &AsciiSet = &NON_ALPHANUMERIC
     .remove(b'_')
     .remove(b'.')
     .remove(b'~');
-
-/// Common options accepted by list operations.
-#[derive(Debug, Clone, Default, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct ListOptions {
-    /// A service-specific filter expression.
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub filter: Option<String>,
-    /// A service-specific ordering expression.
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub order_by: Option<String>,
-    /// A continuation token returned by a previous request.
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub page_token: Option<String>,
-    /// The requested maximum number of results.
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub max_page_size: Option<u32>,
-    /// Whether deleted resources should be included.
-    #[serde(skip_serializing_if = "std::ops::Not::not")]
-    pub show_deleted: bool,
-}
 
 /// A successful response from an operation without a dedicated response model.
 #[derive(Debug, Clone)]
@@ -84,6 +62,65 @@ impl RawResponse {
         T: DeserializeOwned,
     {
         Ok(serde_json::from_slice(&self.body)?)
+    }
+
+    /// Decodes the response body as UTF-8 text.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the body is not valid UTF-8.
+    pub fn text(&self) -> Result<String> {
+        std::str::from_utf8(&self.body)
+            .map(String::from)
+            .map_err(|error| Error::InvalidResponse(error.to_string()))
+    }
+}
+
+/// A successful typed Roblox Open Cloud response.
+#[derive(Debug, Clone)]
+pub struct Response<T> {
+    status: StatusCode,
+    headers: HeaderMap,
+    body: T,
+}
+
+impl<T> Response<T> {
+    pub(crate) const fn new(status: StatusCode, headers: HeaderMap, body: T) -> Self {
+        Self {
+            status,
+            headers,
+            body,
+        }
+    }
+
+    /// Returns the HTTP status.
+    #[must_use]
+    pub const fn status(&self) -> StatusCode {
+        self.status
+    }
+
+    /// Returns the response headers.
+    #[must_use]
+    pub const fn headers(&self) -> &HeaderMap {
+        &self.headers
+    }
+
+    /// Returns the typed response body.
+    #[must_use]
+    pub const fn body(&self) -> &T {
+        &self.body
+    }
+
+    /// Consumes the response and returns the typed body.
+    #[must_use]
+    pub fn into_body(self) -> T {
+        self.body
+    }
+
+    /// Consumes the response and returns its status, headers, and typed body.
+    #[must_use]
+    pub fn into_parts(self) -> (StatusCode, HeaderMap, T) {
+        (self.status, self.headers, self.body)
     }
 }
 
@@ -160,10 +197,6 @@ impl Client {
         OperationRequest::new(self, endpoint)
     }
 
-    pub(crate) fn request(&self, method: Method, path: &str) -> Result<RequestBuilder> {
-        self.request_with_authentication(method, path, true)
-    }
-
     pub(crate) fn endpoint_request(
         &self,
         endpoint: Endpoint,
@@ -208,10 +241,6 @@ impl Client {
         Ok(response.json().await?)
     }
 
-    pub(crate) async fn send(&self, builder: RequestBuilder) -> Result<reqwest::Response> {
-        check_status(builder.send().await?).await
-    }
-
     pub(crate) async fn send_raw(&self, builder: RequestBuilder) -> Result<RawResponse> {
         let response = check_status(builder.send().await?).await?;
         let status = response.status();
@@ -237,24 +266,6 @@ impl fmt::Debug for Client {
 
 pub(crate) fn encode_path_segment(value: &str) -> String {
     percent_encoding::utf8_percent_encode(value, PATH_SEGMENT).to_string()
-}
-
-pub(crate) fn item_path(collection_path: &str, item_id: &str) -> String {
-    format!("{collection_path}/{}", encode_path_segment(item_id))
-}
-
-pub(crate) fn universe_path(universe_id: u64, suffix: &str) -> String {
-    format!("/cloud/v2/universes/{universe_id}{suffix}")
-}
-
-pub(crate) fn extract_revision(
-    object: &serde_json::Map<String, serde_json::Value>,
-) -> Option<String> {
-    object
-        .get("revisionId")
-        .or_else(|| object.get("etag"))
-        .and_then(serde_json::Value::as_str)
-        .map(String::from)
 }
 
 impl From<HttpMethod> for Method {

@@ -2,7 +2,7 @@ use std::fmt;
 use std::fmt::Display;
 
 use bytes::Bytes;
-use reqwest::multipart::Form;
+use reqwest::multipart::{Form, Part};
 use serde::Serialize;
 
 use crate::client::encode_path_segment;
@@ -144,6 +144,56 @@ impl Endpoint {
     }
 }
 
+/// A file supplied to a multipart Open Cloud operation.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct File {
+    contents: Bytes,
+    file_name: Option<String>,
+    content_type: Option<String>,
+}
+
+impl File {
+    /// Creates a file from its contents.
+    #[must_use]
+    pub fn new(contents: impl Into<Bytes>) -> Self {
+        Self {
+            contents: contents.into(),
+            file_name: None,
+            content_type: None,
+        }
+    }
+
+    /// Sets the file name sent in the multipart disposition.
+    #[must_use]
+    pub fn with_name(mut self, file_name: impl Into<String>) -> Self {
+        self.file_name = Some(file_name.into());
+        self
+    }
+
+    /// Sets the file's MIME content type.
+    #[must_use]
+    pub fn with_content_type(mut self, content_type: impl Into<String>) -> Self {
+        self.content_type = Some(content_type.into());
+        self
+    }
+
+    /// Converts this value into a multipart part.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the configured content type is invalid.
+    pub fn into_part(self) -> Result<Part> {
+        let mut part = Part::stream(self.contents);
+        if let Some(file_name) = self.file_name {
+            part = part.file_name(file_name);
+        }
+        if let Some(content_type) = self.content_type {
+            part = part.mime_str(&content_type)?;
+        }
+        Ok(part)
+    }
+}
+
 enum RequestBody {
     Bytes(Bytes),
     Form(Vec<(String, String)>),
@@ -205,6 +255,41 @@ impl<'client> OperationRequest<'client> {
         Ok(self)
     }
 
+    /// Substitutes one typed, percent-encoded path parameter.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the value is not scalar or the endpoint has no
+    /// parameter with `name`.
+    pub fn path_serialized(self, name: &str, value: &impl Serialize) -> Result<Self> {
+        let mut values = parameter_values(value)?.into_iter();
+        let first = values.next().ok_or_else(|| {
+            Error::InvalidResponse(format!("path parameter `{name}` serialized to no values"))
+        })?;
+        if values.next().is_some() {
+            return Err(Error::InvalidResponse(format!(
+                "path parameter `{name}` serialized to multiple values"
+            )));
+        }
+        self.path(name, first)
+    }
+
+    /// Substitutes an optional typed path parameter when present.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the value is not scalar or the endpoint has no
+    /// parameter with `name`.
+    pub fn path_optional_serialized<T>(self, name: &str, value: Option<&T>) -> Result<Self>
+    where
+        T: Serialize,
+    {
+        match value {
+            Some(value) => self.path_serialized(name, value),
+            None => Ok(self),
+        }
+    }
+
     /// Adds one query parameter.
     #[must_use]
     pub fn query(mut self, name: impl Into<String>, value: impl Display) -> Self {
@@ -212,11 +297,101 @@ impl<'client> OperationRequest<'client> {
         self
     }
 
+    /// Adds a typed query parameter using OpenAPI form serialization.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the value cannot be serialized.
+    pub fn query_serialized(
+        mut self,
+        name: impl Into<String>,
+        value: &impl Serialize,
+        explode: bool,
+    ) -> Result<Self> {
+        let name = name.into();
+        let values = parameter_values(value)?;
+        if explode {
+            self.query.extend(
+                values
+                    .into_iter()
+                    .map(|serialized| (name.clone(), serialized)),
+            );
+        } else if !values.is_empty() {
+            self.query.push((name, values.join(",")));
+        }
+        Ok(self)
+    }
+
+    /// Adds an optional typed query parameter when present.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the value cannot be serialized.
+    pub fn query_optional_serialized<T>(
+        self,
+        name: impl Into<String>,
+        value: Option<&T>,
+        explode: bool,
+    ) -> Result<Self>
+    where
+        T: Serialize,
+    {
+        match value {
+            Some(value) => self.query_serialized(name, value, explode),
+            None => Ok(self),
+        }
+    }
+
     /// Adds one request header.
     #[must_use]
     pub fn header(mut self, name: impl Into<String>, value: impl Into<String>) -> Self {
         self.headers.push((name.into(), value.into()));
         self
+    }
+
+    /// Adds a typed request header.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the value cannot be serialized.
+    pub fn header_serialized(
+        mut self,
+        name: impl Into<String>,
+        value: &impl Serialize,
+        explode: bool,
+    ) -> Result<Self> {
+        let name = name.into();
+        let values = parameter_values(value)?;
+        if explode {
+            self.headers.extend(
+                values
+                    .into_iter()
+                    .map(|serialized| (name.clone(), serialized)),
+            );
+        } else if !values.is_empty() {
+            self.headers.push((name, values.join(",")));
+        }
+        Ok(self)
+    }
+
+    /// Adds an optional typed request header when present.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the value cannot be serialized.
+    pub fn header_optional_serialized<T>(
+        self,
+        name: impl Into<String>,
+        value: Option<&T>,
+        explode: bool,
+    ) -> Result<Self>
+    where
+        T: Serialize,
+    {
+        match value {
+            Some(value) => self.header_serialized(name, value, explode),
+            None => Ok(self),
+        }
     }
 
     /// Sets a JSON request body.
@@ -287,6 +462,37 @@ impl<'client> OperationRequest<'client> {
 
         self.client.send_raw(builder).await
     }
+}
+
+fn parameter_values(input: &impl Serialize) -> Result<Vec<String>> {
+    let serialized = serde_json::to_value(input)?;
+    match serialized {
+        serde_json::Value::Null => Ok(Vec::new()),
+        serde_json::Value::Array(values) => values
+            .into_iter()
+            .map(|item| parameter_text(&item))
+            .collect(),
+        value @ (serde_json::Value::Bool(_)
+        | serde_json::Value::Number(_)
+        | serde_json::Value::String(_)
+        | serde_json::Value::Object(_)) => Ok(vec![parameter_text(&value)?]),
+    }
+}
+
+fn parameter_text(value: &serde_json::Value) -> Result<String> {
+    match value {
+        serde_json::Value::Null => Ok(String::new()),
+        serde_json::Value::Bool(value) => Ok(value.to_string()),
+        serde_json::Value::Number(value) => Ok(value.to_string()),
+        serde_json::Value::String(value) => Ok(value.clone()),
+        serde_json::Value::Array(_) | serde_json::Value::Object(_) => {
+            Ok(serde_json::to_string(value)?)
+        }
+    }
+}
+
+pub(crate) fn multipart_text(value: &impl Serialize) -> Result<String> {
+    parameter_text(&serde_json::to_value(value)?)
 }
 
 impl fmt::Debug for OperationRequest<'_> {

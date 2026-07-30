@@ -1,13 +1,29 @@
+[workspace]
+members = ["codegen"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+repository = "https://github.com/0hirume/roblox-open-cloud"
+
 [package]
 name = "roblox-open-cloud"
 version = "0.1.0"
-edition = "2024"
-rust-version = "1.85"
+edition.workspace = true
+rust-version.workspace = true
 description = "An async Rust client for the recommended Roblox Open Cloud APIs"
 documentation = "https://docs.rs/roblox-open-cloud"
-repository = "https://github.com/0hirume/roblox-open-cloud"
-license = "MIT"
-exclude = ["scripts/**"]
+repository.workspace = true
+license.workspace = true
+exclude = [
+    ".github/**",
+    "codegen/**",
+    "spec/coverage.json",
+    "spec/openapi.json",
+    "spec/source.json",
+]
 keywords = ["api", "oauth", "open-cloud", "roblox"]
 categories = ["api-bindings", "web-programming::http-client"]
 
@@ -31,7 +47,10 @@ url = "2"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 wiremock = "0.6"
 
-[lints.rust]
+[lints]
+workspace = true
+
+[workspace.lints.rust]
 warnings = "deny"
 unsafe_code = "forbid"
 unused_results = "deny"
@@ -39,7 +58,7 @@ unused_crate_dependencies = "deny"
 missing_debug_implementations = "deny"
 unreachable_pub = "deny"
 
-[lints.clippy]
+[workspace.lints.clippy]
 all = { level = "deny", priority = -1 }
 pedantic = { level = "deny", priority = -1 }
 cargo = { level = "deny", priority = -1 }

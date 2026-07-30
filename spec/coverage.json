@@ -1,9 +1,10 @@
 {
   "source": {
     "repository": "Roblox/creator-docs",
-    "commit": "c855f3c1b274007b0b2739ed34d89325342157e0",
-    "commit_date": "2026-07-29",
-    "document": "content/en-us/reference/cloud/openapi.json"
+    "commit": "c8d8a9a0a0f25827e8fe92ce251a7bb157f4bdb4",
+    "commit_date": "2026-07-28",
+    "document": "content/en-us/reference/cloud/openapi.json",
+    "vendored": "spec/openapi.json"
   },
   "policy": {
     "include": [
@@ -1166,9 +1167,9 @@
       "scopes": [
         "universe-datastores.control:delete"
       ],
-      "id": "datastore::request_delete_data_store",
-      "rust_method": "request_delete_data_store",
-      "constant": "REQUEST_DELETE_DATA_STORE"
+      "id": "datastore::delete_data_store",
+      "rust_method": "delete_data_store",
+      "constant": "DELETE_DATA_STORE"
     },
     {
       "domain": "datastore",
@@ -1189,9 +1190,9 @@
       "scopes": [
         "universe-datastores.objects:delete"
       ],
-      "id": "datastore::request_delete_data_store_id_entries_entry_id",
-      "rust_method": "request_delete_data_store_id_entries_entry_id",
-      "constant": "REQUEST_DELETE_DATA_STORE_ID_ENTRIES_ENTRY_ID"
+      "id": "datastore::delete_data_store_id_entries_entry_id",
+      "rust_method": "delete_data_store_id_entries_entry_id",
+      "constant": "DELETE_DATA_STORE_ID_ENTRIES_ENTRY_ID"
     },
     {
       "domain": "datastore",
@@ -1210,9 +1211,9 @@
       "scopes": [
         "universe-datastores.objects:delete"
       ],
-      "id": "datastore::request_delete_entry",
-      "rust_method": "request_delete_entry",
-      "constant": "REQUEST_DELETE_ENTRY"
+      "id": "datastore::delete_entry",
+      "rust_method": "delete_entry",
+      "constant": "DELETE_ENTRY"
     },
     {
       "domain": "datastore",
@@ -1234,9 +1235,9 @@
       "scopes": [
         "universe-datastores.objects:delete"
       ],
-      "id": "datastore::request_delete_scope_id_entries_entry_id",
-      "rust_method": "request_delete_scope_id_entries_entry_id",
-      "constant": "REQUEST_DELETE_SCOPE_ID_ENTRIES_ENTRY_ID"
+      "id": "datastore::delete_scope_id_entries_entry_id",
+      "rust_method": "delete_scope_id_entries_entry_id",
+      "constant": "DELETE_SCOPE_ID_ENTRIES_ENTRY_ID"
     },
     {
       "domain": "datastore",
@@ -1257,9 +1258,9 @@
       "scopes": [
         "universe-datastores.objects:read"
       ],
-      "id": "datastore::request_get_data_store_id_entries_entry_id",
-      "rust_method": "request_get_data_store_id_entries_entry_id",
-      "constant": "REQUEST_GET_DATA_STORE_ID_ENTRIES_ENTRY_ID"
+      "id": "datastore::get_data_store_id_entries_entry_id",
+      "rust_method": "get_data_store_id_entries_entry_id",
+      "constant": "GET_DATA_STORE_ID_ENTRIES_ENTRY_ID"
     },
     {
       "domain": "datastore",
@@ -1280,9 +1281,9 @@
       "scopes": [
         "universe-datastores.versions:list"
       ],
-      "id": "datastore::request_get_data_store_id_entries_entry_id_list_revisions",
-      "rust_method": "request_get_data_store_id_entries_entry_id_list_revisions",
-      "constant": "REQUEST_GET_DATA_STORE_ID_ENTRIES_ENTRY_ID_LIST_REVISIONS"
+      "id": "datastore::get_data_store_id_entries_entry_id_list_revisions",
+      "rust_method": "get_data_store_id_entries_entry_id_list_revisions",
+      "constant": "GET_DATA_STORE_ID_ENTRIES_ENTRY_ID_LIST_REVISIONS"
     },
     {
       "domain": "datastore",
@@ -1302,9 +1303,9 @@
       "scopes": [
         "universe-datastores.objects:list"
       ],
-      "id": "datastore::request_get_data_stores_data_store_id_entries",
-      "rust_method": "request_get_data_stores_data_store_id_entries",
-      "constant": "REQUEST_GET_DATA_STORES_DATA_STORE_ID_ENTRIES"
+      "id": "datastore::get_data_stores_data_store_id_entries",
+      "rust_method": "get_data_stores_data_store_id_entries",
+      "constant": "GET_DATA_STORES_DATA_STORE_ID_ENTRIES"
     },
     {
       "domain": "datastore",
@@ -1323,9 +1324,9 @@
       "scopes": [
         "universe-datastores.objects:read"
       ],
-      "id": "datastore::request_get_entry",
-      "rust_method": "request_get_entry",
-      "constant": "REQUEST_GET_ENTRY"
+      "id": "datastore::get_entry",
+      "rust_method": "get_entry",
+      "constant": "GET_ENTRY"
     },
     {
       "domain": "datastore",
@@ -1344,9 +1345,9 @@
       "scopes": [
         "universe-datastores.versions:read"
       ],
-      "id": "datastore::request_get_entry_version",
-      "rust_method": "request_get_entry_version",
-      "constant": "REQUEST_GET_ENTRY_VERSION"
+      "id": "datastore::get_entry_version",
+      "rust_method": "get_entry_version",
+      "constant": "GET_ENTRY_VERSION"
     },
     {
       "domain": "datastore",
@@ -1368,9 +1369,9 @@
       "scopes": [
         "universe-datastores.objects:read"
       ],
-      "id": "datastore::request_get_scope_id_entries_entry_id",
-      "rust_method": "request_get_scope_id_entries_entry_id",
-      "constant": "REQUEST_GET_SCOPE_ID_ENTRIES_ENTRY_ID"
+      "id": "datastore::get_scope_id_entries_entry_id",
+      "rust_method": "get_scope_id_entries_entry_id",
+      "constant": "GET_SCOPE_ID_ENTRIES_ENTRY_ID"
     },
     {
       "domain": "datastore",
@@ -1392,9 +1393,9 @@
       "scopes": [
         "universe-datastores.versions:list"
       ],
-      "id": "datastore::request_get_scope_id_entries_entry_id_list_revisions",
-      "rust_method": "request_get_scope_id_entries_entry_id_list_revisions",
-      "constant": "REQUEST_GET_SCOPE_ID_ENTRIES_ENTRY_ID_LIST_REVISIONS"
+      "id": "datastore::get_scope_id_entries_entry_id_list_revisions",
+      "rust_method": "get_scope_id_entries_entry_id_list_revisions",
+      "constant": "GET_SCOPE_ID_ENTRIES_ENTRY_ID_LIST_REVISIONS"
     },
     {
       "domain": "datastore",
@@ -1415,9 +1416,9 @@
       "scopes": [
         "universe-datastores.objects:list"
       ],
-      "id": "datastore::request_get_scopes_scope_id_entries",
-      "rust_method": "request_get_scopes_scope_id_entries",
-      "constant": "REQUEST_GET_SCOPES_SCOPE_ID_ENTRIES"
+      "id": "datastore::get_scopes_scope_id_entries",
+      "rust_method": "get_scopes_scope_id_entries",
+      "constant": "GET_SCOPES_SCOPE_ID_ENTRIES"
     },
     {
       "domain": "datastore",
@@ -1438,9 +1439,9 @@
         "universe-datastores.objects:create",
         "universe-datastores.objects:update"
       ],
-      "id": "datastore::request_increment_entry",
-      "rust_method": "request_increment_entry",
-      "constant": "REQUEST_INCREMENT_ENTRY"
+      "id": "datastore::increment_entry",
+      "rust_method": "increment_entry",
+      "constant": "INCREMENT_ENTRY"
     },
     {
       "domain": "datastore",
@@ -1459,9 +1460,9 @@
       "scopes": [
         "universe-datastores.control:list"
       ],
-      "id": "datastore::request_list_data_stores",
-      "rust_method": "request_list_data_stores",
-      "constant": "REQUEST_LIST_DATA_STORES"
+      "id": "datastore::list_data_stores",
+      "rust_method": "list_data_stores",
+      "constant": "LIST_DATA_STORES"
     },
     {
       "domain": "datastore",
@@ -1480,9 +1481,9 @@
       "scopes": [
         "universe-datastores.control:list"
       ],
-      "id": "datastore::request_list_data_stores_in_an_experience",
-      "rust_method": "request_list_data_stores_in_an_experience",
-      "constant": "REQUEST_LIST_DATA_STORES_IN_AN_EXPERIENCE"
+      "id": "datastore::list_data_stores_in_an_experience",
+      "rust_method": "list_data_stores_in_an_experience",
+      "constant": "LIST_DATA_STORES_IN_AN_EXPERIENCE"
     },
     {
       "domain": "datastore",
@@ -1501,9 +1502,9 @@
       "scopes": [
         "universe-datastores.objects:list"
       ],
-      "id": "datastore::request_list_entries",
-      "rust_method": "request_list_entries",
-      "constant": "REQUEST_LIST_ENTRIES"
+      "id": "datastore::list_entries",
+      "rust_method": "list_entries",
+      "constant": "LIST_ENTRIES"
     },
     {
       "domain": "datastore",
@@ -1522,9 +1523,9 @@
       "scopes": [
         "universe-datastores.versions:list"
       ],
-      "id": "datastore::request_list_entry_versions",
-      "rust_method": "request_list_entry_versions",
-      "constant": "REQUEST_LIST_ENTRY_VERSIONS"
+      "id": "datastore::list_entry_versions",
+      "rust_method": "list_entry_versions",
+      "constant": "LIST_ENTRY_VERSIONS"
     },
     {
       "domain": "datastore",
@@ -1545,9 +1546,9 @@
       "scopes": [
         "universe-datastores.objects:update"
       ],
-      "id": "datastore::request_patch_data_store_id_entries_entry_id",
-      "rust_method": "request_patch_data_store_id_entries_entry_id",
-      "constant": "REQUEST_PATCH_DATA_STORE_ID_ENTRIES_ENTRY_ID"
+      "id": "datastore::patch_data_store_id_entries_entry_id",
+      "rust_method": "patch_data_store_id_entries_entry_id",
+      "constant": "PATCH_DATA_STORE_ID_ENTRIES_ENTRY_ID"
     },
     {
       "domain": "datastore",
@@ -1569,9 +1570,9 @@
       "scopes": [
         "universe-datastores.objects:update"
       ],
-      "id": "datastore::request_patch_scope_id_entries_entry_id",
-      "rust_method": "request_patch_scope_id_entries_entry_id",
-      "constant": "REQUEST_PATCH_SCOPE_ID_ENTRIES_ENTRY_ID"
+      "id": "datastore::patch_scope_id_entries_entry_id",
+      "rust_method": "patch_scope_id_entries_entry_id",
+      "constant": "PATCH_SCOPE_ID_ENTRIES_ENTRY_ID"
     },
     {
       "domain": "datastore",
@@ -1593,9 +1594,9 @@
         "universe-datastores.objects:create",
         "universe-datastores.objects:update"
       ],
-      "id": "datastore::request_post_data_store_id_entries_entry_id_increment",
-      "rust_method": "request_post_data_store_id_entries_entry_id_increment",
-      "constant": "REQUEST_POST_DATA_STORE_ID_ENTRIES_ENTRY_ID_INCREMENT"
+      "id": "datastore::post_data_store_id_entries_entry_id_increment",
+      "rust_method": "post_data_store_id_entries_entry_id_increment",
+      "constant": "POST_DATA_STORE_ID_ENTRIES_ENTRY_ID_INCREMENT"
     },
     {
       "domain": "datastore",
@@ -1615,9 +1616,9 @@
       "scopes": [
         "universe-datastores.objects:create"
       ],
-      "id": "datastore::request_post_data_stores_data_store_id_entries",
-      "rust_method": "request_post_data_stores_data_store_id_entries",
-      "constant": "REQUEST_POST_DATA_STORES_DATA_STORE_ID_ENTRIES"
+      "id": "datastore::post_data_stores_data_store_id_entries",
+      "rust_method": "post_data_stores_data_store_id_entries",
+      "constant": "POST_DATA_STORES_DATA_STORE_ID_ENTRIES"
     },
     {
       "domain": "datastore",
@@ -1640,9 +1641,9 @@
         "universe-datastores.objects:create",
         "universe-datastores.objects:update"
       ],
-      "id": "datastore::request_post_scope_id_entries_entry_id_increment",
-      "rust_method": "request_post_scope_id_entries_entry_id_increment",
-      "constant": "REQUEST_POST_SCOPE_ID_ENTRIES_ENTRY_ID_INCREMENT"
+      "id": "datastore::post_scope_id_entries_entry_id_increment",
+      "rust_method": "post_scope_id_entries_entry_id_increment",
+      "constant": "POST_SCOPE_ID_ENTRIES_ENTRY_ID_INCREMENT"
     },
     {
       "domain": "datastore",
@@ -1663,9 +1664,9 @@
       "scopes": [
         "universe-datastores.objects:create"
       ],
-      "id": "datastore::request_post_scopes_scope_id_entries",
-      "rust_method": "request_post_scopes_scope_id_entries",
-      "constant": "REQUEST_POST_SCOPES_SCOPE_ID_ENTRIES"
+      "id": "datastore::post_scopes_scope_id_entries",
+      "rust_method": "post_scopes_scope_id_entries",
+      "constant": "POST_SCOPES_SCOPE_ID_ENTRIES"
     },
     {
       "domain": "datastore",
@@ -1686,9 +1687,9 @@
         "universe-datastores.objects:create",
         "universe-datastores.objects:update"
       ],
-      "id": "datastore::request_set_entry",
-      "rust_method": "request_set_entry",
-      "constant": "REQUEST_SET_ENTRY"
+      "id": "datastore::set_entry",
+      "rust_method": "set_entry",
+      "constant": "SET_ENTRY"
     },
     {
       "domain": "datastore",
@@ -1707,9 +1708,9 @@
       "scopes": [
         "universe-datastores.control:snapshot"
       ],
-      "id": "datastore::request_snapshot_data_stores",
-      "rust_method": "request_snapshot_data_stores",
-      "constant": "REQUEST_SNAPSHOT_DATA_STORES"
+      "id": "datastore::snapshot_data_stores",
+      "rust_method": "snapshot_data_stores",
+      "constant": "SNAPSHOT_DATA_STORES"
     },
     {
       "domain": "datastore",
@@ -1729,9 +1730,9 @@
       "scopes": [
         "universe-datastores.control:delete"
       ],
-      "id": "datastore::request_undelete_data_store",
-      "rust_method": "request_undelete_data_store",
-      "constant": "REQUEST_UNDELETE_DATA_STORE"
+      "id": "datastore::undelete_data_store",
+      "rust_method": "undelete_data_store",
+      "constant": "UNDELETE_DATA_STORE"
     },
     {
       "domain": "developer_products",
@@ -4054,9 +4055,9 @@
       "scopes": [
         "memory-store.queue:add"
       ],
-      "id": "memory_store::request_create_memory_store_queue_item",
-      "rust_method": "request_create_memory_store_queue_item",
-      "constant": "REQUEST_CREATE_MEMORY_STORE_QUEUE_ITEM"
+      "id": "memory_store::create_memory_store_queue_item",
+      "rust_method": "create_memory_store_queue_item",
+      "constant": "CREATE_MEMORY_STORE_QUEUE_ITEM"
     },
     {
       "domain": "memory_store",
@@ -4076,9 +4077,9 @@
       "scopes": [
         "memory-store.sorted-map:write"
       ],
-      "id": "memory_store::request_create_memory_store_sorted_map_item",
-      "rust_method": "request_create_memory_store_sorted_map_item",
-      "constant": "REQUEST_CREATE_MEMORY_STORE_SORTED_MAP_ITEM"
+      "id": "memory_store::create_memory_store_sorted_map_item",
+      "rust_method": "create_memory_store_sorted_map_item",
+      "constant": "CREATE_MEMORY_STORE_SORTED_MAP_ITEM"
     },
     {
       "domain": "memory_store",
@@ -4099,9 +4100,9 @@
       "scopes": [
         "memory-store.sorted-map:write"
       ],
-      "id": "memory_store::request_delete_memory_store_sorted_map_item",
-      "rust_method": "request_delete_memory_store_sorted_map_item",
-      "constant": "REQUEST_DELETE_MEMORY_STORE_SORTED_MAP_ITEM"
+      "id": "memory_store::delete_memory_store_sorted_map_item",
+      "rust_method": "delete_memory_store_sorted_map_item",
+      "constant": "DELETE_MEMORY_STORE_SORTED_MAP_ITEM"
     },
     {
       "domain": "memory_store",
@@ -4121,9 +4122,9 @@
       "scopes": [
         "memory-store.queue:discard"
       ],
-      "id": "memory_store::request_discard_memory_store_queue_items",
-      "rust_method": "request_discard_memory_store_queue_items",
-      "constant": "REQUEST_DISCARD_MEMORY_STORE_QUEUE_ITEMS"
+      "id": "memory_store::discard_memory_store_queue_items",
+      "rust_method": "discard_memory_store_queue_items",
+      "constant": "DISCARD_MEMORY_STORE_QUEUE_ITEMS"
     },
     {
       "domain": "memory_store",
@@ -4142,9 +4143,9 @@
       "scopes": [
         "memory-store:flush"
       ],
-      "id": "memory_store::request_flush_memory_store",
-      "rust_method": "request_flush_memory_store",
-      "constant": "REQUEST_FLUSH_MEMORY_STORE"
+      "id": "memory_store::flush_memory_store",
+      "rust_method": "flush_memory_store",
+      "constant": "FLUSH_MEMORY_STORE"
     },
     {
       "domain": "memory_store",
@@ -4162,9 +4163,9 @@
       "oauth": false,
       "unauthenticated": false,
       "scopes": [],
-      "id": "memory_store::request_get_memory_store_flush_operation",
-      "rust_method": "request_get_memory_store_flush_operation",
-      "constant": "REQUEST_GET_MEMORY_STORE_FLUSH_OPERATION"
+      "id": "memory_store::get_memory_store_flush_operation",
+      "rust_method": "get_memory_store_flush_operation",
+      "constant": "GET_MEMORY_STORE_FLUSH_OPERATION"
     },
     {
       "domain": "memory_store",
@@ -4185,9 +4186,9 @@
       "scopes": [
         "memory-store.sorted-map:read"
       ],
-      "id": "memory_store::request_get_memory_store_sorted_map_item",
-      "rust_method": "request_get_memory_store_sorted_map_item",
-      "constant": "REQUEST_GET_MEMORY_STORE_SORTED_MAP_ITEM"
+      "id": "memory_store::get_memory_store_sorted_map_item",
+      "rust_method": "get_memory_store_sorted_map_item",
+      "constant": "GET_MEMORY_STORE_SORTED_MAP_ITEM"
     },
     {
       "domain": "memory_store",
@@ -4207,9 +4208,9 @@
       "scopes": [
         "memory-store.sorted-map:read"
       ],
-      "id": "memory_store::request_list_memory_store_sorted_map_items",
-      "rust_method": "request_list_memory_store_sorted_map_items",
-      "constant": "REQUEST_LIST_MEMORY_STORE_SORTED_MAP_ITEMS"
+      "id": "memory_store::list_memory_store_sorted_map_items",
+      "rust_method": "list_memory_store_sorted_map_items",
+      "constant": "LIST_MEMORY_STORE_SORTED_MAP_ITEMS"
     },
     {
       "domain": "memory_store",
@@ -4229,9 +4230,9 @@
       "scopes": [
         "memory-store.queue:dequeue"
       ],
-      "id": "memory_store::request_read_memory_store_queue_items",
-      "rust_method": "request_read_memory_store_queue_items",
-      "constant": "REQUEST_READ_MEMORY_STORE_QUEUE_ITEMS"
+      "id": "memory_store::read_memory_store_queue_items",
+      "rust_method": "read_memory_store_queue_items",
+      "constant": "READ_MEMORY_STORE_QUEUE_ITEMS"
     },
     {
       "domain": "memory_store",
@@ -4252,9 +4253,9 @@
       "scopes": [
         "memory-store.sorted-map:write"
       ],
-      "id": "memory_store::request_update_memory_store_sorted_map_item",
-      "rust_method": "request_update_memory_store_sorted_map_item",
-      "constant": "REQUEST_UPDATE_MEMORY_STORE_SORTED_MAP_ITEM"
+      "id": "memory_store::update_memory_store_sorted_map_item",
+      "rust_method": "update_memory_store_sorted_map_item",
+      "constant": "UPDATE_MEMORY_STORE_SORTED_MAP_ITEM"
     },
     {
       "domain": "messaging",
@@ -4273,9 +4274,9 @@
       "scopes": [
         "universe-messaging-service:publish"
       ],
-      "id": "messaging::request_publish_universe_message",
-      "rust_method": "request_publish_universe_message",
-      "constant": "REQUEST_PUBLISH_UNIVERSE_MESSAGE"
+      "id": "messaging::publish_universe_message",
+      "rust_method": "publish_universe_message",
+      "constant": "PUBLISH_UNIVERSE_MESSAGE"
     },
     {
       "domain": "notifications",
@@ -4317,9 +4318,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_create_ordered_data_store_entry",
-      "rust_method": "request_create_ordered_data_store_entry",
-      "constant": "REQUEST_CREATE_ORDERED_DATA_STORE_ENTRY"
+      "id": "ordered_datastore::create_ordered_data_store_entry",
+      "rust_method": "create_ordered_data_store_entry",
+      "constant": "CREATE_ORDERED_DATA_STORE_ENTRY"
     },
     {
       "domain": "ordered_datastore",
@@ -4341,9 +4342,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_delete_ordered_data_store_entry",
-      "rust_method": "request_delete_ordered_data_store_entry",
-      "constant": "REQUEST_DELETE_ORDERED_DATA_STORE_ENTRY"
+      "id": "ordered_datastore::delete_ordered_data_store_entry",
+      "rust_method": "delete_ordered_data_store_entry",
+      "constant": "DELETE_ORDERED_DATA_STORE_ENTRY"
     },
     {
       "domain": "ordered_datastore",
@@ -4365,9 +4366,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_delete_scope_entries_entry",
-      "rust_method": "request_delete_scope_entries_entry",
-      "constant": "REQUEST_DELETE_SCOPE_ENTRIES_ENTRY"
+      "id": "ordered_datastore::delete_scope_entries_entry",
+      "rust_method": "delete_scope_entries_entry",
+      "constant": "DELETE_SCOPE_ENTRIES_ENTRY"
     },
     {
       "domain": "ordered_datastore",
@@ -4389,9 +4390,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:read"
       ],
-      "id": "ordered_datastore::request_get_ordered_data_store_entry",
-      "rust_method": "request_get_ordered_data_store_entry",
-      "constant": "REQUEST_GET_ORDERED_DATA_STORE_ENTRY"
+      "id": "ordered_datastore::get_ordered_data_store_entry",
+      "rust_method": "get_ordered_data_store_entry",
+      "constant": "GET_ORDERED_DATA_STORE_ENTRY"
     },
     {
       "domain": "ordered_datastore",
@@ -4413,9 +4414,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:read"
       ],
-      "id": "ordered_datastore::request_get_scope_entries_entry",
-      "rust_method": "request_get_scope_entries_entry",
-      "constant": "REQUEST_GET_SCOPE_ENTRIES_ENTRY"
+      "id": "ordered_datastore::get_scope_entries_entry",
+      "rust_method": "get_scope_entries_entry",
+      "constant": "GET_SCOPE_ENTRIES_ENTRY"
     },
     {
       "domain": "ordered_datastore",
@@ -4436,9 +4437,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:read"
       ],
-      "id": "ordered_datastore::request_get_scopes_scope_entries",
-      "rust_method": "request_get_scopes_scope_entries",
-      "constant": "REQUEST_GET_SCOPES_SCOPE_ENTRIES"
+      "id": "ordered_datastore::get_scopes_scope_entries",
+      "rust_method": "get_scopes_scope_entries",
+      "constant": "GET_SCOPES_SCOPE_ENTRIES"
     },
     {
       "domain": "ordered_datastore",
@@ -4460,9 +4461,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_increment_ordered_data_store_entry",
-      "rust_method": "request_increment_ordered_data_store_entry",
-      "constant": "REQUEST_INCREMENT_ORDERED_DATA_STORE_ENTRY"
+      "id": "ordered_datastore::increment_ordered_data_store_entry",
+      "rust_method": "increment_ordered_data_store_entry",
+      "constant": "INCREMENT_ORDERED_DATA_STORE_ENTRY"
     },
     {
       "domain": "ordered_datastore",
@@ -4483,9 +4484,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:read"
       ],
-      "id": "ordered_datastore::request_list_ordered_data_store_entries",
-      "rust_method": "request_list_ordered_data_store_entries",
-      "constant": "REQUEST_LIST_ORDERED_DATA_STORE_ENTRIES"
+      "id": "ordered_datastore::list_ordered_data_store_entries",
+      "rust_method": "list_ordered_data_store_entries",
+      "constant": "LIST_ORDERED_DATA_STORE_ENTRIES"
     },
     {
       "domain": "ordered_datastore",
@@ -4507,9 +4508,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_patch_scope_entries_entry",
-      "rust_method": "request_patch_scope_entries_entry",
-      "constant": "REQUEST_PATCH_SCOPE_ENTRIES_ENTRY"
+      "id": "ordered_datastore::patch_scope_entries_entry",
+      "rust_method": "patch_scope_entries_entry",
+      "constant": "PATCH_SCOPE_ENTRIES_ENTRY"
     },
     {
       "domain": "ordered_datastore",
@@ -4531,9 +4532,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_post_scope_entries_entry_increment",
-      "rust_method": "request_post_scope_entries_entry_increment",
-      "constant": "REQUEST_POST_SCOPE_ENTRIES_ENTRY_INCREMENT"
+      "id": "ordered_datastore::post_scope_entries_entry_increment",
+      "rust_method": "post_scope_entries_entry_increment",
+      "constant": "POST_SCOPE_ENTRIES_ENTRY_INCREMENT"
     },
     {
       "domain": "ordered_datastore",
@@ -4554,9 +4555,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_post_scopes_scope_entries",
-      "rust_method": "request_post_scopes_scope_entries",
-      "constant": "REQUEST_POST_SCOPES_SCOPE_ENTRIES"
+      "id": "ordered_datastore::post_scopes_scope_entries",
+      "rust_method": "post_scopes_scope_entries",
+      "constant": "POST_SCOPES_SCOPE_ENTRIES"
     },
     {
       "domain": "ordered_datastore",
@@ -4578,9 +4579,9 @@
       "scopes": [
         "universe.ordered-data-store.scope.entry:write"
       ],
-      "id": "ordered_datastore::request_update_ordered_data_store_entry",
-      "rust_method": "request_update_ordered_data_store_entry",
-      "constant": "REQUEST_UPDATE_ORDERED_DATA_STORE_ENTRY"
+      "id": "ordered_datastore::update_ordered_data_store_entry",
+      "rust_method": "update_ordered_data_store_entry",
+      "constant": "UPDATE_ORDERED_DATA_STORE_ENTRY"
     },
     {
       "domain": "places",
@@ -5251,9 +5252,9 @@
       "scopes": [
         "legacy-universe:manage"
       ],
-      "id": "universe::request_activates_a_universes",
-      "rust_method": "request_activates_a_universes",
-      "constant": "REQUEST_ACTIVATES_A_UNIVERSES"
+      "id": "universe::activates_a_universes",
+      "rust_method": "activates_a_universes",
+      "constant": "ACTIVATES_A_UNIVERSES"
     },
     {
       "domain": "universe",
@@ -5272,9 +5273,9 @@
       "scopes": [
         "legacy-universe:manage"
       ],
-      "id": "universe::request_deactivates_a_universe",
-      "rust_method": "request_deactivates_a_universe",
-      "constant": "REQUEST_DEACTIVATES_A_UNIVERSE"
+      "id": "universe::deactivates_a_universe",
+      "rust_method": "deactivates_a_universe",
+      "constant": "DEACTIVATES_A_UNIVERSE"
     },
     {
       "domain": "universe",
@@ -5293,9 +5294,9 @@
       "scopes": [
         "universe:read"
       ],
-      "id": "universe::request_forecast_the_impact_of_restarting_game_servers_for_a_universe",
-      "rust_method": "request_forecast_the_impact_of_restarting_game_servers_for_a_universe",
-      "constant": "REQUEST_FORECAST_THE_IMPACT_OF_RESTARTING_GAME_SERVERS_FOR_A_UNIVERSE"
+      "id": "universe::forecast_the_impact_of_restarting_game_servers_for_a_universe",
+      "rust_method": "forecast_the_impact_of_restarting_game_servers_for_a_universe",
+      "constant": "FORECAST_THE_IMPACT_OF_RESTARTING_GAME_SERVERS_FOR_A_UNIVERSE"
     },
     {
       "domain": "universe",
@@ -5312,9 +5313,9 @@
       "oauth": true,
       "unauthenticated": false,
       "scopes": [],
-      "id": "universe::request_get_universe",
-      "rust_method": "request_get_universe",
-      "constant": "REQUEST_GET_UNIVERSE"
+      "id": "universe::get_universe",
+      "rust_method": "get_universe",
+      "constant": "GET_UNIVERSE"
     },
     {
       "domain": "universe",
@@ -5331,9 +5332,9 @@
       "scopes": [
         "legacy-universe:manage"
       ],
-      "id": "universe::request_get_universes_multiget_permissions",
-      "rust_method": "request_get_universes_multiget_permissions",
-      "constant": "REQUEST_GET_UNIVERSES_MULTIGET_PERMISSIONS"
+      "id": "universe::get_universes_multiget_permissions",
+      "rust_method": "get_universes_multiget_permissions",
+      "constant": "GET_UNIVERSES_MULTIGET_PERMISSIONS"
     },
     {
       "domain": "universe",
@@ -5352,9 +5353,9 @@
       "scopes": [
         "legacy-universe:manage"
       ],
-      "id": "universe::request_get_universes_universe_id_permissions",
-      "rust_method": "request_get_universes_universe_id_permissions",
-      "constant": "REQUEST_GET_UNIVERSES_UNIVERSE_ID_PERMISSIONS"
+      "id": "universe::get_universes_universe_id_permissions",
+      "rust_method": "get_universes_universe_id_permissions",
+      "constant": "GET_UNIVERSES_UNIVERSE_ID_PERMISSIONS"
     },
     {
       "domain": "universe",
@@ -5373,9 +5374,9 @@
       "scopes": [
         "universe:write"
       ],
-      "id": "universe::request_launch_a_game_server_restart_for_a_universe",
-      "rust_method": "request_launch_a_game_server_restart_for_a_universe",
-      "constant": "REQUEST_LAUNCH_A_GAME_SERVER_RESTART_FOR_A_UNIVERSE"
+      "id": "universe::launch_a_game_server_restart_for_a_universe",
+      "rust_method": "launch_a_game_server_restart_for_a_universe",
+      "constant": "LAUNCH_A_GAME_SERVER_RESTART_FOR_A_UNIVERSE"
     },
     {
       "domain": "universe",
@@ -5394,9 +5395,9 @@
       "scopes": [
         "universe:read"
       ],
-      "id": "universe::request_list_restart_statuses_for_a_universe",
-      "rust_method": "request_list_restart_statuses_for_a_universe",
-      "constant": "REQUEST_LIST_RESTART_STATUSES_FOR_A_UNIVERSE"
+      "id": "universe::list_restart_statuses_for_a_universe",
+      "rust_method": "list_restart_statuses_for_a_universe",
+      "constant": "LIST_RESTART_STATUSES_FOR_A_UNIVERSE"
     },
     {
       "domain": "universe",
@@ -5416,9 +5417,9 @@
       "scopes": [
         "universe-messaging-service:publish"
       ],
-      "id": "universe::request_publish_a_cross_server_message_to_a_universe",
-      "rust_method": "request_publish_a_cross_server_message_to_a_universe",
-      "constant": "REQUEST_PUBLISH_A_CROSS_SERVER_MESSAGE_TO_A_UNIVERSE"
+      "id": "universe::publish_a_cross_server_message_to_a_universe",
+      "rust_method": "publish_a_cross_server_message_to_a_universe",
+      "constant": "PUBLISH_A_CROSS_SERVER_MESSAGE_TO_A_UNIVERSE"
     },
     {
       "domain": "universe",
@@ -5437,9 +5438,9 @@
       "scopes": [
         "universe:write"
       ],
-      "id": "universe::request_restart_universe_servers",
-      "rust_method": "request_restart_universe_servers",
-      "constant": "REQUEST_RESTART_UNIVERSE_SERVERS"
+      "id": "universe::restart_universe_servers",
+      "rust_method": "restart_universe_servers",
+      "constant": "RESTART_UNIVERSE_SERVERS"
     },
     {
       "domain": "universe",
@@ -5458,9 +5459,9 @@
       "scopes": [
         "universe:write"
       ],
-      "id": "universe::request_update_universe",
-      "rust_method": "request_update_universe",
-      "constant": "REQUEST_UPDATE_UNIVERSE"
+      "id": "universe::update_universe",
+      "rust_method": "update_universe",
+      "constant": "UPDATE_UNIVERSE"
     },
     {
       "domain": "users",

@@ -28,6 +28,7 @@ pub mod configs;
 pub mod coverage;
 #[path = "generated/creator_store.rs"]
 pub mod creator_store;
+#[path = "generated/datastore.rs"]
 pub mod datastore;
 #[path = "generated/developer_products.rs"]
 pub mod developer_products;
@@ -47,11 +48,14 @@ pub mod localization;
 pub mod luau;
 #[path = "generated/matchmaking.rs"]
 pub mod matchmaking;
+#[path = "generated/memory_store.rs"]
 pub mod memory_store;
+#[path = "generated/messaging.rs"]
 pub mod messaging;
 #[path = "generated/notifications.rs"]
 pub mod notifications;
 pub mod oauth;
+#[path = "generated/ordered_datastore.rs"]
 pub mod ordered_datastore;
 #[path = "generated/places.rs"]
 pub mod places;
@@ -65,11 +69,16 @@ pub mod subscriptions;
 pub mod team_create;
 #[path = "generated/thumbnails.rs"]
 pub mod thumbnails;
+#[path = "generated/types.rs"]
+pub mod types;
+#[path = "generated/universe.rs"]
 pub mod universe;
 #[path = "generated/users.rs"]
 pub mod users;
 
 pub use auth::{Authentication, Credentials};
-pub use client::{Client, ListOptions, RawResponse};
+pub use client::{Client, RawResponse, Response};
 pub use error::{Error, Result};
-pub use operation::{AuthenticationSupport, Endpoint, HttpMethod, OperationRequest, Stability};
+pub use operation::{
+    AuthenticationSupport, Endpoint, File, HttpMethod, OperationRequest, Stability,
+};

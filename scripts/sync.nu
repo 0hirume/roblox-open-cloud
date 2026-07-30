@@ -1,4 +1,14 @@
-const HTTP_METHODS = [delete get head options patch post put trace]
+const HTTP_METHODS = [
+    delete
+    get
+    head
+    options
+    patch
+    post
+    put
+    trace
+]
+
 const TYPED_DOMAINS = [
     datastore
     memory_store
@@ -53,9 +63,8 @@ def rust-identifier [value: string]: nothing -> string {
     let identifier = (
         $value
         | str snake-case
-        | str replace --all --regex '[^a-zA-Z0-9_]' '_'
-        | str replace --all --regex '_+' '_'
-        | str trim --char '_'
+        | str replace --all --regex '[^a-zA-Z0-9]+' _
+        | str trim --char _
     )
     let identifier = if $identifier =~ '^[0-9]' {
         $'operation_($identifier)'
@@ -72,34 +81,36 @@ def rust-identifier [value: string]: nothing -> string {
     }
 }
 
-def domain-for [tag: string, path: string, summary: string]: nothing -> string {
+# nu-lint-ignore: single_call_command
+def domain-for [tag: string, path: string]: string -> string {
+    let summary = $in
     let lower_path = $path | str downcase
     let lower_summary = $summary | str downcase
 
-    if ($lower_path | str contains ':publishmessage') {
+    if $lower_path =~ :publishmessage {
         'messaging'
-    } else if ($lower_path | str contains '/secrets') {
+    } else if $lower_path =~ /secrets {
         'secrets'
     } else if (
-        ($lower_path | str contains 'ordered-data-store')
-        or ($lower_summary | str contains 'ordered data store')
+        $lower_path =~ ordered-data-store
+        or $lower_summary =~ 'ordered data store'
     ) {
         'ordered_datastore'
     } else if (
-        ($lower_path | str contains 'memory-store')
-        or ($lower_summary | str contains 'memory store')
+        $lower_path =~ memory-store
+        or $lower_summary =~ 'memory store'
     ) {
         'memory_store'
     } else if (
-        ($lower_path | str contains 'data-store')
-        or ($lower_path | str contains 'datastore')
+        $lower_path =~ data-store
+        or $lower_path =~ datastore
     ) {
         'datastore'
-    } else if ($lower_path | str contains 'user-restriction') {
+    } else if $lower_path =~ user-restriction {
         'restrictions'
-    } else if ($lower_path | str contains 'luau-execution') {
+    } else if $lower_path =~ luau-execution {
         'luau'
-    } else if ($lower_path | str contains '/subscriptions/') {
+    } else if $lower_path =~ /subscriptions/ {
         'subscriptions'
     } else {
         match $tag {
@@ -126,15 +137,145 @@ def domain-for [tag: string, path: string, summary: string]: nothing -> string {
             'Thumbnails' => 'thumbnails'
             'Universes' => 'universe'
             'Users' => 'users'
-            _ => (error make {
-                msg: $'No Rust domain mapping for OpenAPI tag ($tag)'
-            })
+            _ => (error make $'No Rust domain mapping for OpenAPI tag ($tag)')
         }
     }
 }
 
-def service-type [domain: string]: nothing -> string {
-    match $domain {
+def rust-string []: any -> string {
+    to json --raw
+}
+
+def route-identifier [operation: record]: nothing -> string {
+    let parts = (
+        $operation.path
+        | split row /
+        | where $it != '' and $it !~ '^v[0-9]+$'
+        | each {|part|
+            $part
+            | str replace --all --regex '[{}]' ''
+        }
+    )
+    let tail = $parts | last 3
+    let path_name = $tail | str join ' '
+    let name = rust-identifier $'($operation.http_method) ($path_name)'
+    if ($name | str length) <= 72 {
+        $name
+    } else {
+        let shorter_path = $tail | last 2 | str join ' '
+        rust-identifier $'($operation.http_method) ($shorter_path)'
+    }
+}
+
+def render-endpoint [operation: record]: nothing -> string {
+    let scopes = (
+        $operation.scopes
+        | each {|scope| $scope | rust-string }
+        | str join ', '
+    )
+    let method = match $operation.http_method {
+        DELETE => 'Delete'
+        GET => 'Get'
+        HEAD => 'Head'
+        OPTIONS => 'Options'
+        PATCH => 'Patch'
+        POST => 'Post'
+        PUT => 'Put'
+        TRACE => 'Trace'
+        _ => (error make $'Unsupported HTTP method ($operation.http_method)')
+    }
+    let stability = match $operation.stability {
+        stable => 'Stable'
+        beta => 'Beta'
+        legacy-beta => 'LegacyBeta'
+        _ => (error make $'Unsupported stability ($operation.stability)')
+    }
+    let path = $operation.path | rust-string
+    let summary = $operation.summary | rust-string
+    let summary_doc = (
+        $operation.summary
+        | str replace --all --regex '\r|\n' ' '
+    )
+
+    [
+        $'/// ($summary_doc)'
+        $"pub const ($operation.constant): crate::Endpoint = crate::Endpoint::new\("
+        $'    crate::HttpMethod::($method),'
+        $'    ($path),'
+        $'    ($summary),'
+        $'    crate::Stability::($stability),'
+        $"    crate::AuthenticationSupport::new\(($operation.api_key), ($operation.oauth), ($operation.unauthenticated)),"
+        $'    &[($scopes)],'
+        ');'
+    ] | str join (char newline)
+}
+
+def render-method [operation: record]: nothing -> string {
+    let summary_doc = (
+        $operation.summary
+        | str replace --all --regex '\r|\n' ' '
+    )
+    let arguments = (
+        $operation.path_parameters
+        | each {|parameter|
+            let rust_name = rust-identifier $parameter
+            $'        ($rust_name): impl std::fmt::Display,'
+        }
+    )
+
+    if ($arguments | is-empty) {
+        [
+            $'    /// ($summary_doc)'
+            '    #[must_use]'
+            $"    pub fn ($operation.rust_method)\(&self) -> crate::OperationRequest<'_> {"
+            $"        self.client.operation\(($operation.constant))"
+            '    }'
+        ] | str join (char newline)
+    } else {
+        let substitutions = (
+            $operation.path_parameters
+            | each {|parameter|
+                let rust_name = rust-identifier $parameter
+                let parameter_name = $parameter | rust-string
+                $"        let request = request.path\(($parameter_name), ($rust_name))?;"
+            }
+        )
+        [
+            $'    /// ($summary_doc)'
+            '    ///'
+            '    /// # Errors'
+            '    ///'
+            '    /// Returns an error if a generated path substitution fails.'
+            $"    pub fn ($operation.rust_method)\("
+            '        &self,'
+            ...$arguments
+            "    ) -> crate::Result<crate::OperationRequest<'_>> {"
+            $"        let request = self.client.operation\(($operation.constant));"
+            ...$substitutions
+            '        Ok(request)'
+            '    }'
+        ] | str join (char newline)
+    }
+}
+
+# nu-lint-ignore: single_call_command
+def render-domain [domain: string, ...existing_domains: string]: list<record> -> string {
+    let operations = $in
+    let endpoints = (
+        $operations
+        | each {|operation| render-endpoint $operation }
+        | str join $'(char newline)(char newline)'
+    )
+    let endpoint_names = (
+        $operations
+        | each {|operation| $'    ($operation.constant),' }
+    )
+    let methods = (
+        $operations
+        | each {|operation| render-method $operation }
+        | str join $'(char newline)(char newline)'
+    )
+    let service = match $domain {
         analytics => 'Analytics'
         assets => 'Assets'
         avatars => 'Avatars'
@@ -163,164 +304,8 @@ def service-type [domain: string]: nothing -> string {
         thumbnails => 'Thumbnails'
         universe => 'Universes'
         users => 'Users'
-        _ => (error make {msg: $'No service type for ($domain)'})
+        _ => (error make $'No service type for ($domain)')
     }
-}
-
-def accessor-name [domain: string]: nothing -> string {
-    match $domain {
-        universe => 'universes'
-        _ => $domain
-    }
-}
-
-def http-variant [method: string]: nothing -> string {
-    match $method {
-        DELETE => 'Delete'
-        GET => 'Get'
-        HEAD => 'Head'
-        OPTIONS => 'Options'
-        PATCH => 'Patch'
-        POST => 'Post'
-        PUT => 'Put'
-        TRACE => 'Trace'
-        _ => (error make {msg: $'Unsupported HTTP method ($method)'})
-    }
-}
-
-def stability-variant [stability: string]: nothing -> string {
-    match $stability {
-        stable => 'Stable'
-        beta => 'Beta'
-        legacy-beta => 'LegacyBeta'
-        _ => (error make {msg: $'Unsupported stability ($stability)'})
-    }
-}
-
-def rust-string [value: string]: nothing -> string {
-    $value | to json --raw
-}
-
-def route-identifier [operation: record]: nothing -> string {
-    let parts = (
-        $operation.path
-        | split row '/'
-        | where {|part| $part != '' and $part !~ '^v[0-9]+$'}
-        | each {|part|
-            $part
-            | str replace --all (char lbrace) ''
-            | str replace --all (char rbrace) ''
-        }
-    )
-    let tail = $parts | last 3
-    let path_name = $tail | str join ' '
-    let name = rust-identifier $'($operation.http_method) ($path_name)'
-    if ($name | str length) <= 72 {
-        $name
-    } else {
-        let shorter_path = $tail | last 2 | str join ' '
-        rust-identifier $'($operation.http_method) ($shorter_path)'
-    }
-}
-
-def render-endpoint [operation: record]: nothing -> string {
-    let scopes = (
-        $operation.scopes
-        | each {|scope| rust-string $scope}
-        | str join ', '
-    )
-    let method = http-variant $operation.http_method
-    let stability = stability-variant $operation.stability
-    let path = rust-string $operation.path
-    let summary = rust-string $operation.summary
-    let summary_doc = (
-        $operation.summary
-        | str replace --all (char cr) ' '
-        | str replace --all (char newline) ' '
-    )
-
-    [
-        $'/// ($summary_doc)'
-        $"pub const ($operation.constant): crate::Endpoint = crate::Endpoint::new\("
-        $'    crate::HttpMethod::($method),'
-        $'    ($path),'
-        $'    ($summary),'
-        $'    crate::Stability::($stability),'
-        $"    crate::AuthenticationSupport::new\(($operation.api_key), ($operation.oauth), ($operation.unauthenticated)),"
-        $'    &[($scopes)],'
-        ');'
-    ] | str join (char newline)
-}
-
-def render-method [operation: record]: nothing -> string {
-    let summary_doc = (
-        $operation.summary
-        | str replace --all (char cr) ' '
-        | str replace --all (char newline) ' '
-    )
-    let arguments = (
-        $operation.path_parameters
-        | each {|parameter|
-            let rust_name = rust-identifier $parameter
-            $'        ($rust_name): impl std::fmt::Display,'
-        }
-    )
-
-    if ($arguments | is-empty) {
-        [
-            $'    /// ($summary_doc)'
-            '    #[must_use]'
-            $"    pub fn ($operation.rust_method)\(&self) -> crate::OperationRequest<'_> {"
-            $"        self.client.operation\(($operation.constant))"
-            '    }'
-        ] | str join (char newline)
-    } else {
-        let substitutions = (
-            $operation.path_parameters
-            | each {|parameter|
-                let rust_name = rust-identifier $parameter
-                let parameter_name = rust-string $parameter
-                $"        let request = request.path\(($parameter_name), ($rust_name))?;"
-            }
-        )
-        [
-            $'    /// ($summary_doc)'
-            '    ///'
-            '    /// # Errors'
-            '    ///'
-            '    /// Returns an error if a generated path substitution fails.'
-            $"    pub fn ($operation.rust_method)\("
-            '        &self,'
-            ...$arguments
-            "    ) -> crate::Result<crate::OperationRequest<'_>> {"
-            $"        let request = self.client.operation\(($operation.constant));"
-            ...$substitutions
-            '        Ok(request)'
-            '    }'
-        ] | str join (char newline)
-    }
-}
-
-def render-domain [
-    domain: string
-    operations: list<record>
-    existing_domains: list<string>
-]: nothing -> string {
-    let endpoints = (
-        $operations
-        | each {|operation| render-endpoint $operation}
-        | str join $'(char newline)(char newline)'
-    )
-    let endpoint_names = (
-        $operations
-        | each {|operation| $'    ($operation.constant),'}
-    )
-    let methods = (
-        $operations
-        | each {|operation| render-method $operation}
-        | str join $'(char newline)(char newline)'
-    )
-    let service = service-type $domain
 
     let common = [
         '// @generated by scripts/sync.nu; do not edit by hand.'
@@ -343,7 +328,10 @@ def render-domain [
             ''
         ] | str join (char newline)
     } else {
-        let accessor = accessor-name $domain
+        let accessor = match $domain {
+            universe => 'universes'
+            _ => $domain
+        }
         [
             ...$common
             '/// Operations in this Roblox Open Cloud domain.'
@@ -368,7 +356,9 @@ def render-domain [
     }
 }
 
-def render-coverage [operations: list<record>]: nothing -> string {
+# nu-lint-ignore: single_call_command
+def render-coverage []: list<record> -> string {
+    let operations = $in
     let entries = (
         $operations
         | each {|operation|
@@ -389,36 +379,35 @@ def render-coverage [operations: list<record>]: nothing -> string {
 def collect-operations [api: record]: nothing -> list<record> {
     let operations = (
         $api.paths
-        | transpose path item
-        | each {|path_item|
-            $path_item.item
+        | items {|path, item|
+            $item
             | transpose method operation
-            | where {|entry| $entry.method in $HTTP_METHODS}
+            | where method in $HTTP_METHODS
             | each {|entry|
                 let operation = $entry.operation
-                let security = ($operation | get -o security | default [])
+                let security = $operation | get --optional security | default []
                 let schemes = (
                     $security
-                    | each {|requirement| $requirement | columns}
+                    | each {|requirement| $requirement | columns }
                     | flatten
                     | uniq
                     | sort
                 )
-                let tags = ($operation | get -o tags | default [Uncategorized])
+                let tags = $operation | get --optional tags | default [Uncategorized]
                 let tag = $tags | first
                 let summary = (
                     $operation
-                    | get -o summary
-                    | default $'($entry.method | str upcase) ($path_item.path)'
+                    | get --optional summary
+                    | default $'($entry.method | str upcase) ($path)'
                 )
                 let documented_stability = (
                     $operation
-                    | get -o 'x-roblox-stability'
+                    | get --optional 'x-roblox-stability'
                     | default UNSPECIFIED
                 )
                 let deprecated = (
-                    ($operation | get -o deprecated | default false)
-                    or (($operation | get -o 'x-roblox-deprecated') != null)
+                    ($operation | get --optional deprecated | default false)
+                    or (($operation | get --optional 'x-roblox-deprecated') != null)
                 )
                 let api_key = 'roblox-api-key' in $schemes
                 let oauth = 'roblox-oauth2' in $schemes
@@ -438,9 +427,9 @@ def collect-operations [api: record]: nothing -> list<record> {
                 if $recommended {
                     let scopes = (
                         $operation
-                        | get -o 'x-roblox-scopes'
+                        | get --optional 'x-roblox-scopes'
                         | default []
-                        | each {|scope| $scope | get name}
+                        | get name
                         | uniq
                         | sort
                     )
@@ -450,20 +439,20 @@ def collect-operations [api: record]: nothing -> list<record> {
                         _ => 'legacy-beta'
                     }
                     let path_parameters = (
-                        $path_item.path
+                        $path
                         | parse --regex '\x7b(?<name>[^\x7d]+)\x7d'
                         | get name
                     )
-                    let domain = domain-for $tag $path_item.path $summary
+                    let operation_id = $operation | get --optional operationId
+                    let domain = $summary | domain-for $tag $path
                     {
                         domain: $domain
                         http_method: ($entry.method | str upcase)
-                        operation_id: (
-                            $operation
-                            | get -o operationId
-                            | default ''
-                        )
-                        path: $path_item.path
+                        operation_id: (match $operation_id {
+                            null => ''
+                            _ => $operation_id
+                        })
+                        path: $path
                         path_parameters: $path_parameters
                         summary: $summary
                         tag: $tag
@@ -493,7 +482,7 @@ def collect-operations [api: record]: nothing -> list<record> {
             $'($operation.domain)::($operation.base_method)'
         }
         | transpose key operations
-        | where {|group| ($group.operations | length) > 1}
+        | where ($it.operations | length) > 1
         | get key
     )
 
@@ -523,70 +512,87 @@ def collect-operations [api: record]: nothing -> list<record> {
     | sort-by domain rust_method
 }
 
-export def main [
-    --docs: path = 'C:/Users/ohirume/src/creator-docs'
-]: nothing -> nothing {
+# Synchronizes recommended Roblox Open Cloud operations from Creator Docs.
+export def main [--docs: path = 'C:/Users/ohirume/src/creator-docs']: nothing -> nothing {
     let spec_path = (
         $docs
         | path join content en-us reference cloud openapi.json
     )
-    let api = open $spec_path
+    let api = try {
+        open $spec_path
+    } catch {|error|
+        $error | error make
+    }
     let operations = collect-operations $api
     let duplicate_ids = (
         $operations
         | group-by id
         | transpose id operations
-        | where {|group| ($group.operations | length) > 1}
+        | where ($it.operations | length) > 1
     )
     if ($duplicate_ids | is-not-empty) {
         error make {
             msg: 'Generated Rust endpoint identifiers are not unique'
             help: ($duplicate_ids | table --expand)
+            labels: [
+                {
+                    text: 'duplicate endpoint identifiers'
+                    span: (metadata $duplicate_ids).span
+                }
+            ]
         }
     }
 
     let commit = (
-        ^git -C $docs rev-parse HEAD
+        git -C $docs rev-parse HEAD
         | complete
     )
     if $commit.exit_code != 0 {
-        error make {msg: $commit.stderr}
+        error make $commit.stderr
     }
     let commit_date = (
-        ^git -C $docs show -s '--format=%cs' HEAD
+        git -C $docs show -s '--format=%cs' HEAD
         | complete
     )
     if $commit_date.exit_code != 0 {
-        error make {msg: $commit_date.stderr}
+        error make $commit_date.stderr
     }
 
-    mkdir spec
-    mkdir src/generated
-
-    {
-        source: {
-            repository: Roblox/creator-docs
-            commit: ($commit.stdout | str trim)
-            commit_date: ($commit_date.stdout | str trim)
-            document: content/en-us/reference/cloud/openapi.json
-        }
-        policy: {
-            include: [
-                'non-deprecated, non-experimental operations supporting API keys or OAuth'
-                'non-deprecated unauthenticated operations marked stable or beta'
-            ]
-            exclude: [
-                'cookie-only operations'
-                'deprecated operations'
-                'experimental operations'
-                'unauthenticated operations without a stability marker'
-            ]
-        }
-        count: ($operations | length)
-        operations: $operations
+    try {
+        mkdir spec
+        mkdir src/generated
+    } catch {|error|
+        $error | error make
     }
-    | to json --indent 2
-    | save --force spec/coverage.json
+
+    try {
+        {
+            source: {
+                repository: Roblox/creator-docs
+                commit: ($commit.stdout | str trim)
+                commit_date: ($commit_date.stdout | str trim)
+                document: content/en-us/reference/cloud/openapi.json
+            }
+            policy: {
+                include: [
+                    'non-deprecated, non-experimental operations supporting API keys or OAuth'
+                    'non-deprecated unauthenticated operations marked stable or beta'
+                ]
+                exclude: [
+                    'cookie-only operations'
+                    'deprecated operations'
+                    'experimental operations'
+                    'unauthenticated operations without a stability marker'
+                ]
+            }
+            count: ($operations | length)
+            operations: $operations
+        }
+        | to json --indent 2
+        | save --force spec/coverage.json
+    } catch {|error|
+        $error | error make
+    }
 
     let existing_domains = [
         datastore
@@ -597,34 +603,44 @@ export def main [
     ]
     $operations
     | group-by domain
-    | transpose domain operations
-    | each {|group|
-        let source = render-domain (
-            $group.domain
-        ) $group.operations $existing_domains
-        $source | save --force $'src/generated/($group.domain).rs'
+    | items {|domain, operations|
+        let source = $operations | render-domain $domain ...$existing_domains
+        try {
+            $source | save --force $'src/generated/($domain).rs'
+        } catch {|error|
+            $error | error make
+        }
     }
-    | ignore
-    render-coverage $operations | save --force src/generated/coverage.rs
-    let format = (^cargo fmt --all | complete)
+    try {
+        $operations
+        | render-coverage
+        | save --force src/generated/coverage.rs
+    } catch {|error|
+        $error | error make
+    }
+    let format = cargo fmt --all | complete
     if $format.exit_code != 0 {
         error make {
             msg: 'rustfmt failed after endpoint generation'
             help: $format.stderr
+            labels: [
+                {
+                    text: 'rustfmt failed'
+                    span: (metadata $format).span
+                }
+            ]
         }
     }
 
-    let summary = (
+    (
         $operations
         | group-by domain
-        | transpose domain operations
-        | each {|group|
+        | items {|domain, operations|
             {
-                domain: $group.domain
-                operations: ($group.operations | length)
+                domain: $domain
+                operations: ($operations | length)
             }
         }
         | sort-by domain
     )
-    $summary
 }

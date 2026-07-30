@@ -48,7 +48,8 @@ url = "2"
 
 [dev-dependencies]
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
-wiremock = "0.6"
+# 0.6.5 uses let-chains, which are unavailable on the 1.85 MSRV.
+wiremock = "=0.6.4"
 
 [lints]
 workspace = true

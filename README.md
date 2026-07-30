@@ -15,12 +15,16 @@ resources, revocation, user-info, and discovery endpoints.
 ## Usage
 
 ```rust,no_run
-use roblox_open_cloud::Client;
+use roblox_open_cloud::{Client, universe::GetUniverseRequest};
 
 # async fn run() -> roblox_open_cloud::Result<()> {
 let client = Client::api_key("your-api-key")?;
-let universe = client.universes().get(123).await?;
-println!("{}", universe.display_name);
+let response = client
+    .universes()
+    .get_universe(GetUniverseRequest::new("123"))
+    .await?;
+
+println!("{:?}", response.body().display_name);
 # Ok(())
 # }
 ```
@@ -36,22 +40,34 @@ let client = Client::oauth("access-token")?;
 # }
 ```
 
-Universes, standard and ordered DataStores, MemoryStore, messaging, and the
-OAuth lifecycle have focused typed APIs. The complete recommended surface is
-available through domain request builders:
+Every recommended resource operation follows the same typed shape: select a
+domain from `Client`, call an operation with its generated request struct, and
+receive a `Response<T>`. Operation request types live in their domain modules,
+while reusable OpenAPI models live in `roblox_open_cloud::types`.
 
 ```rust,no_run
-use roblox_open_cloud::Client;
-use serde_json::json;
+use roblox_open_cloud::{
+    Client,
+    analytics::{
+        QueriesDimensionValuesForAUniverseBody, QueriesDimensionValuesForAUniverseRequest,
+    },
+};
 
 # async fn run() -> roblox_open_cloud::Result<()> {
 let client = Client::api_key("your-api-key")?;
 let response = client
     .analytics()
-    .queries_dimension_values_for_a_universe(123)?
-    .query("limit", 100)
-    .json(&json!({ "metric": "DailyActiveUsers" }))?
-    .send()
+    .queries_dimension_values_for_a_universe(
+        QueriesDimensionValuesForAUniverseRequest::new(
+            123,
+            QueriesDimensionValuesForAUniverseBody::new(
+                "2026-07-31T01:00:00Z",
+                "DailyActiveUsers",
+                "2026-07-31T00:00:00Z",
+            )
+            .limit(100),
+        ),
+    )
     .await?;
 
 println!("{}", response.status());
@@ -74,6 +90,32 @@ Roblox Creator Docs repository:
 - Cookie-only, deprecated, and experimental operations are excluded.
 
 See `spec/coverage.json` in the source repository for the pinned inventory.
+
+## Code generation
+
+The checked-in endpoint inventory is maintained by an unpublished Rust
+workspace tool. Its OpenAPI input is vendored at `spec/openapi.json`, so
+generation does not require a separate Creator Docs checkout:
+
+```text
+cargo run -p codegen -- check
+cargo run -p codegen -- sync
+```
+
+`check` fails when the checked-in coverage inventory or generated Rust differs
+from fresh output; `sync` rewrites the output and runs rustfmt. The vendored
+specification and coverage inventory are excluded from the published crate;
+their attribution and license remain included.
+
+To import a newer snapshot from an explicit Creator Docs checkout, run:
+
+```text
+cargo run -p codegen -- update <creator-docs-directory>
+```
+
+A daily GitHub workflow performs that import and opens or updates a review PR
+whenever the specification changes. Normal generation never reads the external
+checkout.
 
 ## License
 

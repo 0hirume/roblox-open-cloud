@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Replaced the Nushell synchronization script with an unpublished, strictly
+  linted and tested Rust code-generation workspace tool.
+- Vendored the Creator Docs OpenAPI input so generation is reproducible without
+  a separate checkout or machine-specific path.
+- Added a scheduled workflow that refreshes the vendored OpenAPI snapshot and
+  opens a review PR when its generated API changes.
+- Added push and pull-request checks for generated output, formatting, lints,
+  tests, documentation, and package verification.
+- Configured releases to create dated changelog sections automatically.
+- Replaced the split handwritten/request-builder resource API with one uniform,
+  fully typed request-and-response API generated from the recommended Creator
+  Docs OpenAPI surface.
+- Generated reusable OpenAPI models for JSON and multipart operations across
+  all 28 supported resource domains.
+- Added generated `new(required...)` constructors, chainable optional-field
+  setters, `Into<T>` conversions, and concise domain-local request-body aliases
+  across the resource API.
+
+### Removed
+
+- Removed the old handwritten resource clients and generic domain request
+  builders in favor of the uniform generated API.
+
 ## [0.1.0] - 2026-07-30
 
 ### Added

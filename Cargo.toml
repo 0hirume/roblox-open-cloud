@@ -4,7 +4,6 @@ resolver = "3"
 
 [workspace.package]
 edition = "2024"
-rust-version = "1.85"
 license = "MIT"
 repository = "https://github.com/0hirume/roblox-open-cloud"
 
@@ -12,7 +11,6 @@ repository = "https://github.com/0hirume/roblox-open-cloud"
 name = "roblox-open-cloud"
 version = "0.1.0"
 edition.workspace = true
-rust-version.workspace = true
 description = "An async Rust client for the recommended Roblox Open Cloud APIs"
 documentation = "https://docs.rs/roblox-open-cloud"
 repository.workspace = true
@@ -48,8 +46,7 @@ url = "2"
 
 [dev-dependencies]
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
-# 0.6.5 uses let-chains, which are unavailable on the 1.85 MSRV.
-wiremock = "=0.6.4"
+wiremock = "0.6"
 
 [lints]
 workspace = true

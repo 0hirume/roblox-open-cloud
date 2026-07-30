@@ -296,12 +296,13 @@ impl Registry {
         constructible: bool,
     ) -> Result<Type> {
         let base_name = type_identifier(preferred);
-        if let Some(existing) = self.definitions.get_mut(&base_name) {
-            if existing.schema == *schema && existing.serde == serde {
-                existing.constructible |= constructible;
-                let base_name = format_ident!("{base_name}");
-                return Ok(parse_quote!(crate::types::#base_name));
-            }
+        if let Some(existing) = self.definitions.get_mut(&base_name)
+            && existing.schema == *schema
+            && existing.serde == serde
+        {
+            existing.constructible |= constructible;
+            let base_name = format_ident!("{base_name}");
+            return Ok(parse_quote!(crate::types::#base_name));
         }
         let rust_name = unique_name(&base_name, &mut self.used_names);
         let previous = self.definitions.insert(

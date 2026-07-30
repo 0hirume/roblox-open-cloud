@@ -252,10 +252,10 @@ fn collect_operations(api: &OpenApi) -> Result<Vec<Operation>> {
     let mut base_operations = Vec::new();
     for (path, path_item) in &api.paths {
         for (method, operation) in path_item.operations() {
-            if let Some(operation) = operation {
-                if let Some(operation) = collect_operation(path, method, operation)? {
-                    base_operations.push(operation);
-                }
+            if let Some(operation) = operation
+                && let Some(operation) = collect_operation(path, method, operation)?
+            {
+                base_operations.push(operation);
             }
         }
     }

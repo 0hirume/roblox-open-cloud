@@ -3624,6 +3624,10 @@ pub enum GroupsGetsTheGroupSAuditLogActionType {
     PublishAnnouncement,
     #[serde(rename = "DeleteAnnouncement")]
     DeleteAnnouncement,
+    #[serde(rename = "UpdateRoleSetPermissions")]
+    UpdateRoleSetPermissions,
+    #[serde(rename = "UpdateGroupSecuritySettings")]
+    UpdateGroupSecuritySettings,
 }
 ///OpenAPI integer enum `GroupsGetsTheGroupSAuditLogLimit`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]

@@ -15,7 +15,7 @@
     "/ads-management/v1/advertisable-universes": {
       "get": {
         "description": "Returns the universe IDs of every experience the billing account is eligible to advertise. The complete list is returned in a single response; this endpoint is not paginated. Use these IDs to set targetUniverseId when creating a campaign, and resolve experience names with the Open Cloud Universe API.",
-        "tags": ["Sponsored campaigns", "Universes"],
+        "tags": ["Advertising"],
         "summary": "List advertisable universes",
         "responses": {
           "200": {
@@ -88,14 +88,14 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#get_ads_management_v1_advertisable_universes"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#get_ads_management_v1_advertisable_universes"
         }
       }
     },
     "/ads-management/v1/billing-accounts": {
       "get": {
         "description": "Lists the billing accounts owned by the authenticated user. Each account includes its type, status, time zone, and create/update timestamps. Results are paginated with a cursor (pageToken).",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "List billing accounts",
         "parameters": [
           {
@@ -196,14 +196,14 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#get_ads_management_v1_billing_accounts"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#get_ads_management_v1_billing_accounts"
         }
       }
     },
     "/ads-management/v1/billing-accounts/{id}": {
       "get": {
         "description": "Returns a single billing account owned by the authenticated user. Returns 404 if the account does not exist or is not owned by the caller.",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Get a billing account",
         "parameters": [
           {
@@ -297,14 +297,14 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#get_ads_management_v1_billing_accounts__id_"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#get_ads_management_v1_billing_accounts__id_"
         }
       }
     },
     "/ads-management/v1/campaign-options": {
       "get": {
         "description": "Returns the values accepted when creating a campaign: supported objectives, payment types, ad formats, and targeting dimensions. When universeId is supplied, the response also includes an eligibility block indicating whether that experience can currently be advertised, along with the reasons when it cannot.",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Get campaign options",
         "parameters": [
           {
@@ -406,14 +406,14 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#get_ads_management_v1_campaign_options"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#get_ads_management_v1_campaign_options"
         }
       }
     },
     "/ads-management/v1/campaigns": {
       "get": {
         "description": "Lists the campaigns in the caller's billing account. Campaigns are grouped by status (ACTIVE first, then PAUSED, then CANCELLED) and returned newest first within each group. Results are paginated with a cursor (pageToken); each page returns up to maxPageSize campaigns (default 50, max 100).",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "List campaigns",
         "parameters": [
           {
@@ -514,12 +514,12 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#get_ads_management_v1_campaigns"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#get_ads_management_v1_campaigns"
         }
       },
       "post": {
         "description": "Creates an ad campaign in the billing account. The creatives you reference must already exist as Open Cloud image assets that you have permission to use; they are validated and saved to your account's reusable creatives when the campaign is created. On success the campaign is returned with deliveryStatus IN_REVIEW, meaning it is queued for ad-policy review and not yet serving — poll the campaign (or campaigns:batchGetStatus) until this changes. budget.amountMicros is the budget in micro-USD as a decimal string (e.g. \"5000000\" = $5.00). It must be at least the minimum campaign budget; an amount below the minimum returns 400 with the required minimum stated in the error message. schedule.durationInDays must not exceed 3650 (~10 years). The x-idempotency-key header is required and must be a UUID: retrying the same key with an identical body within 24 hours returns the original campaign (200), while reusing a key with a different body returns 409.",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Create a campaign",
         "parameters": [
           {
@@ -634,14 +634,14 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#post_ads_management_v1_campaigns"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#post_ads_management_v1_campaigns"
         }
       }
     },
     "/ads-management/v1/campaigns/{id}": {
       "get": {
         "description": "Returns a single campaign, including its status (the lifecycle state you control: ACTIVE, PAUSED, or CANCELLED) and its deliveryStatus (whether it is currently serving: SERVING, IN_REVIEW, NOT_SERVING, or REJECTED). deliveryStatusReasons lists any reasons that affect delivery — for example why a campaign is not serving or was rejected, or that a serving campaign is still in its initial learning period. Returns 404 if the campaign does not exist or is not owned by the caller.",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Get a campaign",
         "parameters": [
           {
@@ -745,12 +745,12 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#get_ads_management_v1_campaigns__id_"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#get_ads_management_v1_campaigns__id_"
         }
       },
       "patch": {
         "description": "Updates the mutable fields of a campaign. You can change: name, budget.amountMicros, schedule.startTime and schedule.durationInDays (schedule changes are only allowed before the campaign starts), and status. Set status to ACTIVE to run or resume the campaign, PAUSED to pause it, or CANCELLED to cancel it permanently. budget.type cannot be changed — only the amount. A budget increase takes effect immediately, but a budget decrease on a running campaign is scheduled for the next midnight in the account's time zone; while a decrease is pending, the response reports it in budget.scheduledAmountMicros and budget.scheduledEffectiveTime. The fields objective, paymentType, targeting, creativeAssetIds, and bid are fixed after creation and return 400 if included. The updated campaign is returned with its recomputed deliveryStatus.",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Update a campaign",
         "parameters": [
           {
@@ -865,14 +865,14 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#patch_ads_management_v1_campaigns__id_"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#patch_ads_management_v1_campaigns__id_"
         }
       }
     },
     "/ads-management/v1/campaigns:batchGetStatus": {
       "post": {
         "description": "Returns the status (lifecycle state) and deliveryStatus (whether the campaign is currently serving), along with deliveryStatusReasons, for up to 100 campaigns in a single call. This is the recommended way to poll the review and serving state of many campaigns at once. Provide the campaign IDs in campaignIds; any ID that is not found or is not owned by the caller is returned in the failures array with reason NOT_FOUND.",
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Batch get campaign status",
         "requestBody": {
           "content": {
@@ -966,14 +966,14 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#post_ads_management_v1_campaigns_batchGetStatus"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#post_ads_management_v1_campaigns_batchGetStatus"
         }
       }
     },
     "/ads-management/v1/creatives": {
       "get": {
         "description": "Lists the reusable creatives saved to the caller's billing account. Each creative includes its assetId, name, moderation status, dimensions, and source. Use isArchived to filter by archive state. Results are paginated with a cursor (pageToken).",
-        "tags": ["Assets", "Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "List creatives",
         "parameters": [
           {
@@ -1082,7 +1082,7 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/assets#get_ads_management_v1_creatives"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#get_ads_management_v1_creatives"
         }
       }
     },
@@ -8530,7 +8530,7 @@
       "patch": {
         "tags": ["Places", "Universes"],
         "summary": "Update Place",
-        "description": "Updates the specified place.",
+        "description": "Updates the specified place. To avoid overwriting changes, this endpoint\nresponds with an HTTP 409 Conflict error if the place is open in an\nactive Team Create session.",
         "operationId": "Cloud_UpdatePlace",
         "parameters": [
           {
@@ -20230,7 +20230,9 @@
                 "AssignRole",
                 "UnassignRole",
                 "PublishAnnouncement",
-                "DeleteAnnouncement"
+                "DeleteAnnouncement",
+                "UpdateRoleSetPermissions",
+                "UpdateGroupSecuritySettings"
               ]
             }
           },
@@ -39038,7 +39040,9 @@
                 "AssignRole",
                 "UnassignRole",
                 "PublishAnnouncement",
-                "DeleteAnnouncement"
+                "DeleteAnnouncement",
+                "UpdateRoleSetPermissions",
+                "UpdateGroupSecuritySettings"
               ]
             }
           },
@@ -39947,6 +39951,55 @@
         "externalDocs": {
           "url": "https://create.roblox.com/docs/cloud/reference/features/groups#groups_get_v1_groups__groupId__community_feature_freezes"
         }
+      }
+    },
+    "/v1/groups/{groupId}/community-tier/evaluate": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Roblox.Groups.Client.TierEvaluationResultResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "1: Group is invalid or does not exist."
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed\r\n22: The feature is disabled.\r\n23: Insufficient permissions to complete the request.\r\n49: User is invalid or does not exist"
+          }
+        },
+        "servers": [
+          {
+            "url": "https://groups.roblox.com"
+          }
+        ],
+        "x-roblox-engine-usability": {
+          "apiKeyWithHttpService": false
+        },
+        "security": [
+          {
+            "roblox-legacy-cookie": []
+          }
+        ]
       }
     },
     "/v1/groups/{groupId}/configuration": {
@@ -51125,7 +51178,7 @@
             }
           },
           "400": {
-            "description": "1: The universe does not exist.\r\n48: The playtesters list is missing or empty.\r\n49: Too many playtesters were specified in a single request."
+            "description": "1: The universe does not exist.\r\n48: The playtesters list is missing or empty.\r\n49: Too many playtesters were specified in a single request.\r\n51: One or more playtesters cannot be added due to safety restrictions."
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
@@ -62654,7 +62707,7 @@
     },
     "/v2/sponsored-campaigns": {
       "get": {
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Gets a page of Roblox.AdConfiguration.Api.SponsoredCampaignModel with specified input parameters.",
         "parameters": [
           {
@@ -62745,13 +62798,13 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_get_v2_sponsored_campaigns"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#adconfiguration_get_v2_sponsored_campaigns"
         }
       }
     },
     "/v2/sponsored-campaigns/create": {
       "post": {
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Creates a complete ad. Including ad campaign, ad set, escrow, and the ad.\r\nCurrently intended for creation of sponsorships only.",
         "requestBody": {
           "content": {
@@ -62817,13 +62870,13 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_post_v2_sponsored_campaigns_create"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#adconfiguration_post_v2_sponsored_campaigns_create"
         }
       }
     },
     "/v2/sponsored-campaigns/eligible-asset-type-ids": {
       "get": {
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Get all asset type IDs that are eligible to be sponsored.",
         "responses": {
           "200": {
@@ -62870,13 +62923,13 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_get_v2_sponsored_campaigns_eligible_asset_type_ids"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#adconfiguration_get_v2_sponsored_campaigns_eligible_asset_type_ids"
         }
       }
     },
     "/v2/sponsored-campaigns/eligible-campaign-targets": {
       "post": {
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Returns a collection of Roblox.AdConfiguration.Api.Models.CampaignTargetModel that the user is authorized to sponsor, ordered by most recently advertised",
         "requestBody": {
           "content": {
@@ -62934,13 +62987,13 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_post_v2_sponsored_campaigns_eligible_campaign_targets"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#adconfiguration_post_v2_sponsored_campaigns_eligible_campaign_targets"
         }
       }
     },
     "/v2/sponsored-campaigns/multi-get-can-user-sponsor": {
       "get": {
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Checks whether the targets are eligible for sponsorship, and\r\nif the user is authorized to sponsor the targets.",
         "parameters": [
           {
@@ -63018,13 +63071,13 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_get_v2_sponsored_campaigns_multi_get_can_user_sponsor"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#adconfiguration_get_v2_sponsored_campaigns_multi_get_can_user_sponsor"
         }
       }
     },
     "/v2/sponsored-campaigns/stop": {
       "post": {
-        "tags": ["Sponsored campaigns"],
+        "tags": ["Advertising"],
         "summary": "Stops a sponsored campaign / ad (ad set) from running. Initiated by a user.",
         "requestBody": {
           "content": {
@@ -63087,13 +63140,12 @@
           }
         ],
         "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_post_v2_sponsored_campaigns_stop"
+          "url": "https://create.roblox.com/docs/cloud/reference/features/advertising#adconfiguration_post_v2_sponsored_campaigns_stop"
         }
       }
     },
     "/v2/sponsored-games": {
       "get": {
-        "tags": ["Sponsored campaigns"],
         "summary": "Gets a page of Roblox.AdConfiguration.Api.SponsoredGameV2Model with specified input parameters.",
         "parameters": [
           {
@@ -63171,15 +63223,11 @@
           {
             "roblox-legacy-cookie": []
           }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_get_v2_sponsored_games"
-        }
+        ]
       }
     },
     "/v2/sponsored-games/create": {
       "post": {
-        "tags": ["Sponsored campaigns"],
         "summary": "Creates a new sponsored game ad with specified input parameters.",
         "requestBody": {
           "content": {
@@ -63241,15 +63289,11 @@
           {
             "roblox-legacy-cookie": []
           }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_post_v2_sponsored_games_create"
-        }
+        ]
       }
     },
     "/v2/sponsored-games/stop": {
       "post": {
-        "tags": ["Sponsored campaigns"],
         "summary": "To stop a sponsored-game ad (ad set) from running, initiated by a user.",
         "requestBody": {
           "content": {
@@ -63308,15 +63352,11 @@
           {
             "roblox-legacy-cookie": []
           }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_post_v2_sponsored_games_stop"
-        }
+        ]
       }
     },
     "/v2/sponsored-games/universes": {
       "get": {
-        "tags": ["Sponsored campaigns"],
         "summary": "Gets a list of universes for the authenticated user, or the given group, ordered by most recently created sponsored game ads.",
         "parameters": [
           {
@@ -63367,10 +63407,7 @@
           {
             "roblox-legacy-cookie": []
           }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/sponsored-campaigns#adconfiguration_get_v2_sponsored_games_universes"
-        }
+        ]
       }
     },
     "/v2/stream-notifications/clear-unread": {
@@ -65364,6 +65401,623 @@
           "url": "https://create.roblox.com/docs/cloud/reference/features/avatars#avatar_get_v3_outfits__userOutfitId__details"
         }
       }
+    },
+    "/virtual-events/v3/game-events/{eventId}": {
+      "delete": {
+        "tags": ["Game Events"],
+        "summary": "Permanently delete an existing game event. Returns 204 No Content on success.\r\nPermission is enforced via an explicit pre-check: callers that can read but not edit\r\nreceive 403; callers that cannot read receive 404.",
+        "operationId": "GameEvent_Delete",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Game event ID to delete (from path).",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The event was deleted."
+          },
+          "401": {
+            "description": "Caller is not authenticated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Caller can read the event but lacks delete permission.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Event does not exist or caller cannot see it.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "The backend rejected the delete after the permission pre-check passed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-roblox-stability": "EXPERIMENTAL",
+        "x-roblox-rate-limits": {
+          "perApiKeyOwner": {
+            "period": "MINUTE",
+            "maxInPeriod": 20
+          },
+          "perOauth2Authorization": {
+            "period": "MINUTE",
+            "maxInPeriod": 20
+          }
+        },
+        "x-roblox-scopes": [
+          {
+            "name": "universe.event:write",
+            "targetResourceSpecifier": ""
+          }
+        ],
+        "x-roblox-engine-usability": {
+          "apiKeyWithHttpService": false
+        },
+        "security": [
+          {
+            "roblox-api-key": []
+          },
+          {
+            "roblox-oauth2": ["universe.event:write"]
+          }
+        ],
+        "externalDocs": {
+          "url": "https://create.roblox.com/docs/cloud/reference/features/virtual-events#GameEvent_Delete"
+        }
+      },
+      "get": {
+        "tags": ["Game Events"],
+        "summary": "Get a single game event by ID.\r\nUse `?fields=` to request a subset of fields; unknown field names return 400.",
+        "operationId": "GameEvent_Get",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Game event ID (from path).",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Optional field mask (comma-separated; omit or use * for all fields).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested game event.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameEventResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed `?fields=` or invalid event ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Event does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-roblox-stability": "EXPERIMENTAL",
+        "x-roblox-rate-limits": {
+          "perApiKeyOwner": {
+            "period": "MINUTE",
+            "maxInPeriod": 100
+          },
+          "perOauth2Authorization": {
+            "period": "MINUTE",
+            "maxInPeriod": 100
+          }
+        },
+        "x-roblox-scopes": [
+          {
+            "name": "universe.event:read",
+            "targetResourceSpecifier": ""
+          }
+        ],
+        "x-roblox-engine-usability": {
+          "apiKeyWithHttpService": false
+        },
+        "security": [
+          {
+            "roblox-api-key": []
+          },
+          {
+            "roblox-oauth2": ["universe.event:read"]
+          }
+        ],
+        "externalDocs": {
+          "url": "https://create.roblox.com/docs/cloud/reference/features/virtual-events#GameEvent_Get"
+        }
+      },
+      "patch": {
+        "tags": ["Game Events"],
+        "summary": "Partially update a game event. Only fields present in the request body are changed; omitted or null fields are left\r\nunchanged. Empty body is a no-op and returns the current game event resource.",
+        "operationId": "GameEvent_Update",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Game event ID from the route.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Partial update payload. Omitted or null fields are treated as no change.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `PATCH /v3/game-events/{eventId}`.\r\nEvery field is optional; null = \"no change\". An empty body is a no-op and returns the current resource."
+              }
+            },
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `PATCH /v3/game-events/{eventId}`.\r\nEvery field is optional; null = \"no change\". An empty body is a no-op and returns the current resource."
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `PATCH /v3/game-events/{eventId}`.\r\nEvery field is optional; null = \"no change\". An empty body is a no-op and returns the current resource."
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `PATCH /v3/game-events/{eventId}`.\r\nEvery field is optional; null = \"no change\". An empty body is a no-op and returns the current resource."
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The updated game event resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameEventResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failure or backend reject.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Caller is not authenticated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Caller can read but lacks edit permission.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Event not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-roblox-stability": "EXPERIMENTAL",
+        "x-roblox-rate-limits": {
+          "perApiKeyOwner": {
+            "period": "MINUTE",
+            "maxInPeriod": 20
+          },
+          "perOauth2Authorization": {
+            "period": "MINUTE",
+            "maxInPeriod": 20
+          }
+        },
+        "x-roblox-scopes": [
+          {
+            "name": "universe.event:write",
+            "targetResourceSpecifier": ""
+          }
+        ],
+        "x-roblox-engine-usability": {
+          "apiKeyWithHttpService": false
+        },
+        "security": [
+          {
+            "roblox-api-key": []
+          },
+          {
+            "roblox-oauth2": ["universe.event:write"]
+          }
+        ],
+        "externalDocs": {
+          "url": "https://create.roblox.com/docs/cloud/reference/features/virtual-events#GameEvent_Update"
+        }
+      }
+    },
+    "/virtual-events/v3/universes/{universeId}/game-events": {
+      "get": {
+        "tags": ["Game Events"],
+        "summary": "List game events under a universe.\r\nUse `?fields=` to trim the response payload.\r\nResponse is always 200 (empty list for unknown universe).",
+        "operationId": "GameEvents_List",
+        "parameters": [
+          {
+            "name": "universeId",
+            "in": "path",
+            "description": "Universe that owns the events (from path).",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Requested page size.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Continuation token from a prior page's `nextPageToken`.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "reverse",
+            "in": "query",
+            "description": "When true, treats `pageToken` as a backward-pagination cursor.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "startsBefore",
+            "in": "query",
+            "description": "Upper bound on event start time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "startsAfter",
+            "in": "query",
+            "description": "Lower bound on event start time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endsBefore",
+            "in": "query",
+            "description": "Upper bound on event end time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endsAfter",
+            "in": "query",
+            "description": "Lower bound on event end time. Defaults to now when neither bound is set.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "visibility",
+            "in": "query",
+            "description": "Visibility filter.",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/EventVisibility"
+                }
+              ]
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Field mask (comma-separated; omit or `*` for all fields).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of game events.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedGameEventsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `?fields=`, out-of-range `pageSize`, or bad query parameter.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-roblox-stability": "EXPERIMENTAL",
+        "x-roblox-rate-limits": {
+          "perApiKeyOwner": {
+            "period": "MINUTE",
+            "maxInPeriod": 100
+          },
+          "perOauth2Authorization": {
+            "period": "MINUTE",
+            "maxInPeriod": 100
+          }
+        },
+        "x-roblox-scopes": [
+          {
+            "name": "universe.event:read",
+            "targetResourceSpecifier": "universes"
+          }
+        ],
+        "x-roblox-engine-usability": {
+          "apiKeyWithHttpService": false
+        },
+        "security": [
+          {
+            "roblox-api-key": []
+          },
+          {
+            "roblox-oauth2": ["universe.event:read"]
+          }
+        ],
+        "externalDocs": {
+          "url": "https://create.roblox.com/docs/cloud/reference/features/virtual-events#GameEvents_List"
+        }
+      },
+      "post": {
+        "tags": ["Game Events"],
+        "summary": "Create a new game event. Returns the full resource on success.",
+        "operationId": "GameEvents_Create",
+        "parameters": [
+          {
+            "name": "universeId",
+            "in": "path",
+            "description": "Universe that will own the new event (from path).",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The create payload.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `POST /v3/universes/{universeId}/game-events`.\r\n`universeId` comes from the URL path, not the body.\r\nVirtualEventsApi.Models.V3.Request.CreateGameEventRequest.Visibility is restricted to Public/Private — Moderated is server-side only.\r\nNullable CLR properties allow JSON binding to materialize incomplete requests; required\r\nfields are enforced by the virtual-events gRPC service when `CreateVirtualEvent` runs."
+              }
+            },
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `POST /v3/universes/{universeId}/game-events`.\r\n`universeId` comes from the URL path, not the body.\r\nVirtualEventsApi.Models.V3.Request.CreateGameEventRequest.Visibility is restricted to Public/Private — Moderated is server-side only.\r\nNullable CLR properties allow JSON binding to materialize incomplete requests; required\r\nfields are enforced by the virtual-events gRPC service when `CreateVirtualEvent` runs."
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `POST /v3/universes/{universeId}/game-events`.\r\n`universeId` comes from the URL path, not the body.\r\nVirtualEventsApi.Models.V3.Request.CreateGameEventRequest.Visibility is restricted to Public/Private — Moderated is server-side only.\r\nNullable CLR properties allow JSON binding to materialize incomplete requests; required\r\nfields are enforced by the virtual-events gRPC service when `CreateVirtualEvent` runs."
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateGameEventRequest"
+                  }
+                ],
+                "description": "Request body for `POST /v3/universes/{universeId}/game-events`.\r\n`universeId` comes from the URL path, not the body.\r\nVirtualEventsApi.Models.V3.Request.CreateGameEventRequest.Visibility is restricted to Public/Private — Moderated is server-side only.\r\nNullable CLR properties allow JSON binding to materialize incomplete requests; required\r\nfields are enforced by the virtual-events gRPC service when `CreateVirtualEvent` runs."
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The newly-created game event resource.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameEventResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failure or server-side reject (moderation, age requirement, ...).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Caller is not authenticated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Caller lacks permission or quota is exhausted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VirtualEventsApi.ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-roblox-stability": "EXPERIMENTAL",
+        "x-roblox-rate-limits": {
+          "perApiKeyOwner": {
+            "period": "MINUTE",
+            "maxInPeriod": 20
+          },
+          "perOauth2Authorization": {
+            "period": "MINUTE",
+            "maxInPeriod": 20
+          }
+        },
+        "x-roblox-scopes": [
+          {
+            "name": "universe.event:write",
+            "targetResourceSpecifier": "universes"
+          }
+        ],
+        "x-roblox-engine-usability": {
+          "apiKeyWithHttpService": false
+        },
+        "security": [
+          {
+            "roblox-api-key": []
+          },
+          {
+            "roblox-oauth2": ["universe.event:write"]
+          }
+        ],
+        "externalDocs": {
+          "url": "https://create.roblox.com/docs/cloud/reference/features/virtual-events#GameEvents_Create"
+        }
+      }
     }
   },
   "components": {
@@ -66251,6 +66905,24 @@
         },
         "additionalProperties": false
       },
+      "CategoryResponse": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventCategory"
+              }
+            ],
+            "description": "The event category type of an event.\r\n            \r\nMirror of:\r\nhttps://github.rbx.com/Roblox/virtual-events/blob/master/services/virtual-events/src/Implementations/Types/EventCategory.cs"
+          },
+          "rank": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "ClientStatusGetRequest": {
         "type": "object",
         "properties": {
@@ -66465,6 +67137,31 @@
         "additionalProperties": false,
         "description": "A representation of a configuration repository with just the values (no metadata or decorators).\r\nThis response can be used as a direct copy-and-paste to the draft update endpoints."
       },
+      "ConfigResponse": {
+        "type": "object",
+        "properties": {
+          "recurrence": {
+            "type": "string",
+            "description": "Cron expression defining the event's recurrence schedule, if any.",
+            "nullable": true
+          },
+          "recurrenceEndTime": {
+            "type": "string",
+            "description": "The latest UTC timestamp at which automatic recurrence scheduling can occur.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "notificationAudience": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventNotificationAudience"
+              }
+            ],
+            "description": "The audience that should receive notifications for this event."
+          }
+        },
+        "additionalProperties": false
+      },
       "ConfigValueFull": {
         "type": "object",
         "properties": {
@@ -66607,6 +67304,123 @@
           }
         },
         "description": "Creates a new entry with the value provided."
+      },
+      "CreateGameEventConfigRequest": {
+        "type": "object",
+        "properties": {
+          "recurrence": {
+            "type": "string",
+            "description": "Cron expression for recurrence. Null = no recurrence. Validated server-side.",
+            "nullable": true
+          },
+          "recurrenceEndTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "notificationAudience": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventNotificationAudience"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Optional event configuration block (recurrence + notification audience) on the v3 Create body."
+      },
+      "CreateGameEventRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Event title. Clients must provide a non-empty value.",
+            "nullable": true
+          },
+          "subtitle": {
+            "type": "string",
+            "description": "Event subtitle. Clients must provide a non-empty value.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional event description.",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Event start time. Clients must provide a timestamp such as\r\n`yyyy-MM-ddTHH:mm:ss.fffzzz` or `yyyy-MM-ddTHH:mm:ss.fffZ`.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "description": "Event end time. Clients must provide a timestamp such as\r\n`yyyy-MM-ddTHH:mm:ss.fffzzz` or `yyyy-MM-ddTHH:mm:ss.fffZ`, and it must be after\r\nVirtualEventsApi.Models.V3.Request.CreateGameEventRequest.StartTime.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "visibility": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventVisibility"
+              }
+            ],
+            "description": "Must be `Public` or `Private`; `Moderated` is server-managed and rejected.",
+            "nullable": true
+          },
+          "groupId": {
+            "type": "integer",
+            "description": "Group host. When omitted, the authenticated user is the host.",
+            "format": "int64",
+            "nullable": true
+          },
+          "placeId": {
+            "type": "integer",
+            "description": "Optional venue place ID. When omitted, the event is created in the universe root place.",
+            "format": "int64",
+            "nullable": true
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventRankedCategory"
+            },
+            "nullable": true
+          },
+          "thumbnails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventMedia"
+            },
+            "nullable": true
+          },
+          "config": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CreateGameEventConfigRequest"
+              }
+            ],
+            "description": "Optional event configuration block (recurrence + notification audience) on the v3 Create body.",
+            "nullable": true
+          },
+          "featuringStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FeaturingStatus"
+              }
+            ],
+            "description": "Optional featuring status flag. When omitted, defaults to \"not featured\".",
+            "nullable": true
+          },
+          "tagline": {
+            "type": "string",
+            "description": "Optional tagline. Length and content are validated server-side.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request body for `POST /v3/universes/{universeId}/game-events`.\r\n`universeId` comes from the URL path, not the body.\r\nVirtualEventsApi.Models.V3.Request.CreateGameEventRequest.Visibility is restricted to Public/Private — Moderated is server-side only.\r\nNullable CLR properties allow JSON binding to materialize incomplete requests; required\r\nfields are enforced by the virtual-events gRPC service when `CreateVirtualEvent` runs."
       },
       "CreateMatchmakingPlayerAttributeDefinitionRequest": {
         "type": "object",
@@ -67830,6 +68644,80 @@
         "additionalProperties": false,
         "description": "This is the base class for all custom Exceptions that are thrown in this API."
       },
+      "EventCategory": {
+        "enum": [
+          "contentUpdate",
+          "locationUpdate",
+          "systemUpdate",
+          "activity",
+          "newContent",
+          "itemDrop",
+          "newSeason",
+          "newLocation",
+          "newMap",
+          "moreLevels",
+          "newFeature",
+          "earlyAccess",
+          "expansion",
+          "challenge",
+          "quest",
+          "festival"
+        ],
+        "type": "string",
+        "description": "The event category type of an event.\r\n            \r\nMirror of:\r\nhttps://github.rbx.com/Roblox/virtual-events/blob/master/services/virtual-events/src/Implementations/Types/EventCategory.cs"
+      },
+      "EventMedia": {
+        "type": "object",
+        "properties": {
+          "mediaId": {
+            "type": "integer",
+            "description": "The ID of the media.",
+            "format": "int64"
+          },
+          "rank": {
+            "type": "integer",
+            "description": "The rank of the media.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Representation of some media associated with an event."
+      },
+      "EventNotificationAudience": {
+        "enum": ["all", "rsvp", "subscribed", "group", "none"],
+        "type": "string",
+        "description": "The notification audience for an experience event"
+      },
+      "EventRankedCategory": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventCategory"
+              }
+            ],
+            "description": "The category content."
+          },
+          "rank": {
+            "type": "integer",
+            "description": "The rank of the category.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Representation of the category associated with an event."
+      },
+      "EventVisibility": {
+        "enum": ["private", "public", "moderated"],
+        "type": "string",
+        "description": "The visibility of a virtual event."
+      },
+      "FeaturingStatus": {
+        "enum": ["invalid", "enabled", "disabled"],
+        "type": "string",
+        "description": "The featuring status of a virtual event."
+      },
       "FilterField": {
         "enum": ["EngineVersion", "PlaceVersion", "ALL"],
         "type": "string",
@@ -67964,6 +68852,141 @@
         },
         "additionalProperties": false,
         "description": "ForecastUpdateResponse is used to return information about the forecasted update of a place."
+      },
+      "GameEventResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique id of the game event. Always populated. Serialized as a string to\r\npreserve precision for clients (event IDs exceed 2^53).",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayTitle": {
+            "type": "string",
+            "description": "Localized title (caller's locale). Populated only when `displayTitle` is in the mask.",
+            "nullable": true
+          },
+          "subtitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "displaySubtitle": {
+            "type": "string",
+            "description": "Localized subtitle. Populated only when `displaySubtitle` is in the mask.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayDescription": {
+            "type": "string",
+            "description": "Localized description. Populated only when `displayDescription` is in the mask.",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "universeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "placeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "host": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HostResponse"
+              }
+            ],
+            "description": "Host block. VirtualEventsApi.Models.V3.Response.HostResponse.HostName and VirtualEventsApi.Models.V3.Response.HostResponse.HasVerifiedBadge are omitted when host-details resolution failed.",
+            "nullable": true
+          },
+          "visibility": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventVisibility"
+              }
+            ],
+            "nullable": true
+          },
+          "featuringStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FeaturingStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "tagline": {
+            "type": "string",
+            "description": "Tagline for featuring review; visible to curators only when featuring is opted into.",
+            "nullable": true
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CategoryResponse"
+            },
+            "nullable": true
+          },
+          "thumbnails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ThumbnailResponse"
+            },
+            "nullable": true
+          },
+          "allThumbnailsCreated": {
+            "type": "boolean",
+            "description": "Whether all requested thumbnails were successfully persisted. Returned on Create/Update.",
+            "nullable": true
+          },
+          "config": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ConfigResponse"
+              }
+            ],
+            "nullable": true
+          },
+          "userRsvpStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RsvpStatus"
+              }
+            ],
+            "description": "Authenticated caller's RSVP status. Omitted for unauthenticated callers.",
+            "nullable": true
+          },
+          "createTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "updateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "v3 game event response. All fields except VirtualEventsApi.Models.V3.Response.GameEventResponse.Id are gated by the `?fields=` mask."
       },
       "GamePassConfigV2": {
         "required": [
@@ -69194,6 +70217,38 @@
       "HomepageThumbnailStatus": {
         "enum": ["Active", "Spammy"],
         "type": "string"
+      },
+      "HostResponse": {
+        "type": "object",
+        "properties": {
+          "hostType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HostType"
+              }
+            ],
+            "description": "The type of host of a virtual event."
+          },
+          "hostId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "hostName": {
+            "type": "string",
+            "nullable": true
+          },
+          "hasVerifiedBadge": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Host block. VirtualEventsApi.Models.V3.Response.HostResponse.HostName and VirtualEventsApi.Models.V3.Response.HostResponse.HasVerifiedBadge are omitted when host-details resolution failed."
+      },
+      "HostType": {
+        "enum": ["user", "group"],
+        "type": "string",
+        "description": "The type of host of a virtual event."
       },
       "HttpContent": {
         "type": "object",
@@ -71722,6 +72777,28 @@
         "x-oneOf": {
           "Value": ["value"]
         }
+      },
+      "PaginatedGameEventsResponse": {
+        "type": "object",
+        "properties": {
+          "gameEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GameEventResponse"
+            },
+            "nullable": true
+          },
+          "nextPageToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "previousPageToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Paginated response for v3 LIST. Page tokens are null at the collection boundaries."
       },
       "PersonalizedConfigStatus": {
         "enum": ["Active", "Inactive"],
@@ -82146,6 +83223,10 @@
             "description": "Keyword used for search query",
             "type": "string"
           },
+          "totalResults": {
+            "format": "int64",
+            "type": "integer"
+          },
           "previousPageCursor": {
             "type": "string"
           },
@@ -83174,6 +84255,21 @@
           },
           "contentId": {
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Roblox.Groups.Client.TierEvaluationResultResponse": {
+        "type": "object",
+        "properties": {
+          "tierInfo": {
+            "$ref": "#/components/schemas/Roblox.Groups.Client.CommunityTierInfoResponse"
+          },
+          "passedSignals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "additionalProperties": false
@@ -88486,6 +89582,11 @@
         "additionalProperties": false,
         "description": "One RPN token: either a logical/comparison CreatorConfigsPublicApi.Models.ConditionalRuleOperator (proto JSON `OPERATOR_*`) or an operand object."
       },
+      "RsvpStatus": {
+        "enum": ["none", "going", "maybeGoing", "notGoing"],
+        "type": "string",
+        "description": "The type of RSVP statuses."
+      },
       "RuleDeltaPayload": {
         "type": "object",
         "properties": {
@@ -89660,6 +90761,20 @@
         "enum": ["Reviewing", "Rejected", "Approved", "Unspecified"],
         "type": "string"
       },
+      "ThumbnailResponse": {
+        "type": "object",
+        "properties": {
+          "mediaId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "rank": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "ToolboxService.Asset": {
         "type": "object",
         "properties": {
@@ -90596,6 +91711,109 @@
         },
         "description": "Updates the entry provided with a new value."
       },
+      "UpdateGameEventConfigRequest": {
+        "type": "object",
+        "properties": {
+          "recurrence": {
+            "type": "string",
+            "description": "New cron recurrence expression. Null = no change. Validated server-side.",
+            "nullable": true
+          },
+          "recurrenceEndTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "notificationAudience": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventNotificationAudience"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Optional config block on the v3 PATCH body. Null sub-fields = no change."
+      },
+      "UpdateGameEventRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "subtitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "visibility": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/EventVisibility"
+              }
+            ],
+            "description": "Must be `Public` or `Private`; other values are rejected. Null = no change.",
+            "nullable": true
+          },
+          "placeId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventRankedCategory"
+            },
+            "nullable": true
+          },
+          "thumbnails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventMedia"
+            },
+            "nullable": true
+          },
+          "config": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UpdateGameEventConfigRequest"
+              }
+            ],
+            "description": "Optional config block on the v3 PATCH body. Null sub-fields = no change.",
+            "nullable": true
+          },
+          "featuringStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/FeaturingStatus"
+              }
+            ],
+            "nullable": true
+          },
+          "tagline": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request body for `PATCH /v3/game-events/{eventId}`.\r\nEvery field is optional; null = \"no change\". An empty body is a no-op and returns the current resource."
+      },
       "UpdateInstanceMetadata": {
         "type": "object",
         "properties": {},
@@ -91379,6 +92597,33 @@
           }
         },
         "additionalProperties": false
+      },
+      "VirtualEventsApi.ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": {}
       },
       "VotingModel": {
         "type": "object",
@@ -92355,6 +93600,32 @@
       }
     },
     {
+      "name": "Advertising",
+      "description": "Create and manage advertising on Roblox. Experience advertising drives engagement to your experiences through the Ads API, and item advertising promotes Marketplace items through sponsored campaigns. See the [Advertising guide](https://create.roblox.com/docs/cloud/guides/advertising) for Open Cloud setup and usage.\n",
+      "x-roblox-tag-info": {
+        "path": "advertising",
+        "content": "HTTP APIs for creating and managing advertising on Roblox Cloud.",
+        "ordering": [
+          "get_ads_management_v1_billing_accounts",
+          "get_ads_management_v1_billing_accounts__id_",
+          "get_ads_management_v1_advertisable_universes",
+          "get_ads_management_v1_campaign_options",
+          "get_ads_management_v1_campaigns",
+          "post_ads_management_v1_campaigns",
+          "get_ads_management_v1_campaigns__id_",
+          "patch_ads_management_v1_campaigns__id_",
+          "post_ads_management_v1_campaigns_batchGetStatus",
+          "get_ads_management_v1_creatives",
+          "adconfiguration_get_v2_sponsored_campaigns",
+          "adconfiguration_post_v2_sponsored_campaigns_create",
+          "adconfiguration_get_v2_sponsored_campaigns_eligible_asset_type_ids",
+          "adconfiguration_post_v2_sponsored_campaigns_eligible_campaign_targets",
+          "adconfiguration_get_v2_sponsored_campaigns_multi_get_can_user_sponsor",
+          "adconfiguration_post_v2_sponsored_campaigns_stop"
+        ]
+      }
+    },
+    {
       "name": "Analytics",
       "description": "Query analytics data for your experiences programmatically. See the [Analytics guide](https://create.roblox.com/docs/cloud/guides/analytics) for Open Cloud setup and usage.\n",
       "x-roblox-tag-info": {
@@ -92375,7 +93646,6 @@
         "path": "assets",
         "content": "HTTP APIs for working with assets on Roblox Cloud.",
         "ordering": [
-          "get_ads_management_v1_creatives",
           "Assets_CreateAsset",
           "Assets_GetAsset",
           "Assets_UpdateAsset",
@@ -92737,6 +94007,21 @@
           "patch_legacy_game_internationalization_v1_developer_products__developerProductId__name_language_codes__languageCode_",
           "gameinternationalization_patch_v1_developer_products__developerProductId__name_language_codes__languageCode_",
           "thumbnails_get_v1_developer_products_icons"
+        ]
+      }
+    },
+    {
+      "name": "Game Events",
+      "description": "Create and manage scheduled game events for a universe — announce content\nupdates, drops, and live moments, and let players discover and RSVP to them.\n\nCommon use cases include:\n\n- **Create an event**: Publish a game event for a universe with a title, schedule, visibility, categories, and thumbnails\n- **List and read events**: Page through a universe's game events or fetch a single event, using an optional `fields` mask to trim the payload\n- **Update or cancel**: Patch event details or delete a game event\n",
+      "x-roblox-tag-info": {
+        "path": "virtual-events",
+        "content": "HTTP APIs for creating and managing game events for a universe on Roblox.",
+        "ordering": [
+          "GameEvents_List",
+          "GameEvents_Create",
+          "GameEvent_Get",
+          "GameEvent_Update",
+          "GameEvent_Delete"
         ]
       }
     },
@@ -93323,36 +94608,6 @@
       }
     },
     {
-      "name": "Sponsored campaigns",
-      "description": "Create and manage sponsored advertising campaigns for your experiences and assets. Choose an [advertisable universe](#get_ads_management_v1_advertisable_universes), [billing account](#get_ads_management_v1_billing_accounts), [billing account details](#get_ads_management_v1_billing_accounts__id_), [campaign options](#get_ads_management_v1_campaign_options), and [creative](#get_ads_management_v1_creatives), then [create](#post_ads_management_v1_campaigns) a campaign. [List](#get_ads_management_v1_campaigns), [retrieve](#get_ads_management_v1_campaigns__id_), [update](#patch_ads_management_v1_campaigns__id_), and [check the status](#post_ads_management_v1_campaigns_batchGetStatus) of campaigns to manage their lifecycle.\n",
-      "x-roblox-tag-info": {
-        "path": "sponsored-campaigns",
-        "content": "HTTP APIs for working with sponsored campaigns on Roblox Cloud.",
-        "ordering": [
-          "get_ads_management_v1_advertisable_universes",
-          "get_ads_management_v1_billing_accounts",
-          "get_ads_management_v1_billing_accounts__id_",
-          "get_ads_management_v1_campaign_options",
-          "get_ads_management_v1_campaigns",
-          "post_ads_management_v1_campaigns",
-          "get_ads_management_v1_campaigns__id_",
-          "patch_ads_management_v1_campaigns__id_",
-          "post_ads_management_v1_campaigns_batchGetStatus",
-          "get_ads_management_v1_creatives",
-          "adconfiguration_get_v2_sponsored_campaigns",
-          "adconfiguration_post_v2_sponsored_campaigns_create",
-          "adconfiguration_get_v2_sponsored_campaigns_eligible_asset_type_ids",
-          "adconfiguration_post_v2_sponsored_campaigns_eligible_campaign_targets",
-          "adconfiguration_get_v2_sponsored_campaigns_multi_get_can_user_sponsor",
-          "adconfiguration_post_v2_sponsored_campaigns_stop",
-          "adconfiguration_get_v2_sponsored_games",
-          "adconfiguration_post_v2_sponsored_games_create",
-          "adconfiguration_post_v2_sponsored_games_stop",
-          "adconfiguration_get_v2_sponsored_games_universes"
-        ]
-      }
-    },
-    {
       "name": "Team Create",
       "description": "Manage Team Create collaborative sessions for your experiences, including session monitoring, membership management, and collaboration settings.\n",
       "x-roblox-tag-info": {
@@ -93472,7 +94727,6 @@
         "path": "universes",
         "content": "HTTP APIs for working with universes on Roblox Cloud, including subscriptions, place and instance updates, user restrictions, and more.",
         "ordering": [
-          "get_ads_management_v1_advertisable_universes",
           "Cloud_GetUniverse",
           "Cloud_UpdateUniverse",
           "Cloud_PublishUniverseMessage",

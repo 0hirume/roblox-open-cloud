@@ -19,33 +19,33 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
 
-      - name: Install Rust
+      - name: install rust
         uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4 # stable
         with:
           toolchain: nightly
           components: clippy, rustfmt
 
-      - name: Check generated output
+      - name: check generated output
         run: cargo run -p codegen -- check
 
-      - name: Check formatting
+      - name: check formatting
         run: cargo fmt --all -- --check
 
-      - name: Lint
+      - name: lint
         run: cargo clippy --workspace --all-targets --all-features -- -D warnings
 
-      - name: Test
+      - name: test
         run: cargo test --workspace --all-features
 
-      - name: Check documentation
+      - name: check documentation
         env:
           RUSTDOCFLAGS: -D warnings
         run: cargo doc --workspace --all-features --no-deps
 
-      - name: Verify package
+      - name: verify package
         run: cargo package

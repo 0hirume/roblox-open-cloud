@@ -18,12 +18,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           persist-credentials: false
 
-      - name: Checkout Creator Docs
+      - name: checkout creator docs
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           repository: Roblox/creator-docs
@@ -33,16 +33,16 @@ jobs:
           sparse-checkout-cone-mode: false
           persist-credentials: false
 
-      - name: Install Rust
+      - name: install rust
         uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4 # stable
         with:
           toolchain: nightly
           components: clippy, rustfmt
 
-      - name: Update generated API
+      - name: update generated api
         run: cargo run -p codegen -- update .upstream/creator-docs
 
-      - name: Open update pull request
+      - name: open update pull request
         id: pull-request
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
@@ -63,28 +63,28 @@ jobs:
             spec/coverage.json
             src/generated/*.rs
 
-      - name: Check generated output
+      - name: check generated output
         if: steps.pull-request.outputs.pull-request-operation == 'created' || steps.pull-request.outputs.pull-request-operation == 'updated'
         run: cargo run -p codegen -- check
 
-      - name: Check formatting
+      - name: check formatting
         if: steps.pull-request.outputs.pull-request-operation == 'created' || steps.pull-request.outputs.pull-request-operation == 'updated'
         run: cargo fmt --all -- --check
 
-      - name: Lint
+      - name: lint
         if: steps.pull-request.outputs.pull-request-operation == 'created' || steps.pull-request.outputs.pull-request-operation == 'updated'
         run: cargo clippy --workspace --all-targets --all-features -- -D warnings
 
-      - name: Test
+      - name: test
         if: steps.pull-request.outputs.pull-request-operation == 'created' || steps.pull-request.outputs.pull-request-operation == 'updated'
         run: cargo test --workspace --all-features
 
-      - name: Check documentation
+      - name: check documentation
         if: steps.pull-request.outputs.pull-request-operation == 'created' || steps.pull-request.outputs.pull-request-operation == 'updated'
         env:
           RUSTDOCFLAGS: -D warnings
         run: cargo doc --workspace --all-features --no-deps
 
-      - name: Verify package
+      - name: verify package
         if: steps.pull-request.outputs.pull-request-operation == 'created' || steps.pull-request.outputs.pull-request-operation == 'updated'
         run: cargo package --allow-dirty

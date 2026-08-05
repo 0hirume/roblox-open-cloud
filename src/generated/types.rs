@@ -5015,13 +5015,9 @@ pub struct ListMatchmakingServerAttributeDefinitionsResponse {
 ///OpenAPI object `ListMemoryStoreSortedMapItemsResponse`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
 pub struct ListMemoryStoreSortedMapItemsResponse {
-    ///OpenAPI field `memoryStoreSortedMapItems`.
-    #[serde(
-        rename = "memoryStoreSortedMapItems",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub memory_store_sorted_map_items: Option<Vec<crate::types::MemoryStoreSortedMapItem>>,
+    ///OpenAPI field `items`.
+    #[serde(rename = "items", default, skip_serializing_if = "Option::is_none")]
+    pub items: Option<Vec<crate::types::MemoryStoreSortedMapItem>>,
     ///OpenAPI field `nextPageToken`.
     #[serde(
         rename = "nextPageToken",
@@ -9236,7 +9232,7 @@ pub struct RobloxGroupsApiGroupSettingsResponse {
         default,
         skip_serializing_if = "Option::is_none"
     )]
-    pub community_tier: Option<crate::types::GroupsApiRobloxGroupsClientCommunityTierInfoResponse>,
+    pub community_tier: Option<crate::types::RobloxGroupsClientCommunityTierInfoResponse>,
     ///OpenAPI field `isApprovalRequired`.
     #[serde(
         rename = "isApprovalRequired",
@@ -9283,41 +9279,6 @@ pub struct RobloxGroupsApiGroupSettingsResponse {
     )]
     pub verification_level:
         Option<crate::types::RobloxGroupsApiGroupSettingsResponseVerificationLevel>,
-}
-///OpenAPI object `GroupsApiRobloxGroupsClientCommunityTierInfoResponse`.
-#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct GroupsApiRobloxGroupsClientCommunityTierInfoResponse {
-    ///OpenAPI field `currentTier`.
-    #[serde(
-        rename = "currentTier",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub current_tier: Option<i32>,
-    ///OpenAPI field `groupId`.
-    #[serde(rename = "groupId", default, skip_serializing_if = "Option::is_none")]
-    pub group_id: Option<i64>,
-    ///OpenAPI field `lastEvaluatedTime`.
-    #[serde(
-        rename = "lastEvaluatedTime",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub last_evaluated_time: Option<String>,
-    ///OpenAPI field `previousTier`.
-    #[serde(
-        rename = "previousTier",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub previous_tier: Option<i32>,
-    ///OpenAPI field `tierUpdatedTime`.
-    #[serde(
-        rename = "tierUpdatedTime",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub tier_updated_time: Option<String>,
 }
 ///OpenAPI integer enum `RobloxGroupsApiGroupSettingsResponseAccountTenureRequirement`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
@@ -9764,6 +9725,69 @@ impl RobloxGroupsApiGroupRoleResponseColor {
     pub const VALUE_14: Self = Self(14);
     pub const VALUE_15: Self = Self(15);
     pub const VALUE_16: Self = Self(16);
+}
+///OpenAPI object `RobloxGroupsClientCommunityTierInfoResponse`.
+#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
+pub struct RobloxGroupsClientCommunityTierInfoResponse {
+    ///OpenAPI field `currentTier`.
+    #[serde(
+        rename = "currentTier",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub current_tier: Option<i32>,
+    ///OpenAPI field `groupId`.
+    #[serde(rename = "groupId", default, skip_serializing_if = "Option::is_none")]
+    pub group_id: Option<i64>,
+    ///OpenAPI field `lastEvaluatedTime`.
+    #[serde(
+        rename = "lastEvaluatedTime",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub last_evaluated_time: Option<String>,
+    ///OpenAPI field `previousTier`.
+    #[serde(
+        rename = "previousTier",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub previous_tier: Option<i32>,
+    ///OpenAPI field `requirements`.
+    #[serde(
+        rename = "requirements",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub requirements: Option<Vec<crate::types::RobloxGroupsClientTierRequirement>>,
+    ///OpenAPI field `tierUpdatedTime`.
+    #[serde(
+        rename = "tierUpdatedTime",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub tier_updated_time: Option<String>,
+}
+///OpenAPI object `RobloxGroupsClientTierRequirement`.
+#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
+pub struct RobloxGroupsClientTierRequirement {
+    ///OpenAPI field `key`.
+    #[serde(rename = "key", default, skip_serializing_if = "Option::is_none")]
+    pub key: Option<crate::types::RobloxGroupsClientTierRequirementKey>,
+    ///OpenAPI field `satisfied`.
+    #[serde(rename = "satisfied", default, skip_serializing_if = "Option::is_none")]
+    pub satisfied: Option<bool>,
+}
+///OpenAPI integer enum `RobloxGroupsClientTierRequirementKey`.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
+#[serde(transparent)]
+pub struct RobloxGroupsClientTierRequirementKey(pub i32);
+impl RobloxGroupsClientTierRequirementKey {
+    pub const VALUE_1: Self = Self(1);
+    pub const VALUE_2: Self = Self(2);
+    pub const VALUE_3: Self = Self(3);
+    pub const VALUE_4: Self = Self(4);
+    pub const VALUE_5: Self = Self(5);
 }
 ///OpenAPI object `RobloxLocalizationTablesApiAutoLocalizationMetadataResponse`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
@@ -11179,18 +11203,18 @@ pub struct RobloxGameInternationalizationApiUniverseDisplayInfoAutomaticTranslat
 pub struct RobloxWebWebApiModelsApiArrayResponseRobloxGroupsApiGroupDetailResponse {
     ///OpenAPI field `data`.
     #[serde(rename = "data", default, skip_serializing_if = "Option::is_none")]
-    pub data: Option<Vec<crate::types::GroupsApiRobloxGroupsApiGroupDetailResponse>>,
+    pub data: Option<Vec<crate::types::RobloxGroupsApiGroupDetailResponse>>,
 }
-///OpenAPI object `GroupsApiRobloxGroupsApiGroupDetailResponse`.
+///OpenAPI object `RobloxGroupsApiGroupDetailResponse`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct GroupsApiRobloxGroupsApiGroupDetailResponse {
+pub struct RobloxGroupsApiGroupDetailResponse {
     ///OpenAPI field `communityTier`.
     #[serde(
         rename = "communityTier",
         default,
         skip_serializing_if = "Option::is_none"
     )]
-    pub community_tier: Option<crate::types::GroupsApiRobloxGroupsClientCommunityTierInfoResponse>,
+    pub community_tier: Option<crate::types::RobloxGroupsClientCommunityTierInfoResponse>,
     ///OpenAPI field `description`.
     #[serde(
         rename = "description",

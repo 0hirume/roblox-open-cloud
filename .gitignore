@@ -1,4 +1,4 @@
 /target
-/Cargo.lock
+/.upstream
 
 mise.local.toml

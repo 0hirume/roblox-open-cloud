@@ -1,51 +1,42 @@
 name: ci
 
 on:
-  pull_request:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request: {}
 
-permissions:
-  contents: read
+permissions: {}
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: nu {0}
+
+env:
+  RUSTUP_TOOLCHAIN: nightly
+
 jobs:
-  check:
+  verify:
+    name: verify
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
       - name: checkout
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
-      - name: install rust
-        uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4 # stable
+      - name: install nushell
+        uses: jdx/mise-action@7e36c90d9ab29c415a2384db3006f3ec8a8cc654 # v4.2.4
         with:
-          toolchain: nightly
-          components: clippy, rustfmt
+          cache: false
+          install_args: aqua:nushell/nushell
 
-      - name: check generated output
-        run: cargo run -p codegen -- check
+      - name: install rust nightly
+        run: rustup toolchain install nightly --profile minimal --component "clippy,rustfmt"
 
-      - name: check formatting
-        run: cargo fmt --all -- --check
-
-      - name: lint
-        run: cargo clippy --workspace --all-targets --all-features -- -D warnings
-
-      - name: test
-        run: cargo test --workspace --all-features
-
-      - name: check documentation
-        env:
-          RUSTDOCFLAGS: -D warnings
-        run: cargo doc --workspace --all-features --no-deps
-
-      - name: verify package
-        run: cargo package
+      - name: verify
+        run: nu .github/ci.nu

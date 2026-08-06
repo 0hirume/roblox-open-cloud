@@ -1,0 +1,7 @@
+[tools]
+"aqua:tombi-toml/tombi" = "latest"
+"aqua:nushell/nushell" = "latest"
+"aqua:rhysd/actionlint" = "latest"
+"github:zizmorcore/zizmor" = "latest"
+"npm:@actions/languageserver" = "latest"
+"npm:yaml-language-server" = "latest"

@@ -12358,6 +12358,10 @@ pub enum ServerStatus {
     OutOfMemory,
     #[serde(rename = "moderated")]
     Moderated,
+    #[serde(rename = "pending")]
+    Pending,
+    #[serde(rename = "unspecified")]
+    Unspecified,
 }
 ///OpenAPI integer enum `ServerType`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]

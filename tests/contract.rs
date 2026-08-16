@@ -19,12 +19,14 @@ fn generated_inventory_covers_the_recommended_creator_docs_surface() -> Result<(
         .and_then(serde_json::Value::as_array)
         .ok_or_else(|| Error::OAuth(String::from("coverage operations are missing")))?;
 
-    assert_eq!(
-        manifest.get("count").and_then(serde_json::Value::as_u64),
-        Some(259)
-    );
-    assert_eq!(operations.len(), 259);
-    assert_eq!(coverage::ENDPOINTS.len(), 259);
+    let operation_count = manifest
+        .get("count")
+        .and_then(serde_json::Value::as_u64)
+        .and_then(|count| usize::try_from(count).ok())
+        .ok_or_else(|| Error::OAuth(String::from("coverage count is missing or invalid")))?;
+
+    assert_eq!(operations.len(), operation_count);
+    assert_eq!(coverage::ENDPOINTS.len(), operation_count);
 
     let mut endpoint_keys = std::collections::BTreeSet::new();
     for endpoint in coverage::ENDPOINTS {

@@ -1,8 +1,8 @@
 {
   "source": {
     "repository": "Roblox/creator-docs",
-    "commit": "23280f5c1fbab3e99c9f49373f30a126bc4906c6",
-    "commit_date": "2026-08-11",
+    "commit": "e496b3febf9867d6e9676a9287ef4bbce4bd704a",
+    "commit_date": "2026-08-15",
     "document": "content/en-us/reference/cloud/openapi.json",
     "vendored": "spec/openapi.json"
   },
@@ -18,7 +18,7 @@
       "unauthenticated operations without a stability marker"
     ]
   },
-  "count": 259,
+  "count": 257,
   "operations": [
     {
       "domain": "analytics",
@@ -346,7 +346,7 @@
       "operation_id": "",
       "path": "/asset-permissions-api/v1/assets/permissions",
       "path_parameters": [],
-      "summary": "Grant a subject permission to multiple assets.\n            \nAuthorization is required to grant permissions to the subject and asset IDs in the request.",
+      "summary": "Grant a subject permission to multiple assets.\r\n            \r\nAuthorization is required to grant permissions to the subject and asset IDs in the request.",
       "tag": "Assets",
       "stability": "beta",
       "api_key": true,
@@ -563,27 +563,6 @@
     },
     {
       "domain": "badges",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-badges/v1/universes/{universeId}/badges",
-      "path_parameters": [
-        "universeId"
-      ],
-      "summary": "Creates a new badge.",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe.badge:manage-and-spend-robux"
-      ],
-      "id": "badges::creates_a_new_badge",
-      "rust_method": "creates_a_new_badge",
-      "constant": "CREATES_A_NEW_BADGE"
-    },
-    {
-      "domain": "badges",
       "http_method": "DELETE",
       "operation_id": "",
       "path": "/legacy-game-internationalization/v1/badges/{badgeId}/icons/language-codes/{languageCode}",
@@ -772,27 +751,6 @@
       "id": "badges::update_localized_name_of_a_badge",
       "rust_method": "update_localized_name_of_a_badge",
       "constant": "UPDATE_LOCALIZED_NAME_OF_A_BADGE"
-    },
-    {
-      "domain": "badges",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-badges/v1/badges/{badgeId}",
-      "path_parameters": [
-        "badgeId"
-      ],
-      "summary": "Updates badge configuration.",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe.badge:write"
-      ],
-      "id": "badges::updates_badge_configuration",
-      "rust_method": "updates_badge_configuration",
-      "constant": "UPDATES_BADGE_CONFIGURATION"
     },
     {
       "domain": "configs",

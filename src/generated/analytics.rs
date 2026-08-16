@@ -46,9 +46,11 @@ pub const ENDPOINTS: &[crate::Endpoint] = &[
     RETRIEVES_THE_RESULT_OF_A_LONG_RUNNING_METRICS_QUERY_OPERATION,
 ];
 ///Request body for [`QueriesDimensionValuesForAUniverseRequest`].
-pub type QueriesDimensionValuesForAUniverseBody = crate::types::DimensionValuesRequest;
+pub type QueriesDimensionValuesForAUniverseBody =
+    crate::types::AnalyticsQueryPublicApiDimensionValuesRequest;
 ///Request body for [`QueriesTimeSeriesMetricDataForAUniverseRequest`].
-pub type QueriesTimeSeriesMetricDataForAUniverseBody = crate::types::QueryRequest;
+pub type QueriesTimeSeriesMetricDataForAUniverseBody =
+    crate::types::AnalyticsQueryPublicApiQueryRequest;
 ///Input for [`QueriesDimensionValuesForAUniverseRequest`].
 #[derive(Debug, Clone)]
 pub struct QueriesDimensionValuesForAUniverseRequest {

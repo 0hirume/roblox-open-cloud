@@ -101,11 +101,11 @@ pub const OVERWRITES_A_BADGE_ICON_WITH_A_NEW_ONE: crate::Endpoint = crate::Endpo
     crate::AuthenticationSupport::new(true, true, false),
     &["legacy-badge:manage"],
 );
-///Grant a subject permission to multiple assets.              Authorization is required to grant permissions to the subject and asset IDs in the request.
+///Grant a subject permission to multiple assets.                Authorization is required to grant permissions to the subject and asset IDs in the request.
 pub const PATCH_ASSET_PERMISSIONS_API_ASSETS_PERMISSIONS: crate::Endpoint = crate::Endpoint::new(
     crate::HttpMethod::Patch,
     "/asset-permissions-api/v1/assets/permissions",
-    "Grant a subject permission to multiple assets.\n            \nAuthorization is required to grant permissions to the subject and asset IDs in the request.",
+    "Grant a subject permission to multiple assets.\r\n            \r\nAuthorization is required to grant permissions to the subject and asset IDs in the request.",
     crate::Stability::Beta,
     crate::AuthenticationSupport::new(true, false, false),
     &["asset-permissions:write"],
@@ -1953,7 +1953,7 @@ impl Assets<'_> {
         let body = response.json()?;
         Ok(crate::Response::new(status, headers, body))
     }
-    ///Grant a subject permission to multiple assets.              Authorization is required to grant permissions to the subject and asset IDs in the request.
+    ///Grant a subject permission to multiple assets.                Authorization is required to grant permissions to the subject and asset IDs in the request.
     ///
     /// # Errors
     ///

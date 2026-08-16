@@ -1108,17 +1108,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DimensionValuesRequest"
+                "$ref": "#/components/schemas/AnalyticsQueryPublicApi.DimensionValuesRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DimensionValuesRequest"
+                "$ref": "#/components/schemas/AnalyticsQueryPublicApi.DimensionValuesRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DimensionValuesRequest"
+                "$ref": "#/components/schemas/AnalyticsQueryPublicApi.DimensionValuesRequest"
               }
             }
           },
@@ -1150,7 +1150,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1160,7 +1160,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1170,7 +1170,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1180,7 +1180,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1190,7 +1190,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1200,7 +1200,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1254,17 +1254,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/QueryRequest"
+                "$ref": "#/components/schemas/AnalyticsQueryPublicApi.QueryRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/QueryRequest"
+                "$ref": "#/components/schemas/AnalyticsQueryPublicApi.QueryRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/QueryRequest"
+                "$ref": "#/components/schemas/AnalyticsQueryPublicApi.QueryRequest"
               }
             }
           },
@@ -1296,7 +1296,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1306,7 +1306,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1316,7 +1316,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1326,7 +1326,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1336,7 +1336,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1346,7 +1346,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1430,7 +1430,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1440,7 +1440,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1450,7 +1450,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1460,7 +1460,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1470,7 +1470,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1480,7 +1480,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1564,7 +1564,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1574,7 +1574,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1584,7 +1584,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1594,7 +1594,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1604,7 +1604,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -1614,7 +1614,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OperationError"
+                  "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationError"
                 }
               }
             }
@@ -2025,7 +2025,7 @@
     "/asset-permissions-api/v1/assets/permissions": {
       "patch": {
         "tags": ["Assets"],
-        "summary": "Grant a subject permission to multiple assets.\n            \nAuthorization is required to grant permissions to the subject and asset IDs in the request.",
+        "summary": "Grant a subject permission to multiple assets.\r\n            \r\nAuthorization is required to grant permissions to the subject and asset IDs in the request.",
         "requestBody": {
           "content": {
             "application/json-patch+json": {
@@ -2052,7 +2052,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -2082,7 +2082,7 @@
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -11137,7 +11137,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -11153,7 +11153,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -11163,7 +11164,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           }
         ],
@@ -11264,7 +11266,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -11280,7 +11282,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -11290,7 +11293,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           }
         ],
@@ -11434,7 +11438,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -11450,7 +11454,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -11460,7 +11465,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           }
         ],
@@ -11559,7 +11565,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -11575,7 +11581,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -11585,7 +11592,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           }
         ],
@@ -11731,7 +11739,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -11747,7 +11755,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -11757,7 +11766,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           }
         ],
@@ -11903,7 +11913,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -11919,7 +11929,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -11929,7 +11940,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           }
         ],
@@ -12030,7 +12042,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -12046,7 +12058,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -12056,7 +12069,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           }
         ],
@@ -12202,7 +12216,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -12218,7 +12232,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -12228,7 +12243,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           },
           {
@@ -12385,7 +12401,7 @@
           {
             "name": "repository",
             "in": "path",
-            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+            "description": "\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
             "required": true,
             "schema": {
               "allOf": [
@@ -12401,7 +12417,8 @@
                 "ExtendedServicesConfig",
                 "LeaderboardsConfig",
                 "ExperienceUserConfig",
-                "JourneysConfig"
+                "JourneysConfig",
+                "AntiCheatConfig"
               ]
             },
             "x-enum-varnames": [
@@ -12411,7 +12428,8 @@
               "ExtendedServicesConfig",
               "LeaderboardsConfig",
               "ExperienceUserConfig",
-              "JourneysConfig"
+              "JourneysConfig",
+              "AntiCheatConfig"
             ]
           },
           {
@@ -14929,6 +14947,7 @@
       "patch": {
         "tags": ["Badges"],
         "summary": "Updates badge configuration.",
+        "description": "Managers may change enabled state, name, and description when authorized for the badge.",
         "parameters": [
           {
             "in": "path",
@@ -14986,6 +15005,7 @@
             "description": "1: Badge is invalid or does not exist.\r\n3: The game is invalid or does not exist."
           }
         },
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-rate-limits": {
           "perApiKeyOwner": {
             "period": "MINUTE",
@@ -15021,6 +15041,7 @@
       "post": {
         "tags": ["Badges", "Universes"],
         "summary": "Creates a new badge.",
+        "description": "Charges the selected payment source and creates the badge under the universe's root place.",
         "parameters": [
           {
             "in": "path",
@@ -15048,7 +15069,7 @@
                     "type": "string"
                   },
                   "paymentSourceType": {
-                    "description": "Whether or not to pay for the badge with user funds, or group funds. ['User' = 1, 'Group' = 2]",
+                    "description": "Whether or not to pay for the badge with user funds, or group funds.",
                     "type": "integer",
                     "format": "int32",
                     "enum": [1, 2]
@@ -15104,6 +15125,7 @@
             "description": "13: Too many requests, try again later."
           }
         },
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-rate-limits": {
           "perApiKeyOwner": {
             "period": "MINUTE",
@@ -24447,10 +24469,10 @@
           {
             "name": "MaxPageSize",
             "in": "query",
-            "description": "The maximum number of game servers to return. The service might return\r\nfewer than this value. If unspecified, at most 25 game servers are\r\nreturned. The maximum value is 100 and higher values are set to 100.",
+            "description": "The maximum number of game servers to return. The service might return\r\nfewer than this value. If unspecified, at most 25 game servers are\r\nreturned. The maximum value is 100 and higher values are set to 100.\r\nZero returns no game servers and only the total count, for callers that\r\nneed the count without paging through rows.",
             "schema": {
               "maximum": 100,
-              "minimum": 1,
+              "minimum": 0,
               "type": "integer",
               "format": "int32"
             }
@@ -30331,6 +30353,7 @@
       "get": {
         "tags": ["Badges", "Metadata"],
         "summary": "Gets metadata about the badges system.",
+        "description": "Returns creation price and field length limits. Callers use this before creating or editing badges.",
         "responses": {
           "200": {
             "description": "OK",
@@ -30353,6 +30376,7 @@
             "url": "https://badges.roblox.com"
           }
         ],
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-engine-usability": {
           "apiKeyWithHttpService": false
         },
@@ -30366,6 +30390,7 @@
       "get": {
         "tags": ["Badges"],
         "summary": "Gets badge information by the badge Id.",
+        "description": "Returns display fields, award statistics, and owning universe for a single badge.",
         "parameters": [
           {
             "in": "path",
@@ -30403,6 +30428,7 @@
             "url": "https://badges.roblox.com"
           }
         ],
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-engine-usability": {
           "apiKeyWithHttpService": false
         },
@@ -30419,6 +30445,7 @@
       "patch": {
         "tags": ["Badges"],
         "summary": "Updates badge configuration.",
+        "description": "Managers may change enabled state, name, and description when authorized for the badge.",
         "parameters": [
           {
             "in": "path",
@@ -30481,6 +30508,7 @@
             "url": "https://badges.roblox.com"
           }
         ],
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-engine-usability": {
           "apiKeyWithHttpService": false
         },
@@ -30597,87 +30625,6 @@
             "documentationUrl": "https://create.roblox.com/docs/cloud/reference/features/badges#patch_legacy_game_internationalization_v1_badges__badgeId__description_language_codes__languageCode_"
           }
         ]
-      }
-    },
-    "/v1/badges/{badgeId}/icon": {
-      "post": {
-        "tags": ["Assets", "Thumbnails"],
-        "summary": "Overwrites a badge icon with a new one.",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "badgeId",
-            "description": "The badge Id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "Files": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Roblox.Badges.Api.IconUploadResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Roblox.Badges.Api.IconUploadResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "6: Text moderated.\r\n22: Icon file is not present in the request."
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          },
-          "403": {
-            "description": "0: Token Validation Failed\r\n2: You do not have permission to manage this badge."
-          },
-          "404": {
-            "description": "1: Badge is invalid or does not exist."
-          },
-          "429": {
-            "description": "13: Too many requests, try again later."
-          }
-        },
-        "servers": [
-          {
-            "url": "https://badges.roblox.com"
-          }
-        ],
-        "x-roblox-engine-usability": {
-          "apiKeyWithHttpService": false
-        },
-        "security": [
-          {
-            "roblox-legacy-cookie": []
-          }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/assets#badges_post_v1_badges__badgeId__icon"
-        }
       }
     },
     "/v1/badges/{badgeId}/icon#publish.roblox.com": {
@@ -45905,6 +45852,15 @@
               "enum": [0, 1, 2],
               "default": 1
             }
+          },
+          {
+            "in": "query",
+            "name": "uprankUnseen",
+            "description": "Whether to uprank unseen friend requests and return isUnseen per friend request.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
           }
         ],
         "responses": {
@@ -50657,6 +50613,7 @@
       "get": {
         "tags": ["Badges", "Universes"],
         "summary": "Gets badges by their awarding game.",
+        "description": "Lists badges created under the universe's root place, with paging and optional sort.",
         "parameters": [
           {
             "in": "path",
@@ -50735,6 +50692,7 @@
             "url": "https://badges.roblox.com"
           }
         ],
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-engine-usability": {
           "apiKeyWithHttpService": false
         },
@@ -50751,6 +50709,7 @@
       "post": {
         "tags": ["Badges", "Universes"],
         "summary": "Creates a new badge.",
+        "description": "Charges the selected payment source and creates the badge under the universe's root place.",
         "parameters": [
           {
             "in": "path",
@@ -50778,7 +50737,7 @@
                     "type": "string"
                   },
                   "paymentSourceType": {
-                    "description": "Whether or not to pay for the badge with user funds, or group funds. ['User' = 1, 'Group' = 2]",
+                    "description": "Whether or not to pay for the badge with user funds, or group funds.",
                     "type": "integer",
                     "format": "int32",
                     "enum": [1, 2]
@@ -50839,6 +50798,7 @@
             "url": "https://badges.roblox.com"
           }
         ],
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-engine-usability": {
           "apiKeyWithHttpService": false
         },
@@ -51342,6 +51302,7 @@
       "get": {
         "tags": ["Badges", "Universes"],
         "summary": "Gets the number of free badges left for the current UTC day by their awarding game.",
+        "description": "Reflects daily free-creation allowance for the universe when the feature is enabled.",
         "parameters": [
           {
             "in": "path",
@@ -51381,6 +51342,7 @@
             "url": "https://badges.roblox.com"
           }
         ],
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-engine-usability": {
           "apiKeyWithHttpService": false
         },
@@ -52033,6 +51995,7 @@
       "delete": {
         "tags": ["Badges"],
         "summary": "Removes a badge from the authenticated user.",
+        "description": "Revokes the caller's own awarded badge instance when the badge exists on their account.",
         "parameters": [
           {
             "in": "path",
@@ -52076,6 +52039,7 @@
             "url": "https://badges.roblox.com"
           }
         ],
+        "x-roblox-stability": "EXPERIMENTAL",
         "x-roblox-engine-usability": {
           "apiKeyWithHttpService": false
         },
@@ -54429,236 +54393,6 @@
         "externalDocs": {
           "url": "https://create.roblox.com/docs/cloud/reference/features/avatars#avatar_get_v1_users__userId__avatar"
         }
-      }
-    },
-    "/v1/users/{userId}/badges": {
-      "get": {
-        "tags": ["Badges", "User profiles", "Users"],
-        "summary": "Gets a list of badges a user has been awarded.",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "userId",
-            "description": "The user Id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
-            "in": "query",
-            "name": "limit",
-            "description": "The number of results per request.",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "enum": [10, 25, 50, 100],
-              "default": 10
-            }
-          },
-          {
-            "in": "query",
-            "name": "cursor",
-            "description": "The paging cursor for the previous or next page.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "sortOrder",
-            "description": "The order the results are sorted in.",
-            "schema": {
-              "type": "string",
-              "enum": ["Asc", "Desc"],
-              "default": "Asc"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Roblox.Web.WebAPI.Models.ApiPageResponse_Roblox.Badges.Api.GetBadgesByUserResponse_"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Roblox.Web.WebAPI.Models.ApiPageResponse_Roblox.Badges.Api.GetBadgesByUserResponse_"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "4: User is invalid or does not exist."
-          }
-        },
-        "servers": [
-          {
-            "url": "https://badges.roblox.com"
-          }
-        ],
-        "x-roblox-engine-usability": {
-          "apiKeyWithHttpService": false
-        },
-        "security": [
-          {
-            "roblox-legacy-cookie": []
-          }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/badges#badges_get_v1_users__userId__badges"
-        },
-        "x-roblox-recommended-alternatives": [
-          {
-            "url": "https://apis.roblox.com/cloud/v2/users/{user_id}/inventory-items",
-            "httpMethod": "GET",
-            "documentationUrl": "https://create.roblox.com/docs/cloud/reference/features/inventories#Cloud_ListInventoryItems"
-          }
-        ]
-      }
-    },
-    "/v1/users/{userId}/badges/awarded-dates": {
-      "get": {
-        "tags": ["Badges", "Users"],
-        "summary": "Gets timestamps for when badges were awarded to a user.",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "userId",
-            "description": "The user Id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
-            "in": "query",
-            "name": "badgeIds",
-            "description": "The CSV of badge Ids.",
-            "required": true,
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "format": "int64",
-                "type": "integer"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Roblox.Web.WebAPI.Models.ApiArrayResponse_Roblox.Badges.Api.BadgeAwardResponse_"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Roblox.Web.WebAPI.Models.ApiArrayResponse_Roblox.Badges.Api.BadgeAwardResponse_"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "5: Too many badge Ids."
-          },
-          "404": {
-            "description": "4: User is invalid or does not exist."
-          }
-        },
-        "servers": [
-          {
-            "url": "https://badges.roblox.com"
-          }
-        ],
-        "x-roblox-engine-usability": {
-          "apiKeyWithHttpService": false
-        },
-        "security": [
-          {
-            "roblox-legacy-cookie": []
-          }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/badges#badges_get_v1_users__userId__badges_awarded_dates"
-        },
-        "x-roblox-recommended-alternatives": [
-          {
-            "url": "https://apis.roblox.com/cloud/v2/users/{user_id}/inventory-items",
-            "httpMethod": "GET",
-            "description": "The addTime response field corresponds with the badge awarded date",
-            "documentationUrl": "https://create.roblox.com/docs/cloud/reference/features/inventories#Cloud_ListInventoryItems"
-          }
-        ]
-      }
-    },
-    "/v1/users/{userId}/badges/{badgeId}/awarded-date": {
-      "get": {
-        "tags": ["Badges", "Users"],
-        "summary": "Gets timestamp for when a single badge was awarded to a user.",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "userId",
-            "description": "User id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
-            "in": "path",
-            "name": "badgeId",
-            "description": "Badge id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "4: User is invalid or does not exist."
-          }
-        },
-        "servers": [
-          {
-            "url": "https://badges.roblox.com"
-          }
-        ],
-        "x-roblox-engine-usability": {
-          "apiKeyWithHttpService": false
-        },
-        "security": [
-          {
-            "roblox-legacy-cookie": []
-          }
-        ],
-        "externalDocs": {
-          "url": "https://create.roblox.com/docs/cloud/reference/features/badges#badges_get_v1_users__userId__badges__badgeId__awarded_date"
-        },
-        "x-roblox-recommended-alternatives": [
-          {
-            "url": "https://apis.roblox.com/cloud/v2/users/{user_id}/inventory-items",
-            "httpMethod": "GET",
-            "description": "The addTime response field corresponds with the badge awarded date",
-            "documentationUrl": "https://create.roblox.com/docs/cloud/reference/features/inventories#Cloud_ListInventoryItems"
-          }
-        ]
       }
     },
     "/v1/users/{userId}/bundles": {
@@ -66640,6 +66374,317 @@
         "enum": ["User", "Group"],
         "type": "string"
       },
+      "AnalyticsQueryPublicApi.BreakdownValue": {
+        "required": ["dimension", "value"],
+        "type": "object",
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "description": "The dimension name."
+          },
+          "value": {
+            "type": "string",
+            "description": "The dimension value."
+          },
+          "displayValue": {
+            "type": "string",
+            "description": "A human-readable display value when the dimension is a unique ID.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A breakdown dimension value in a query result."
+      },
+      "AnalyticsQueryPublicApi.DataPoint": {
+        "required": ["time", "value"],
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "description": "The timestamp of the data point in UTC.",
+            "format": "date-time"
+          },
+          "value": {
+            "type": "number",
+            "description": "The numeric value of the data point.",
+            "format": "double"
+          },
+          "stringValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "String values associated with the data point, when applicable.",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.DataStatus"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A single data point in a metric query result."
+      },
+      "AnalyticsQueryPublicApi.DataStatus": {
+        "enum": ["Valid", "Projected", "NotStatisticallySignificant"],
+        "type": "string",
+        "description": "The status of a data point in a query result."
+      },
+      "AnalyticsQueryPublicApi.DimensionValues": {
+        "required": ["dimension"],
+        "type": "object",
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "description": "The dimension name."
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DimensionValue"
+            },
+            "description": "The values for the dimension."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The values for a single dimension returned by a dimension values query."
+      },
+      "AnalyticsQueryPublicApi.DimensionValuesRequest": {
+        "required": ["endTime", "metric", "startTime"],
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "description": "The metric that provides context for resolving dimension namespaces."
+          },
+          "dimensions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The dimensions to retrieve values for. Each entry is a single dimension name."
+          },
+          "startTime": {
+            "type": "string",
+            "description": "The inclusive start of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "The exclusive end of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
+            "format": "date-time"
+          },
+          "filter": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsQueryPublicApi.QueryFilter"
+            },
+            "description": "Filters to apply to the query."
+          },
+          "granularity": {
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.MetricGranularity"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "The maximum number of values to return per dimension.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A request to query dimension values."
+      },
+      "AnalyticsQueryPublicApi.DimensionValuesResponse": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsQueryPublicApi.DimensionValues"
+            },
+            "description": "The dimension values returned by the query."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The response for a dimension values query."
+      },
+      "AnalyticsQueryPublicApi.FilterOperation": {
+        "enum": [
+          "In",
+          "NotIn",
+          "GreaterThan",
+          "GreaterThanOrEqual",
+          "LessThan",
+          "LessThanOrEqual",
+          "Match"
+        ],
+        "type": "string",
+        "description": "The operation to apply to a query filter."
+      },
+      "AnalyticsQueryPublicApi.MetricGranularity": {
+        "enum": [
+          "OneMinute",
+          "HalfHour",
+          "OneHour",
+          "OneDay",
+          "OneWeek",
+          "OneMonth",
+          "None"
+        ],
+        "type": "string",
+        "description": "The time granularity of metric data points in a query."
+      },
+      "AnalyticsQueryPublicApi.MetricValue": {
+        "type": "object",
+        "properties": {
+          "breakdowns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsQueryPublicApi.BreakdownValue"
+            },
+            "description": "The breakdown values for this series."
+          },
+          "dataPoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsQueryPublicApi.DataPoint"
+            },
+            "description": "The data points for this series."
+          }
+        },
+        "additionalProperties": false,
+        "description": "A metric value for a single breakdown series."
+      },
+      "AnalyticsQueryPublicApi.OperationError": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "The server-assigned resource path.",
+            "nullable": true
+          },
+          "done": {
+            "type": "boolean",
+            "description": "If false, the operation is still in progress. If true, the operation is completed."
+          },
+          "error": {
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.QueryError"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationMetadata"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A completed long-running operation that failed with an error."
+      },
+      "AnalyticsQueryPublicApi.OperationMetadata": {
+        "type": "object",
+        "properties": {
+          "createdTime": {
+            "type": "string",
+            "description": "The time the operation was created.",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The metadata associated with a long-running operation."
+      },
+      "AnalyticsQueryPublicApi.QueryError": {
+        "required": ["message"],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "The error code.",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "description": "The message associated with the query error."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The error returned from a query request."
+      },
+      "AnalyticsQueryPublicApi.QueryFilter": {
+        "required": ["dimension", "operation"],
+        "type": "object",
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "description": "The dimension name to filter on."
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The values to filter by."
+          },
+          "operation": {
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.FilterOperation"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A filter applied to a query dimension."
+      },
+      "AnalyticsQueryPublicApi.QueryRequest": {
+        "required": ["endTime", "granularity", "metric", "startTime"],
+        "type": "object",
+        "properties": {
+          "metric": {
+            "type": "string",
+            "description": "The metric to query."
+          },
+          "granularity": {
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.MetricGranularity"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "The inclusive start of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "The exclusive end of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
+            "format": "date-time"
+          },
+          "breakdown": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The dimensions to group results by. Each entry is a single dimension name."
+          },
+          "filter": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsQueryPublicApi.QueryFilter"
+            },
+            "description": "Filters to apply to the query."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "The maximum number of breakdown series to return.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A request to query time series metric data."
+      },
+      "AnalyticsQueryPublicApi.QueryResponse": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsQueryPublicApi.MetricValue"
+            },
+            "description": "The metric values returned by the query."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The response for a metric query."
+      },
       "ApiEmptyResponseModel": {
         "type": "object",
         "additionalProperties": false
@@ -66717,7 +66762,7 @@
           "UpdateFromRcc"
         ],
         "type": "string",
-        "description": "Asset permission actions that can be granted.\n            \nActions:\n* Invalid - default value, not a valid action.\n* Edit - grants the ability to edit and manage the asset.\n* Use - grants the ability to use the asset.\n* Download - grants the ability to download the asset.\n* CopyFromRcc - grants the ability to copy the asset from RCC, used to enable AssetService:CreatePlaceAsync().\n* UpdateFromRcc - grants the ability to update the asset from RCC, used to enable AssetService:UpdatePlaceAsync().\n            \nValid AssetType - SubjectType - Action combinations:\n* Animation - Group/User/Universe - Use\n* Audio - Group/User/Universe - Use\n* Decal - All/Group/User/Universe - Use\n* Image - All/Group/User/Universe - Use\n* Mesh - All/Group/User/Universe - Use\n* MeshPart - Group/User/Universe - Use\n* Model - User - Edit\n  * Group/User/Universe - Use\n* Place - All - Download\n  * Universe - CopyFromRcc/UpdateFromRcc\n* Video - Group/User/Universe - Use."
+        "description": "Asset permission actions that can be granted.\r\n            \r\nActions:\r\n* Invalid - default value, not a valid action.\r\n* Edit - grants the ability to edit and manage the asset.\r\n* Use - grants the ability to use the asset.\r\n* Download - grants the ability to download the asset.\r\n* CopyFromRcc - grants the ability to copy the asset from RCC, used to enable AssetService:CreatePlaceAsync().\r\n* UpdateFromRcc - grants the ability to update the asset from RCC, used to enable AssetService:UpdatePlaceAsync().\r\n            \r\nValid AssetType - SubjectType - Action combinations:\r\n* Animation - Group/User/Universe - Use\r\n* Audio - Group/User/Universe - Use\r\n* Decal - All/Group/User/Universe - Use\r\n* Image - All/Group/User/Universe - Use\r\n* Mesh - All/Group/User/Universe - Use\r\n* MeshPart - Group/User/Universe - Use\r\n* Model - User - Edit\r\n  * Group/User/Universe - Use\r\n* Place - All - Download\r\n  * Universe - CopyFromRcc/UpdateFromRcc\r\n* Video - Group/User/Universe - Use."
       },
       "AssetGrantRequest": {
         "type": "object",
@@ -66766,7 +66811,16 @@
           "SubjectNotFound",
           "AssetTypeNotEnabled",
           "PermissionLimitReached",
-          "DependenciesLimitReached"
+          "DependenciesLimitReached",
+          "NotRequestable",
+          "RequesterNotConnected",
+          "AlreadyPending",
+          "AlreadyHasAccess",
+          "RequestNotFound",
+          "InvalidRequestStatus",
+          "RateLimited",
+          "CallerNotOwner",
+          "BatchSizeLimitExceeded"
         ],
         "type": "string",
         "description": "Enums for customized error code in error responses."
@@ -67101,27 +67155,6 @@
         },
         "additionalProperties": false,
         "description": "Response object to grant one permission to multiple assets."
-      },
-      "BreakdownValue": {
-        "required": ["dimension", "value"],
-        "type": "object",
-        "properties": {
-          "dimension": {
-            "type": "string",
-            "description": "The dimension name."
-          },
-          "value": {
-            "type": "string",
-            "description": "The dimension value."
-          },
-          "displayValue": {
-            "type": "string",
-            "description": "A human-readable display value when the dimension is a unique ID.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A breakdown dimension value in a query result."
       },
       "BulkDeleteSavesRequest": {
         "required": ["targets"],
@@ -68255,40 +68288,6 @@
         "type": "string",
         "description": "The custom signal type."
       },
-      "DataPoint": {
-        "required": ["time", "value"],
-        "type": "object",
-        "properties": {
-          "time": {
-            "type": "string",
-            "description": "The timestamp of the data point in UTC.",
-            "format": "date-time"
-          },
-          "value": {
-            "type": "number",
-            "description": "The numeric value of the data point.",
-            "format": "double"
-          },
-          "stringValues": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "String values associated with the data point, when applicable.",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/DataStatus"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A single data point in a metric query result."
-      },
-      "DataStatus": {
-        "enum": ["Valid", "Projected", "NotStatisticallySignificant"],
-        "type": "string",
-        "description": "The status of a data point in a query result."
-      },
       "DataStore": {
         "type": "object",
         "properties": {
@@ -68658,25 +68657,6 @@
         "additionalProperties": false,
         "description": "A single dimension value returned by a dimension values query."
       },
-      "DimensionValues": {
-        "required": ["dimension"],
-        "type": "object",
-        "properties": {
-          "dimension": {
-            "type": "string",
-            "description": "The dimension name."
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DimensionValue"
-            },
-            "description": "The values for the dimension."
-          }
-        },
-        "additionalProperties": false,
-        "description": "The values for a single dimension returned by a dimension values query."
-      },
       "DimensionValuesOperationResult": {
         "type": "object",
         "properties": {
@@ -68690,72 +68670,14 @@
             "description": "If false, the operation is still in progress. If true, the operation is completed."
           },
           "response": {
-            "$ref": "#/components/schemas/DimensionValuesResponse"
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.DimensionValuesResponse"
           },
           "metadata": {
-            "$ref": "#/components/schemas/OperationMetadata"
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationMetadata"
           }
         },
         "additionalProperties": false,
         "description": "A completed long-running dimension values operation with results."
-      },
-      "DimensionValuesRequest": {
-        "required": ["endTime", "metric", "startTime"],
-        "type": "object",
-        "properties": {
-          "metric": {
-            "type": "string",
-            "description": "The metric that provides context for resolving dimension namespaces."
-          },
-          "dimensions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The dimensions to retrieve values for. Each entry is a single dimension name."
-          },
-          "startTime": {
-            "type": "string",
-            "description": "The inclusive start of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
-            "format": "date-time"
-          },
-          "endTime": {
-            "type": "string",
-            "description": "The exclusive end of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
-            "format": "date-time"
-          },
-          "filter": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryFilter"
-            },
-            "description": "Filters to apply to the query."
-          },
-          "granularity": {
-            "$ref": "#/components/schemas/MetricGranularity"
-          },
-          "limit": {
-            "type": "integer",
-            "description": "The maximum number of values to return per dimension.",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A request to query dimension values."
-      },
-      "DimensionValuesResponse": {
-        "type": "object",
-        "properties": {
-          "values": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DimensionValues"
-            },
-            "description": "The dimension values returned by the query."
-          }
-        },
-        "additionalProperties": false,
-        "description": "The response for a dimension values query."
       },
       "DiscardMemoryStoreQueueItemsRequest": {
         "type": "object",
@@ -69019,19 +68941,6 @@
         },
         "additionalProperties": false,
         "description": "Describes the metadata and available values for a single filter field."
-      },
-      "FilterOperation": {
-        "enum": [
-          "In",
-          "NotIn",
-          "GreaterThan",
-          "GreaterThanOrEqual",
-          "LessThan",
-          "LessThanOrEqual",
-          "Match"
-        ],
-        "type": "string",
-        "description": "The operation to apply to a query filter."
       },
       "FilterOptionsResponse": {
         "type": "object",
@@ -72444,40 +72353,6 @@
         },
         "description": "Represents the reaction to a message."
       },
-      "MetricGranularity": {
-        "enum": [
-          "OneMinute",
-          "HalfHour",
-          "OneHour",
-          "OneDay",
-          "OneWeek",
-          "OneMonth",
-          "None"
-        ],
-        "type": "string",
-        "description": "The time granularity of metric data points in a query."
-      },
-      "MetricValue": {
-        "type": "object",
-        "properties": {
-          "breakdowns": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BreakdownValue"
-            },
-            "description": "The breakdown values for this series."
-          },
-          "dataPoints": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DataPoint"
-            },
-            "description": "The data points for this series."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A metric value for a single breakdown series."
-      },
       "MockServerSignalValues": {
         "type": "object",
         "properties": {
@@ -72941,28 +72816,6 @@
           "result": ["error", "response"]
         }
       },
-      "OperationError": {
-        "type": "object",
-        "properties": {
-          "path": {
-            "type": "string",
-            "description": "The server-assigned resource path.",
-            "nullable": true
-          },
-          "done": {
-            "type": "boolean",
-            "description": "If false, the operation is still in progress. If true, the operation is completed."
-          },
-          "error": {
-            "$ref": "#/components/schemas/QueryError"
-          },
-          "metadata": {
-            "$ref": "#/components/schemas/OperationMetadata"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A completed long-running operation that failed with an error."
-      },
       "OperationErrorResponse": {
         "type": "object",
         "properties": {
@@ -72983,19 +72836,6 @@
         },
         "additionalProperties": false
       },
-      "OperationMetadata": {
-        "type": "object",
-        "properties": {
-          "createdTime": {
-            "type": "string",
-            "description": "The time the operation was created.",
-            "format": "date-time",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "The metadata associated with a long-running operation."
-      },
       "OperationPending": {
         "type": "object",
         "properties": {
@@ -73009,7 +72849,7 @@
             "description": "If false, the operation is still in progress. If true, the operation is completed."
           },
           "metadata": {
-            "$ref": "#/components/schemas/OperationMetadata"
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationMetadata"
           }
         },
         "additionalProperties": false,
@@ -74083,23 +73923,6 @@
         "description": "Contains query correction information for a search query.",
         "nullable": true
       },
-      "QueryError": {
-        "required": ["message"],
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "integer",
-            "description": "The error code.",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string",
-            "description": "The message associated with the query error."
-          }
-        },
-        "additionalProperties": false,
-        "description": "The error returned from a query request."
-      },
       "QueryFacets": {
         "type": "object",
         "properties": {
@@ -74124,28 +73947,6 @@
         "description": "The facets of a query.",
         "nullable": true
       },
-      "QueryFilter": {
-        "required": ["dimension", "operation"],
-        "type": "object",
-        "properties": {
-          "dimension": {
-            "type": "string",
-            "description": "The dimension name to filter on."
-          },
-          "values": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The values to filter by."
-          },
-          "operation": {
-            "$ref": "#/components/schemas/FilterOperation"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A filter applied to a query dimension."
-      },
       "QueryOperationResult": {
         "type": "object",
         "properties": {
@@ -74159,72 +73960,14 @@
             "description": "If false, the operation is still in progress. If true, the operation is completed."
           },
           "response": {
-            "$ref": "#/components/schemas/QueryResponse"
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.QueryResponse"
           },
           "metadata": {
-            "$ref": "#/components/schemas/OperationMetadata"
+            "$ref": "#/components/schemas/AnalyticsQueryPublicApi.OperationMetadata"
           }
         },
         "additionalProperties": false,
         "description": "A completed long-running query operation with results."
-      },
-      "QueryRequest": {
-        "required": ["endTime", "granularity", "metric", "startTime"],
-        "type": "object",
-        "properties": {
-          "metric": {
-            "type": "string",
-            "description": "The metric to query."
-          },
-          "granularity": {
-            "$ref": "#/components/schemas/MetricGranularity"
-          },
-          "startTime": {
-            "type": "string",
-            "description": "The inclusive start of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
-            "format": "date-time"
-          },
-          "endTime": {
-            "type": "string",
-            "description": "The exclusive end of the query time range. Any UTC offset is accepted; results are always bucketed in UTC.",
-            "format": "date-time"
-          },
-          "breakdown": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The dimensions to group results by. Each entry is a single dimension name."
-          },
-          "filter": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryFilter"
-            },
-            "description": "Filters to apply to the query."
-          },
-          "limit": {
-            "type": "integer",
-            "description": "The maximum number of breakdown series to return.",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A request to query time series metric data."
-      },
-      "QueryResponse": {
-        "type": "object",
-        "properties": {
-          "values": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MetricValue"
-            },
-            "description": "The metric values returned by the query."
-          }
-        },
-        "additionalProperties": false,
-        "description": "The response for a metric query."
       },
       "ReadMemoryStoreQueueItemsResponse": {
         "type": "object",
@@ -74256,10 +73999,11 @@
           "ExtendedServicesConfig",
           "LeaderboardsConfig",
           "ExperienceUserConfig",
-          "JourneysConfig"
+          "JourneysConfig",
+          "AntiCheatConfig"
         ],
         "type": "string",
-        "description": "Public API repository identifier. Only values exposed by the public API are included;\r\ninternal repository types are not exposed to allow development and testing before enabling.\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig",
+        "description": "Public API repository identifier. Only values exposed by the public API are included;\r\ninternal repository types are not exposed to allow development and testing before enabling.\n\nInExperienceConfig\n\nRecommendationServicesConfig\n\nDataStoresConfig\n\nExtendedServicesConfig\n\nLeaderboardsConfig\n\nExperienceUserConfig\n\nJourneysConfig\n\nAntiCheatConfig",
         "x-enum-varnames": [
           "InExperienceConfig",
           "RecommendationServicesConfig",
@@ -74267,7 +74011,8 @@
           "ExtendedServicesConfig",
           "LeaderboardsConfig",
           "ExperienceUserConfig",
-          "JourneysConfig"
+          "JourneysConfig",
+          "AntiCheatConfig"
         ]
       },
       "RestartState": {
@@ -78681,43 +78426,6 @@
         },
         "additionalProperties": false
       },
-      "Roblox.Badges.Api.BadgeAwardResponse": {
-        "description": "The result of being awarded a badge.",
-        "type": "object",
-        "properties": {
-          "badgeId": {
-            "format": "int64",
-            "description": "The badge Id.",
-            "type": "integer"
-          },
-          "awardedDate": {
-            "format": "date-time",
-            "description": "When the badge was awarded.",
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Roblox.Badges.Api.BadgeCreatorResponse": {
-        "description": "Represents information about the badge creator. (Creator of the place that awarded the badge)",
-        "type": "object",
-        "properties": {
-          "id": {
-            "format": "int64",
-            "description": "The creator ID",
-            "type": "integer"
-          },
-          "name": {
-            "description": "The name of the creator",
-            "type": "string"
-          },
-          "type": {
-            "description": "The type of the creator",
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
       "Roblox.Badges.Api.BadgeMetadataResponse": {
         "description": "Metadata about badges.",
         "type": "object",
@@ -78799,69 +78507,6 @@
           },
           "awardingUniverse": {
             "$ref": "#/components/schemas/Roblox.Badges.Api.UniverseResponse"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Roblox.Badges.Api.GetBadgesByUserResponse": {
-        "description": "Response for the GetBadgesByUser endpoint.",
-        "type": "object",
-        "properties": {
-          "creator": {
-            "$ref": "#/components/schemas/Roblox.Badges.Api.BadgeCreatorResponse"
-          },
-          "id": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "displayName": {
-            "type": "string"
-          },
-          "displayDescription": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "iconImageId": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "displayIconImageId": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "awarder": {
-            "$ref": "#/components/schemas/Roblox.Web.Responses.RelatedEntityTypeResponse_Roblox.Platform.Badges.BadgeAwarderType_"
-          },
-          "statistics": {
-            "$ref": "#/components/schemas/Roblox.Web.Responses.Badges.BadgeAwardStatisticsResponse"
-          },
-          "created": {
-            "format": "date-time",
-            "type": "string"
-          },
-          "updated": {
-            "format": "date-time",
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Roblox.Badges.Api.IconUploadResponse": {
-        "description": "Badge icon upload response.",
-        "type": "object",
-        "properties": {
-          "targetId": {
-            "format": "int64",
-            "description": "The asset id of the uploaded icon.",
-            "type": "integer"
           }
         },
         "additionalProperties": false
@@ -80482,6 +80127,10 @@
             }
           },
           "hasVerifiedBadge": {
+            "description": "The user's verified badge status.",
+            "type": "boolean"
+          },
+          "isUnseen": {
             "description": "The user's verified badge status.",
             "type": "boolean"
           },
@@ -82740,11 +82389,11 @@
         "additionalProperties": false
       },
       "Roblox.Games.Api.Models.Response.UpsellUxTreatment": {
-        "description": "Upsell UX treatment metadata appended to a playability response when an experience is\r\ncurrently playable but will be restricted under upcoming Roblox-Core content rules.\r\nMirrors the existing Roblox.Games.Api.Models.Response.PlayableUxTreatment contract intentionally so client\r\nrendering can be unified.",
+        "description": "Upsell UX treatment metadata appended to a playability response.",
         "type": "object",
         "properties": {
           "treatment": {
-            "description": "Identifier of the client component to render (currently \"ageCheckUpsell\").\r\nAbsent when the upsell should not surface.",
+            "description": "Identifier of the client component to render.",
             "type": "string"
           },
           "data": {
@@ -82754,11 +82403,11 @@
         "additionalProperties": false
       },
       "Roblox.Games.Api.Models.Response.UpsellUxTreatmentData": {
-        "description": "Localized strings for an Roblox.Games.Api.Models.Response.UpsellUxTreatment. Currently only carries\r\nRoblox.Games.Api.Models.Response.UpsellUxTreatmentData.BodyText; structured to allow additional fields without breaking the\r\nJSON contract.",
+        "description": "Localized strings for an Roblox.Games.Api.Models.Response.UpsellUxTreatment.",
         "type": "object",
         "properties": {
           "bodyText": {
-            "description": "Localized body text for the upsell banner (e.g. \"You'll soon need an age check to\r\njoin this game.\").",
+            "description": "Localized body text for the upsell.",
             "type": "string"
           }
         },
@@ -89105,18 +88754,6 @@
         },
         "additionalProperties": false
       },
-      "Roblox.Web.WebAPI.Models.ApiArrayResponse_Roblox.Badges.Api.BadgeAwardResponse_": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Roblox.Badges.Api.BadgeAwardResponse"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
       "Roblox.Web.WebAPI.Models.ApiArrayResponse_Roblox.Catalog.Api.BundleDetailsModel_": {
         "type": "object",
         "properties": {
@@ -89603,24 +89240,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Roblox.Badges.Api.BadgeResponse"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "Roblox.Web.WebAPI.Models.ApiPageResponse_Roblox.Badges.Api.GetBadgesByUserResponse_": {
-        "type": "object",
-        "properties": {
-          "previousPageCursor": {
-            "type": "string"
-          },
-          "nextPageCursor": {
-            "type": "string"
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Roblox.Badges.Api.GetBadgesByUserResponse"
             }
           }
         },
@@ -94204,7 +93823,6 @@
           "localizationtables_get_v1_localization_table_tables__assetId_",
           "post_legacy_publish_v1_badges__badgeId__icon",
           "publish_post_v1_badges__badgeId__icon",
-          "badges_post_v1_badges__badgeId__icon",
           "Toolbox_SearchCreatorStoreAssetsDeprecated",
           "Toolbox_GetAssetDetails",
           "patch_asset_permissions_api_v1_assets_permissions",
@@ -94367,9 +93985,6 @@
           "badges_get_v1_universes__universeId__badges",
           "badges_get_v1_universes__universeId__free_badges_quota",
           "badges_delete_v1_user_badges__badgeId_",
-          "badges_get_v1_users__userId__badges",
-          "badges_get_v1_users__userId__badges__badgeId__awarded_date",
-          "badges_get_v1_users__userId__badges_awarded_dates",
           "thumbnails_get_v1_badges_icons"
         ]
       }
@@ -95211,7 +94826,6 @@
           "gameinternationalization_post_v1_game_thumbnails_games__gameId__language_codes__languageCode__images_order",
           "post_legacy_publish_v1_badges__badgeId__icon",
           "publish_post_v1_badges__badgeId__icon",
-          "badges_post_v1_badges__badgeId__icon",
           "avatar_post_v1_avatar_redraw_thumbnail",
           "games_get_v1_games__universeId__media",
           "games_get_v2_games__universeId__media",
@@ -95460,7 +95074,6 @@
           "avatar_get_v4_avatar_users__userId_",
           "avatar_get_v1_users__userId__avatar",
           "avatar_get_v1_users__userId__currently_wearing",
-          "badges_get_v1_users__userId__badges",
           "groups_delete_v1_user_groups_primary",
           "groups_post_v1_user_groups_primary",
           "groups_get_v1_users__userId__groups_primary_role",
@@ -95511,9 +95124,6 @@
           "inventory_get_v1_users__userId__categories",
           "inventory_get_v1_users__userId__categories_favorites",
           "accountinformation_get_v1_users__userId__roblox_badges",
-          "badges_get_v1_users__userId__badges",
-          "badges_get_v1_users__userId__badges_awarded_dates",
-          "badges_get_v1_users__userId__badges__badgeId__awarded_date",
           "Cloud_ListAssetQuotas",
           "Cloud_GenerateUserThumbnail",
           "Cloud_GetUserThumbnailGenerationOperation",

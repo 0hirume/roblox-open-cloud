@@ -2,6 +2,223 @@
 
 ///OpenAPI type `AcceptGroupJoinRequestRequest`.
 pub type AcceptGroupJoinRequestRequest = serde_json::Value;
+///OpenAPI object `AnalyticsQueryPublicApiDimensionValuesRequest`.
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+pub struct AnalyticsQueryPublicApiDimensionValuesRequest {
+    ///OpenAPI field `dimensions`.
+    #[serde(
+        rename = "dimensions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub dimensions: Option<Vec<String>>,
+    ///OpenAPI field `endTime`.
+    #[serde(rename = "endTime")]
+    pub end_time: String,
+    ///OpenAPI field `filter`.
+    #[serde(rename = "filter", default, skip_serializing_if = "Option::is_none")]
+    pub filter: Option<Vec<crate::types::AnalyticsQueryPublicApiQueryFilter>>,
+    ///OpenAPI field `granularity`.
+    #[serde(
+        rename = "granularity",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub granularity: Option<crate::types::AnalyticsQueryPublicApiMetricGranularity>,
+    ///OpenAPI field `limit`.
+    #[serde(rename = "limit", default, skip_serializing_if = "Option::is_none")]
+    pub limit: Option<i32>,
+    ///OpenAPI field `metric`.
+    #[serde(rename = "metric")]
+    pub metric: String,
+    ///OpenAPI field `startTime`.
+    #[serde(rename = "startTime")]
+    pub start_time: String,
+}
+impl AnalyticsQueryPublicApiDimensionValuesRequest {
+    ///Creates this value from its required fields.
+    #[must_use]
+    pub fn new(
+        end_time: impl Into<String>,
+        metric: impl Into<String>,
+        start_time: impl Into<String>,
+    ) -> Self {
+        Self {
+            dimensions: None,
+            end_time: end_time.into(),
+            filter: None,
+            granularity: None,
+            limit: None,
+            metric: metric.into(),
+            start_time: start_time.into(),
+        }
+    }
+    ///Sets `dimensions`.
+    #[must_use]
+    pub fn dimensions(mut self, dimensions: impl Into<Vec<String>>) -> Self {
+        self.dimensions = Some(dimensions.into());
+        self
+    }
+    ///Sets `filter`.
+    #[must_use]
+    pub fn filter(
+        mut self,
+        filter: impl Into<Vec<crate::types::AnalyticsQueryPublicApiQueryFilter>>,
+    ) -> Self {
+        self.filter = Some(filter.into());
+        self
+    }
+    ///Sets `granularity`.
+    #[must_use]
+    pub fn granularity(
+        mut self,
+        granularity: impl Into<crate::types::AnalyticsQueryPublicApiMetricGranularity>,
+    ) -> Self {
+        self.granularity = Some(granularity.into());
+        self
+    }
+    ///Sets `limit`.
+    #[must_use]
+    pub fn limit(mut self, limit: impl Into<i32>) -> Self {
+        self.limit = Some(limit.into());
+        self
+    }
+}
+///OpenAPI enum `AnalyticsQueryPublicApiMetricGranularity`.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
+pub enum AnalyticsQueryPublicApiMetricGranularity {
+    #[serde(rename = "OneMinute")]
+    OneMinute,
+    #[serde(rename = "HalfHour")]
+    HalfHour,
+    #[serde(rename = "OneHour")]
+    OneHour,
+    #[serde(rename = "OneDay")]
+    OneDay,
+    #[serde(rename = "OneWeek")]
+    OneWeek,
+    #[serde(rename = "OneMonth")]
+    OneMonth,
+    #[serde(rename = "None")]
+    None,
+}
+///OpenAPI object `AnalyticsQueryPublicApiQueryFilter`.
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+pub struct AnalyticsQueryPublicApiQueryFilter {
+    ///OpenAPI field `dimension`.
+    #[serde(rename = "dimension")]
+    pub dimension: String,
+    ///OpenAPI field `operation`.
+    #[serde(rename = "operation")]
+    pub operation: crate::types::AnalyticsQueryPublicApiFilterOperation,
+    ///OpenAPI field `values`.
+    #[serde(rename = "values", default, skip_serializing_if = "Option::is_none")]
+    pub values: Option<Vec<String>>,
+}
+impl AnalyticsQueryPublicApiQueryFilter {
+    ///Creates this value from its required fields.
+    #[must_use]
+    pub fn new(
+        dimension: impl Into<String>,
+        operation: impl Into<crate::types::AnalyticsQueryPublicApiFilterOperation>,
+    ) -> Self {
+        Self {
+            dimension: dimension.into(),
+            operation: operation.into(),
+            values: None,
+        }
+    }
+    ///Sets `values`.
+    #[must_use]
+    pub fn values(mut self, values: impl Into<Vec<String>>) -> Self {
+        self.values = Some(values.into());
+        self
+    }
+}
+///OpenAPI enum `AnalyticsQueryPublicApiFilterOperation`.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
+pub enum AnalyticsQueryPublicApiFilterOperation {
+    #[serde(rename = "In")]
+    In,
+    #[serde(rename = "NotIn")]
+    NotIn,
+    #[serde(rename = "GreaterThan")]
+    GreaterThan,
+    #[serde(rename = "GreaterThanOrEqual")]
+    GreaterThanOrEqual,
+    #[serde(rename = "LessThan")]
+    LessThan,
+    #[serde(rename = "LessThanOrEqual")]
+    LessThanOrEqual,
+    #[serde(rename = "Match")]
+    Match,
+}
+///OpenAPI object `AnalyticsQueryPublicApiQueryRequest`.
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+pub struct AnalyticsQueryPublicApiQueryRequest {
+    ///OpenAPI field `breakdown`.
+    #[serde(rename = "breakdown", default, skip_serializing_if = "Option::is_none")]
+    pub breakdown: Option<Vec<String>>,
+    ///OpenAPI field `endTime`.
+    #[serde(rename = "endTime")]
+    pub end_time: String,
+    ///OpenAPI field `filter`.
+    #[serde(rename = "filter", default, skip_serializing_if = "Option::is_none")]
+    pub filter: Option<Vec<crate::types::AnalyticsQueryPublicApiQueryFilter>>,
+    ///OpenAPI field `granularity`.
+    #[serde(rename = "granularity")]
+    pub granularity: crate::types::AnalyticsQueryPublicApiMetricGranularity,
+    ///OpenAPI field `limit`.
+    #[serde(rename = "limit", default, skip_serializing_if = "Option::is_none")]
+    pub limit: Option<i32>,
+    ///OpenAPI field `metric`.
+    #[serde(rename = "metric")]
+    pub metric: String,
+    ///OpenAPI field `startTime`.
+    #[serde(rename = "startTime")]
+    pub start_time: String,
+}
+impl AnalyticsQueryPublicApiQueryRequest {
+    ///Creates this value from its required fields.
+    #[must_use]
+    pub fn new(
+        end_time: impl Into<String>,
+        granularity: impl Into<crate::types::AnalyticsQueryPublicApiMetricGranularity>,
+        metric: impl Into<String>,
+        start_time: impl Into<String>,
+    ) -> Self {
+        Self {
+            breakdown: None,
+            end_time: end_time.into(),
+            filter: None,
+            granularity: granularity.into(),
+            limit: None,
+            metric: metric.into(),
+            start_time: start_time.into(),
+        }
+    }
+    ///Sets `breakdown`.
+    #[must_use]
+    pub fn breakdown(mut self, breakdown: impl Into<Vec<String>>) -> Self {
+        self.breakdown = Some(breakdown.into());
+        self
+    }
+    ///Sets `filter`.
+    #[must_use]
+    pub fn filter(
+        mut self,
+        filter: impl Into<Vec<crate::types::AnalyticsQueryPublicApiQueryFilter>>,
+    ) -> Self {
+        self.filter = Some(filter.into());
+        self
+    }
+    ///Sets `limit`.
+    #[must_use]
+    pub fn limit(mut self, limit: impl Into<i32>) -> Self {
+        self.limit = Some(limit.into());
+        self
+    }
+}
 ///OpenAPI object `Asset`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
 pub struct Asset {
@@ -206,83 +423,6 @@ pub enum AvatarsGenerateUserThumbnailShape {
     Round,
     #[serde(rename = "SQUARE")]
     Square,
-}
-///OpenAPI object `BadgesCreatesANewBadgeBody`.
-#[derive(Debug, Clone, Default)]
-pub struct BadgesCreatesANewBadgeBody {
-    ///OpenAPI field `description`.
-    pub description: Option<String>,
-    ///OpenAPI field `expectedCost`.
-    pub expected_cost: Option<i64>,
-    ///OpenAPI field `files`.
-    pub files: Option<crate::File>,
-    ///OpenAPI field `isActive`.
-    pub is_active: Option<bool>,
-    ///OpenAPI field `name`.
-    pub name: Option<String>,
-    ///OpenAPI field `paymentSourceType`.
-    pub payment_source_type: Option<crate::types::BadgesCreatesANewBadgeBodyPaymentSourceType>,
-}
-impl BadgesCreatesANewBadgeBody {
-    ///Creates this value from its required fields.
-    #[must_use]
-    pub const fn new() -> Self {
-        Self {
-            description: None,
-            expected_cost: None,
-            files: None,
-            is_active: None,
-            name: None,
-            payment_source_type: None,
-        }
-    }
-    ///Sets `description`.
-    #[must_use]
-    pub fn description(mut self, description: impl Into<String>) -> Self {
-        self.description = Some(description.into());
-        self
-    }
-    ///Sets `expectedCost`.
-    #[must_use]
-    pub fn expected_cost(mut self, expected_cost: impl Into<i64>) -> Self {
-        self.expected_cost = Some(expected_cost.into());
-        self
-    }
-    ///Sets `files`.
-    #[must_use]
-    pub fn files(mut self, files: impl Into<crate::File>) -> Self {
-        self.files = Some(files.into());
-        self
-    }
-    ///Sets `isActive`.
-    #[must_use]
-    pub fn is_active(mut self, is_active: impl Into<bool>) -> Self {
-        self.is_active = Some(is_active.into());
-        self
-    }
-    ///Sets `name`.
-    #[must_use]
-    pub fn name(mut self, name: impl Into<String>) -> Self {
-        self.name = Some(name.into());
-        self
-    }
-    ///Sets `paymentSourceType`.
-    #[must_use]
-    pub fn payment_source_type(
-        mut self,
-        payment_source_type: impl Into<crate::types::BadgesCreatesANewBadgeBodyPaymentSourceType>,
-    ) -> Self {
-        self.payment_source_type = Some(payment_source_type.into());
-        self
-    }
-}
-///OpenAPI integer enum `BadgesCreatesANewBadgeBodyPaymentSourceType`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
-#[serde(transparent)]
-pub struct BadgesCreatesANewBadgeBodyPaymentSourceType(pub i32);
-impl BadgesCreatesANewBadgeBodyPaymentSourceType {
-    pub const VALUE_1: Self = Self(1);
-    pub const VALUE_2: Self = Self(2);
 }
 ///OpenAPI enum `BadgesThumbnailsBadgeIconsFormat`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
@@ -2245,106 +2385,41 @@ pub struct DimensionValuesOperationResult {
     pub done: Option<bool>,
     ///OpenAPI field `metadata`.
     #[serde(rename = "metadata", default, skip_serializing_if = "Option::is_none")]
-    pub metadata: Option<crate::types::OperationMetadata>,
+    pub metadata: Option<crate::types::AnalyticsQueryPublicApiOperationMetadata>,
     ///OpenAPI field `path`.
     #[serde(rename = "path", default, skip_serializing_if = "Option::is_none")]
     pub path: Option<String>,
     ///OpenAPI field `response`.
     #[serde(rename = "response", default, skip_serializing_if = "Option::is_none")]
-    pub response: Option<crate::types::DimensionValuesResponse>,
+    pub response: Option<crate::types::AnalyticsQueryPublicApiDimensionValuesResponse>,
 }
-///OpenAPI object `DimensionValuesRequest`.
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
-pub struct DimensionValuesRequest {
-    ///OpenAPI field `dimensions`.
-    #[serde(
-        rename = "dimensions",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub dimensions: Option<Vec<String>>,
-    ///OpenAPI field `endTime`.
-    #[serde(rename = "endTime")]
-    pub end_time: String,
-    ///OpenAPI field `filter`.
-    #[serde(rename = "filter", default, skip_serializing_if = "Option::is_none")]
-    pub filter: Option<Vec<crate::types::QueryFilter>>,
-    ///OpenAPI field `granularity`.
-    #[serde(
-        rename = "granularity",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub granularity: Option<crate::types::MetricGranularity>,
-    ///OpenAPI field `limit`.
-    #[serde(rename = "limit", default, skip_serializing_if = "Option::is_none")]
-    pub limit: Option<i32>,
-    ///OpenAPI field `metric`.
-    #[serde(rename = "metric")]
-    pub metric: String,
-    ///OpenAPI field `startTime`.
-    #[serde(rename = "startTime")]
-    pub start_time: String,
-}
-impl DimensionValuesRequest {
-    ///Creates this value from its required fields.
-    #[must_use]
-    pub fn new(
-        end_time: impl Into<String>,
-        metric: impl Into<String>,
-        start_time: impl Into<String>,
-    ) -> Self {
-        Self {
-            dimensions: None,
-            end_time: end_time.into(),
-            filter: None,
-            granularity: None,
-            limit: None,
-            metric: metric.into(),
-            start_time: start_time.into(),
-        }
-    }
-    ///Sets `dimensions`.
-    #[must_use]
-    pub fn dimensions(mut self, dimensions: impl Into<Vec<String>>) -> Self {
-        self.dimensions = Some(dimensions.into());
-        self
-    }
-    ///Sets `filter`.
-    #[must_use]
-    pub fn filter(mut self, filter: impl Into<Vec<crate::types::QueryFilter>>) -> Self {
-        self.filter = Some(filter.into());
-        self
-    }
-    ///Sets `granularity`.
-    #[must_use]
-    pub fn granularity(mut self, granularity: impl Into<crate::types::MetricGranularity>) -> Self {
-        self.granularity = Some(granularity.into());
-        self
-    }
-    ///Sets `limit`.
-    #[must_use]
-    pub fn limit(mut self, limit: impl Into<i32>) -> Self {
-        self.limit = Some(limit.into());
-        self
-    }
-}
-///OpenAPI object `DimensionValuesResponse`.
+///OpenAPI object `AnalyticsQueryPublicApiDimensionValuesResponse`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct DimensionValuesResponse {
+pub struct AnalyticsQueryPublicApiDimensionValuesResponse {
     ///OpenAPI field `values`.
     #[serde(rename = "values", default, skip_serializing_if = "Option::is_none")]
-    pub values: Option<Vec<crate::types::DimensionValues>>,
+    pub values: Option<Vec<crate::types::AnalyticsQueryPublicApiDimensionValues>>,
 }
-///OpenAPI object `DimensionValues`.
+///OpenAPI object `AnalyticsQueryPublicApiDimensionValues`.
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
-pub struct DimensionValues {
+pub struct AnalyticsQueryPublicApiDimensionValues {
     ///OpenAPI field `dimension`.
     #[serde(rename = "dimension")]
     pub dimension: String,
     ///OpenAPI field `values`.
     #[serde(rename = "values", default, skip_serializing_if = "Option::is_none")]
     pub values: Option<Vec<crate::types::DimensionValue>>,
+}
+///OpenAPI object `AnalyticsQueryPublicApiOperationMetadata`.
+#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
+pub struct AnalyticsQueryPublicApiOperationMetadata {
+    ///OpenAPI field `createdTime`.
+    #[serde(
+        rename = "createdTime",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub created_time: Option<String>,
 }
 ///OpenAPI object `DimensionValue`.
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
@@ -3046,6 +3121,24 @@ pub enum AssetPermissionsErrorCode {
     PermissionLimitReached,
     #[serde(rename = "DependenciesLimitReached")]
     DependenciesLimitReached,
+    #[serde(rename = "NotRequestable")]
+    NotRequestable,
+    #[serde(rename = "RequesterNotConnected")]
+    RequesterNotConnected,
+    #[serde(rename = "AlreadyPending")]
+    AlreadyPending,
+    #[serde(rename = "AlreadyHasAccess")]
+    AlreadyHasAccess,
+    #[serde(rename = "RequestNotFound")]
+    RequestNotFound,
+    #[serde(rename = "InvalidRequestStatus")]
+    InvalidRequestStatus,
+    #[serde(rename = "RateLimited")]
+    RateLimited,
+    #[serde(rename = "CallerNotOwner")]
+    CallerNotOwner,
+    #[serde(rename = "BatchSizeLimitExceeded")]
+    BatchSizeLimitExceeded,
 }
 ///OpenAPI object `Group`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
@@ -6269,24 +6362,6 @@ pub struct MessageReaction {
     #[serde(rename = "emoteId", default, skip_serializing_if = "Option::is_none")]
     pub emote_id: Option<String>,
 }
-///OpenAPI enum `MetricGranularity`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
-pub enum MetricGranularity {
-    #[serde(rename = "OneMinute")]
-    OneMinute,
-    #[serde(rename = "HalfHour")]
-    HalfHour,
-    #[serde(rename = "OneHour")]
-    OneHour,
-    #[serde(rename = "OneDay")]
-    OneDay,
-    #[serde(rename = "OneWeek")]
-    OneWeek,
-    #[serde(rename = "OneMonth")]
-    OneMonth,
-    #[serde(rename = "None")]
-    None,
-}
 ///OpenAPI object `MockServerSignalValues`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
 pub struct MockServerSignalValues {
@@ -6570,17 +6645,6 @@ pub struct Operation {
     #[serde(rename = "response", default, skip_serializing_if = "Option::is_none")]
     pub response: Option<crate::types::GoogleProtobufAny>,
 }
-///OpenAPI object `OperationMetadata`.
-#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct OperationMetadata {
-    ///OpenAPI field `createdTime`.
-    #[serde(
-        rename = "createdTime",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub created_time: Option<String>,
-}
 ///OpenAPI object `OperationPending`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
 pub struct OperationPending {
@@ -6589,7 +6653,7 @@ pub struct OperationPending {
     pub done: Option<bool>,
     ///OpenAPI field `metadata`.
     #[serde(rename = "metadata", default, skip_serializing_if = "Option::is_none")]
-    pub metadata: Option<crate::types::OperationMetadata>,
+    pub metadata: Option<crate::types::AnalyticsQueryPublicApiOperationMetadata>,
     ///OpenAPI field `path`.
     #[serde(rename = "path", default, skip_serializing_if = "Option::is_none")]
     pub path: Option<String>,
@@ -7337,57 +7401,6 @@ impl PublishUniverseMessageRequest {
         }
     }
 }
-///OpenAPI object `QueryFilter`.
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
-pub struct QueryFilter {
-    ///OpenAPI field `dimension`.
-    #[serde(rename = "dimension")]
-    pub dimension: String,
-    ///OpenAPI field `operation`.
-    #[serde(rename = "operation")]
-    pub operation: crate::types::FilterOperation,
-    ///OpenAPI field `values`.
-    #[serde(rename = "values", default, skip_serializing_if = "Option::is_none")]
-    pub values: Option<Vec<String>>,
-}
-impl QueryFilter {
-    ///Creates this value from its required fields.
-    #[must_use]
-    pub fn new(
-        dimension: impl Into<String>,
-        operation: impl Into<crate::types::FilterOperation>,
-    ) -> Self {
-        Self {
-            dimension: dimension.into(),
-            operation: operation.into(),
-            values: None,
-        }
-    }
-    ///Sets `values`.
-    #[must_use]
-    pub fn values(mut self, values: impl Into<Vec<String>>) -> Self {
-        self.values = Some(values.into());
-        self
-    }
-}
-///OpenAPI enum `FilterOperation`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
-pub enum FilterOperation {
-    #[serde(rename = "In")]
-    In,
-    #[serde(rename = "NotIn")]
-    NotIn,
-    #[serde(rename = "GreaterThan")]
-    GreaterThan,
-    #[serde(rename = "GreaterThanOrEqual")]
-    GreaterThanOrEqual,
-    #[serde(rename = "LessThan")]
-    LessThan,
-    #[serde(rename = "LessThanOrEqual")]
-    LessThanOrEqual,
-    #[serde(rename = "Match")]
-    Match,
-}
 ///OpenAPI object `QueryOperationResult`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
 pub struct QueryOperationResult {
@@ -7396,105 +7409,42 @@ pub struct QueryOperationResult {
     pub done: Option<bool>,
     ///OpenAPI field `metadata`.
     #[serde(rename = "metadata", default, skip_serializing_if = "Option::is_none")]
-    pub metadata: Option<crate::types::OperationMetadata>,
+    pub metadata: Option<crate::types::AnalyticsQueryPublicApiOperationMetadata>,
     ///OpenAPI field `path`.
     #[serde(rename = "path", default, skip_serializing_if = "Option::is_none")]
     pub path: Option<String>,
     ///OpenAPI field `response`.
     #[serde(rename = "response", default, skip_serializing_if = "Option::is_none")]
-    pub response: Option<crate::types::QueryResponse>,
+    pub response: Option<crate::types::AnalyticsQueryPublicApiQueryResponse>,
 }
-///OpenAPI object `QueryRequest`.
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
-pub struct QueryRequest {
-    ///OpenAPI field `breakdown`.
-    #[serde(rename = "breakdown", default, skip_serializing_if = "Option::is_none")]
-    pub breakdown: Option<Vec<String>>,
-    ///OpenAPI field `endTime`.
-    #[serde(rename = "endTime")]
-    pub end_time: String,
-    ///OpenAPI field `filter`.
-    #[serde(rename = "filter", default, skip_serializing_if = "Option::is_none")]
-    pub filter: Option<Vec<crate::types::QueryFilter>>,
-    ///OpenAPI field `granularity`.
-    #[serde(rename = "granularity")]
-    pub granularity: crate::types::MetricGranularity,
-    ///OpenAPI field `limit`.
-    #[serde(rename = "limit", default, skip_serializing_if = "Option::is_none")]
-    pub limit: Option<i32>,
-    ///OpenAPI field `metric`.
-    #[serde(rename = "metric")]
-    pub metric: String,
-    ///OpenAPI field `startTime`.
-    #[serde(rename = "startTime")]
-    pub start_time: String,
-}
-impl QueryRequest {
-    ///Creates this value from its required fields.
-    #[must_use]
-    pub fn new(
-        end_time: impl Into<String>,
-        granularity: impl Into<crate::types::MetricGranularity>,
-        metric: impl Into<String>,
-        start_time: impl Into<String>,
-    ) -> Self {
-        Self {
-            breakdown: None,
-            end_time: end_time.into(),
-            filter: None,
-            granularity: granularity.into(),
-            limit: None,
-            metric: metric.into(),
-            start_time: start_time.into(),
-        }
-    }
-    ///Sets `breakdown`.
-    #[must_use]
-    pub fn breakdown(mut self, breakdown: impl Into<Vec<String>>) -> Self {
-        self.breakdown = Some(breakdown.into());
-        self
-    }
-    ///Sets `filter`.
-    #[must_use]
-    pub fn filter(mut self, filter: impl Into<Vec<crate::types::QueryFilter>>) -> Self {
-        self.filter = Some(filter.into());
-        self
-    }
-    ///Sets `limit`.
-    #[must_use]
-    pub fn limit(mut self, limit: impl Into<i32>) -> Self {
-        self.limit = Some(limit.into());
-        self
-    }
-}
-///OpenAPI object `QueryResponse`.
+///OpenAPI object `AnalyticsQueryPublicApiQueryResponse`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct QueryResponse {
+pub struct AnalyticsQueryPublicApiQueryResponse {
     ///OpenAPI field `values`.
     #[serde(rename = "values", default, skip_serializing_if = "Option::is_none")]
-    pub values: Option<Vec<crate::types::MetricValue>>,
+    pub values: Option<Vec<crate::types::AnalyticsQueryPublicApiMetricValue>>,
 }
-///OpenAPI object `MetricValue`.
+///OpenAPI object `AnalyticsQueryPublicApiMetricValue`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct MetricValue {
+pub struct AnalyticsQueryPublicApiMetricValue {
     ///OpenAPI field `breakdowns`.
     #[serde(
         rename = "breakdowns",
         default,
         skip_serializing_if = "Option::is_none"
     )]
-    pub breakdowns: Option<Vec<crate::types::BreakdownValue>>,
+    pub breakdowns: Option<Vec<crate::types::AnalyticsQueryPublicApiBreakdownValue>>,
     ///OpenAPI field `dataPoints`.
     #[serde(
         rename = "dataPoints",
         default,
         skip_serializing_if = "Option::is_none"
     )]
-    pub data_points: Option<Vec<crate::types::DataPoint>>,
+    pub data_points: Option<Vec<crate::types::AnalyticsQueryPublicApiDataPoint>>,
 }
-///OpenAPI object `BreakdownValue`.
+///OpenAPI object `AnalyticsQueryPublicApiBreakdownValue`.
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
-pub struct BreakdownValue {
+pub struct AnalyticsQueryPublicApiBreakdownValue {
     ///OpenAPI field `dimension`.
     #[serde(rename = "dimension")]
     pub dimension: String,
@@ -7509,12 +7459,12 @@ pub struct BreakdownValue {
     #[serde(rename = "value")]
     pub value: String,
 }
-///OpenAPI object `DataPoint`.
+///OpenAPI object `AnalyticsQueryPublicApiDataPoint`.
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
-pub struct DataPoint {
+pub struct AnalyticsQueryPublicApiDataPoint {
     ///OpenAPI field `status`.
     #[serde(rename = "status", default, skip_serializing_if = "Option::is_none")]
-    pub status: Option<crate::types::DataStatus>,
+    pub status: Option<crate::types::AnalyticsQueryPublicApiDataStatus>,
     ///OpenAPI field `stringValues`.
     #[serde(
         rename = "stringValues",
@@ -7529,9 +7479,9 @@ pub struct DataPoint {
     #[serde(rename = "value")]
     pub value: f64,
 }
-///OpenAPI enum `DataStatus`.
+///OpenAPI enum `AnalyticsQueryPublicApiDataStatus`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
-pub enum DataStatus {
+pub enum AnalyticsQueryPublicApiDataStatus {
     #[serde(rename = "Valid")]
     Valid,
     #[serde(rename = "Projected")]
@@ -7572,6 +7522,8 @@ pub enum Repository {
     ExperienceUserConfig,
     #[serde(rename = "JourneysConfig")]
     JourneysConfig,
+    #[serde(rename = "AntiCheatConfig")]
+    AntiCheatConfig,
 }
 ///OpenAPI object `RestartStatus`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
@@ -7865,52 +7817,6 @@ impl RobloxApiDevelopModelsUpdateTeamCreateSettingsRequest {
     #[must_use]
     pub fn is_enabled(mut self, is_enabled: impl Into<bool>) -> Self {
         self.is_enabled = Some(is_enabled.into());
-        self
-    }
-}
-///OpenAPI object `RobloxBadgesApiUpdateBadgeRequest`.
-#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct RobloxBadgesApiUpdateBadgeRequest {
-    ///OpenAPI field `description`.
-    #[serde(
-        rename = "description",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub description: Option<String>,
-    ///OpenAPI field `enabled`.
-    #[serde(rename = "enabled", default, skip_serializing_if = "Option::is_none")]
-    pub enabled: Option<bool>,
-    ///OpenAPI field `name`.
-    #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-}
-impl RobloxBadgesApiUpdateBadgeRequest {
-    ///Creates this value from its required fields.
-    #[must_use]
-    pub const fn new() -> Self {
-        Self {
-            description: None,
-            enabled: None,
-            name: None,
-        }
-    }
-    ///Sets `description`.
-    #[must_use]
-    pub fn description(mut self, description: impl Into<String>) -> Self {
-        self.description = Some(description.into());
-        self
-    }
-    ///Sets `enabled`.
-    #[must_use]
-    pub fn enabled(mut self, enabled: impl Into<bool>) -> Self {
-        self.enabled = Some(enabled.into());
-        self
-    }
-    ///Sets `name`.
-    #[must_use]
-    pub fn name(mut self, name: impl Into<String>) -> Self {
-        self.name = Some(name.into());
         self
     }
 }
@@ -10771,107 +10677,6 @@ pub struct RobloxPublishApiUploadResponse {
     ///OpenAPI field `targetId`.
     #[serde(rename = "targetId", default, skip_serializing_if = "Option::is_none")]
     pub target_id: Option<i64>,
-}
-///OpenAPI object `RobloxWebResponsesBadgesBadgeResponseV2`.
-#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct RobloxWebResponsesBadgesBadgeResponseV2 {
-    ///OpenAPI field `awarder`.
-    #[serde(rename = "awarder", default, skip_serializing_if = "Option::is_none")]
-    pub awarder: Option<
-        crate::types::RobloxWebResponsesRelatedEntityTypeResponseRobloxPlatformBadgesBadgeAwarderType,
-    >,
-    ///OpenAPI field `created`.
-    #[serde(rename = "created", default, skip_serializing_if = "Option::is_none")]
-    pub created: Option<String>,
-    ///OpenAPI field `description`.
-    #[serde(rename = "description", default, skip_serializing_if = "Option::is_none")]
-    pub description: Option<String>,
-    ///OpenAPI field `displayDescription`.
-    #[serde(
-        rename = "displayDescription",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub display_description: Option<String>,
-    ///OpenAPI field `displayIconImageId`.
-    #[serde(
-        rename = "displayIconImageId",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub display_icon_image_id: Option<i64>,
-    ///OpenAPI field `displayName`.
-    #[serde(rename = "displayName", default, skip_serializing_if = "Option::is_none")]
-    pub display_name: Option<String>,
-    ///OpenAPI field `enabled`.
-    #[serde(rename = "enabled", default, skip_serializing_if = "Option::is_none")]
-    pub enabled: Option<bool>,
-    ///OpenAPI field `iconImageId`.
-    #[serde(rename = "iconImageId", default, skip_serializing_if = "Option::is_none")]
-    pub icon_image_id: Option<i64>,
-    ///OpenAPI field `id`.
-    #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
-    pub id: Option<i64>,
-    ///OpenAPI field `name`.
-    #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-    ///OpenAPI field `statistics`.
-    #[serde(rename = "statistics", default, skip_serializing_if = "Option::is_none")]
-    pub statistics: Option<
-        crate::types::RobloxWebResponsesBadgesBadgeAwardStatisticsResponse,
-    >,
-    ///OpenAPI field `updated`.
-    #[serde(rename = "updated", default, skip_serializing_if = "Option::is_none")]
-    pub updated: Option<String>,
-}
-///OpenAPI object `RobloxWebResponsesBadgesBadgeAwardStatisticsResponse`.
-#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct RobloxWebResponsesBadgesBadgeAwardStatisticsResponse {
-    ///OpenAPI field `awardedCount`.
-    #[serde(
-        rename = "awardedCount",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub awarded_count: Option<i64>,
-    ///OpenAPI field `pastDayAwardedCount`.
-    #[serde(
-        rename = "pastDayAwardedCount",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub past_day_awarded_count: Option<i64>,
-    ///OpenAPI field `winRatePercentage`.
-    #[serde(
-        rename = "winRatePercentage",
-        default,
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub win_rate_percentage: Option<f64>,
-}
-///OpenAPI object `RobloxWebResponsesRelatedEntityTypeResponseRobloxPlatformBadgesBadgeAwarderType`.
-#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
-pub struct RobloxWebResponsesRelatedEntityTypeResponseRobloxPlatformBadgesBadgeAwarderType {
-    ///OpenAPI field `id`.
-    #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
-    pub id: Option<i64>,
-    ///OpenAPI field `name`.
-    #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-    ///OpenAPI field `type`.
-    #[serde(rename = "type", default, skip_serializing_if = "Option::is_none")]
-    pub type_value: Option<
-        crate::types::RobloxWebResponsesRelatedEntityTypeResponseRobloxPlatformBadgesBadgeAwarderTypeType,
-    >,
-}
-///OpenAPI integer enum `RobloxWebResponsesRelatedEntityTypeResponseRobloxPlatformBadgesBadgeAwarderTypeType`.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
-#[serde(transparent)]
-pub struct RobloxWebResponsesRelatedEntityTypeResponseRobloxPlatformBadgesBadgeAwarderTypeType(
-    pub i32,
-);
-impl RobloxWebResponsesRelatedEntityTypeResponseRobloxPlatformBadgesBadgeAwarderTypeType {
-    pub const VALUE_1: Self = Self(1);
 }
 ///Empty OpenAPI object `RobloxWebWebApiApiEmptyResponseModel`.
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, serde::Serialize, serde::Deserialize)]

@@ -3123,8 +3123,8 @@ pub enum AssetPermissionsErrorCode {
     DependenciesLimitReached,
     #[serde(rename = "NotRequestable")]
     NotRequestable,
-    #[serde(rename = "RequesterNotConnected")]
-    RequesterNotConnected,
+    #[serde(rename = "RequesterNotAConnection")]
+    RequesterNotAConnection,
     #[serde(rename = "AlreadyPending")]
     AlreadyPending,
     #[serde(rename = "AlreadyHasAccess")]
@@ -3721,6 +3721,10 @@ pub enum GroupsGetsTheGroupSAuditLogActionType {
     UpdateRoleSetPermissions,
     #[serde(rename = "UpdateGroupSecuritySettings")]
     UpdateGroupSecuritySettings,
+    #[serde(rename = "GrantEnterpriseTier")]
+    GrantEnterpriseTier,
+    #[serde(rename = "RevokeEnterpriseTier")]
+    RevokeEnterpriseTier,
 }
 ///OpenAPI integer enum `GroupsGetsTheGroupSAuditLogLimit`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
@@ -9635,6 +9639,13 @@ impl RobloxGroupsApiGroupRoleResponseColor {
 ///OpenAPI object `RobloxGroupsClientCommunityTierInfoResponse`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
 pub struct RobloxGroupsClientCommunityTierInfoResponse {
+    ///OpenAPI field `capabilities`.
+    #[serde(
+        rename = "capabilities",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub capabilities: Option<crate::types::RobloxGroupsClientTierCapabilities>,
     ///OpenAPI field `currentTier`.
     #[serde(
         rename = "currentTier",
@@ -9673,6 +9684,17 @@ pub struct RobloxGroupsClientCommunityTierInfoResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub tier_updated_time: Option<String>,
+}
+///OpenAPI object `RobloxGroupsClientTierCapabilities`.
+#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
+pub struct RobloxGroupsClientTierCapabilities {
+    ///OpenAPI field `isEligibleForUnrestrictedMessages`.
+    #[serde(
+        rename = "isEligibleForUnrestrictedMessages",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub is_eligible_for_unrestricted_messages: Option<bool>,
 }
 ///OpenAPI object `RobloxGroupsClientTierRequirement`.
 #[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]

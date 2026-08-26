@@ -1,8 +1,8 @@
 {
   "source": {
     "repository": "Roblox/creator-docs",
-    "commit": "afe040c5ad1b4d338bd4e06407ad0942198f5bef",
-    "commit_date": "2026-08-20",
+    "commit": "b0bf2f1557726e830129fd67075fe695883a91f7",
+    "commit_date": "2026-08-22",
     "document": "content/en-us/reference/cloud/openapi.json",
     "vendored": "spec/openapi.json"
   },
@@ -18,7 +18,7 @@
       "unauthenticated operations without a stability marker"
     ]
   },
-  "count": 257,
+  "count": 218,
   "operations": [
     {
       "domain": "analytics",
@@ -563,92 +563,6 @@
     },
     {
       "domain": "badges",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/icons/language-codes/{languageCode}",
-      "path_parameters": [
-        "badgeId",
-        "languageCode"
-      ],
-      "summary": "Delete a localized icon from a badge",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::delete_a_localized_icon_from_a_badge",
-      "rust_method": "delete_a_localized_icon_from_a_badge",
-      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_BADGE"
-    },
-    {
-      "domain": "badges",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name-description/language-codes/{languageCode}",
-      "path_parameters": [
-        "badgeId",
-        "languageCode"
-      ],
-      "summary": "Delete localized name and description of a badge",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::delete_localized_name_and_description_of_a_badge",
-      "rust_method": "delete_localized_name_and_description_of_a_badge",
-      "constant": "DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_BADGE"
-    },
-    {
-      "domain": "badges",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/icons",
-      "path_parameters": [
-        "badgeId"
-      ],
-      "summary": "Get all icons for a badge",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::get_all_icons_for_a_badge",
-      "rust_method": "get_all_icons_for_a_badge",
-      "constant": "GET_ALL_ICONS_FOR_A_BADGE"
-    },
-    {
-      "domain": "badges",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name-description",
-      "path_parameters": [
-        "badgeId"
-      ],
-      "summary": "GET /legacy-game-internationalization/v1/badges/{badgeId}/name-description",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::get_legacy_game_internationalization_v1_badges_badge_id_name_description",
-      "rust_method": "get_legacy_game_internationalization_v1_badges_badge_id_name_description",
-      "constant": "GET_LEGACY_GAME_INTERNATIONALIZATION_V1_BADGES_BADGE_ID_NAME_DESCRIPTION"
-    },
-    {
-      "domain": "badges",
       "http_method": "GET",
       "operation_id": "",
       "path": "/v1/badges/icons",
@@ -663,94 +577,6 @@
       "id": "badges::thumbnails_badge_icons",
       "rust_method": "thumbnails_badge_icons",
       "constant": "THUMBNAILS_BADGE_ICONS"
-    },
-    {
-      "domain": "badges",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/icons/language-codes/{languageCode}",
-      "path_parameters": [
-        "badgeId",
-        "languageCode"
-      ],
-      "summary": "Update a badge's icon",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::update_a_badge_s_icon",
-      "rust_method": "update_a_badge_s_icon",
-      "constant": "UPDATE_A_BADGE_S_ICON"
-    },
-    {
-      "domain": "badges",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/description/language-codes/{languageCode}",
-      "path_parameters": [
-        "badgeId",
-        "languageCode"
-      ],
-      "summary": "Update localized description of a badge",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::update_localized_description_of_a_badge",
-      "rust_method": "update_localized_description_of_a_badge",
-      "constant": "UPDATE_LOCALIZED_DESCRIPTION_OF_A_BADGE"
-    },
-    {
-      "domain": "badges",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name-description/language-codes/{languageCode}",
-      "path_parameters": [
-        "badgeId",
-        "languageCode"
-      ],
-      "summary": "Update localized name and description of a badge",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::update_localized_name_and_description_of_a_badge",
-      "rust_method": "update_localized_name_and_description_of_a_badge",
-      "constant": "UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_BADGE"
-    },
-    {
-      "domain": "badges",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/badges/{badgeId}/name/language-codes/{languageCode}",
-      "path_parameters": [
-        "badgeId",
-        "languageCode"
-      ],
-      "summary": "Update localized name of a badge",
-      "tag": "Badges",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-badge:manage"
-      ],
-      "id": "badges::update_localized_name_of_a_badge",
-      "rust_method": "update_localized_name_of_a_badge",
-      "constant": "UPDATE_LOCALIZED_NAME_OF_A_BADGE"
     },
     {
       "domain": "configs",
@@ -1715,92 +1541,6 @@
     },
     {
       "domain": "developer_products",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/icons/language-codes/{languageCode}",
-      "path_parameters": [
-        "developerProductId",
-        "languageCode"
-      ],
-      "summary": "Delete a localized icon from a developer product",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::delete_a_localized_icon_from_a_developer_product",
-      "rust_method": "delete_a_localized_icon_from_a_developer_product",
-      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_DEVELOPER_PRODUCT"
-    },
-    {
-      "domain": "developer_products",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name-description/language-codes/{languageCode}",
-      "path_parameters": [
-        "developerProductId",
-        "languageCode"
-      ],
-      "summary": "Delete localized name and description of a developer product",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::delete_localized_name_and_description_of_a_developer_product",
-      "rust_method": "delete_localized_name_and_description_of_a_developer_product",
-      "constant": "DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_DEVELOPER_PRODUCT"
-    },
-    {
-      "domain": "developer_products",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/icons",
-      "path_parameters": [
-        "developerProductId"
-      ],
-      "summary": "Get all icons for a developer product",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::get_all_icons_for_a_developer_product",
-      "rust_method": "get_all_icons_for_a_developer_product",
-      "constant": "GET_ALL_ICONS_FOR_A_DEVELOPER_PRODUCT"
-    },
-    {
-      "domain": "developer_products",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name-description",
-      "path_parameters": [
-        "developerProductId"
-      ],
-      "summary": "Get all names and descriptions of a developer product",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::get_all_names_and_descriptions_of_a_developer_product",
-      "rust_method": "get_all_names_and_descriptions_of_a_developer_product",
-      "constant": "GET_ALL_NAMES_AND_DESCRIPTIONS_OF_A_DEVELOPER_PRODUCT"
-    },
-    {
-      "domain": "developer_products",
       "http_method": "GET",
       "operation_id": "DeveloperProducts_GetDeveloperProductConfigV2",
       "path": "/developer-products/v2/universes/{universeId}/developer-products/{productId}/creator",
@@ -1844,28 +1584,6 @@
     },
     {
       "domain": "developer_products",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/icons/language-codes/{languageCode}",
-      "path_parameters": [
-        "developerProductId",
-        "languageCode"
-      ],
-      "summary": "Update a developer product's icon",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::update_a_developer_product_s_icon",
-      "rust_method": "update_a_developer_product_s_icon",
-      "constant": "UPDATE_A_DEVELOPER_PRODUCT_S_ICON"
-    },
-    {
-      "domain": "developer_products",
       "http_method": "PATCH",
       "operation_id": "DeveloperProducts_UpdateDeveloperProductV2",
       "path": "/developer-products/v2/universes/{universeId}/developer-products/{productId}",
@@ -1887,72 +1605,6 @@
       "constant": "UPDATE_DEVELOPER_PRODUCT"
     },
     {
-      "domain": "developer_products",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/description/language-codes/{languageCode}",
-      "path_parameters": [
-        "developerProductId",
-        "languageCode"
-      ],
-      "summary": "Update localized description of a developer product",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::update_localized_description_of_a_developer_product",
-      "rust_method": "update_localized_description_of_a_developer_product",
-      "constant": "UPDATE_LOCALIZED_DESCRIPTION_OF_A_DEVELOPER_PRODUCT"
-    },
-    {
-      "domain": "developer_products",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name-description/language-codes/{languageCode}",
-      "path_parameters": [
-        "developerProductId",
-        "languageCode"
-      ],
-      "summary": "Update localized name and description of a developer product",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::update_localized_name_and_description_of_a_developer_product",
-      "rust_method": "update_localized_name_and_description_of_a_developer_product",
-      "constant": "UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_DEVELOPER_PRODUCT"
-    },
-    {
-      "domain": "developer_products",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/developer-products/{developerProductId}/name/language-codes/{languageCode}",
-      "path_parameters": [
-        "developerProductId",
-        "languageCode"
-      ],
-      "summary": "Update localized name of a developer product",
-      "tag": "Developer products",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-developer-product:manage"
-      ],
-      "id": "developer_products::update_localized_name_of_a_developer_product",
-      "rust_method": "update_localized_name_of_a_developer_product",
-      "constant": "UPDATE_LOCALIZED_NAME_OF_A_DEVELOPER_PRODUCT"
-    },
-    {
       "domain": "game_passes",
       "http_method": "POST",
       "operation_id": "GamePasses_CreateGamePass",
@@ -1972,92 +1624,6 @@
       "id": "game_passes::create_game_pass",
       "rust_method": "create_game_pass",
       "constant": "CREATE_GAME_PASS"
-    },
-    {
-      "domain": "game_passes",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons/language-codes/{languageCode}",
-      "path_parameters": [
-        "gamePassId",
-        "languageCode"
-      ],
-      "summary": "Delete a localized icon from a game pass",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::delete_a_localized_icon_from_a_game_pass",
-      "rust_method": "delete_a_localized_icon_from_a_game_pass",
-      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_GAME_PASS"
-    },
-    {
-      "domain": "game_passes",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description/language-codes/{languageCode}",
-      "path_parameters": [
-        "gamePassId",
-        "languageCode"
-      ],
-      "summary": "Delete localized name and description of a game pass",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::delete_localized_name_and_description_of_a_game_pass",
-      "rust_method": "delete_localized_name_and_description_of_a_game_pass",
-      "constant": "DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS"
-    },
-    {
-      "domain": "game_passes",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons",
-      "path_parameters": [
-        "gamePassId"
-      ],
-      "summary": "Get all icons for a game pass",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::get_all_icons_for_a_game_pass",
-      "rust_method": "get_all_icons_for_a_game_pass",
-      "constant": "GET_ALL_ICONS_FOR_A_GAME_PASS"
-    },
-    {
-      "domain": "game_passes",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description",
-      "path_parameters": [
-        "gamePassId"
-      ],
-      "summary": "Get all names and descriptions of a game pass",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::get_all_names_and_descriptions_of_a_game_pass",
-      "rust_method": "get_all_names_and_descriptions_of_a_game_pass",
-      "constant": "GET_ALL_NAMES_AND_DESCRIPTIONS_OF_A_GAME_PASS"
     },
     {
       "domain": "game_passes",
@@ -2121,28 +1687,6 @@
     },
     {
       "domain": "game_passes",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons/language-codes/{languageCode}",
-      "path_parameters": [
-        "gamePassId",
-        "languageCode"
-      ],
-      "summary": "Update a game pass's icon",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::update_a_game_pass_s_icon",
-      "rust_method": "update_a_game_pass_s_icon",
-      "constant": "UPDATE_A_GAME_PASS_S_ICON"
-    },
-    {
-      "domain": "game_passes",
       "http_method": "PATCH",
       "operation_id": "GamePasses_UpdateGamePass",
       "path": "/game-passes/v1/universes/{universeId}/game-passes/{gamePassId}",
@@ -2162,72 +1706,6 @@
       "id": "game_passes::update_game_pass",
       "rust_method": "update_game_pass",
       "constant": "UPDATE_GAME_PASS"
-    },
-    {
-      "domain": "game_passes",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/description/language-codes/{languageCode}",
-      "path_parameters": [
-        "gamePassId",
-        "languageCode"
-      ],
-      "summary": "Update localized description of a game pass",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::update_localized_description_of_a_game_pass",
-      "rust_method": "update_localized_description_of_a_game_pass",
-      "constant": "UPDATE_LOCALIZED_DESCRIPTION_OF_A_GAME_PASS"
-    },
-    {
-      "domain": "game_passes",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description/language-codes/{languageCode}",
-      "path_parameters": [
-        "gamePassId",
-        "languageCode"
-      ],
-      "summary": "Update localized name and description of a game pass",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::update_localized_name_and_description_of_a_game_pass",
-      "rust_method": "update_localized_name_and_description_of_a_game_pass",
-      "constant": "UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS"
-    },
-    {
-      "domain": "game_passes",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name/language-codes/{languageCode}",
-      "path_parameters": [
-        "gamePassId",
-        "languageCode"
-      ],
-      "summary": "Update localized name of a game pass",
-      "tag": "Game passes",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-game-pass:manage"
-      ],
-      "id": "game_passes::update_localized_name_of_a_game_pass",
-      "rust_method": "update_localized_name_of_a_game_pass",
-      "constant": "UPDATE_LOCALIZED_NAME_OF_A_GAME_PASS"
     },
     {
       "domain": "generative_ai",
@@ -2861,94 +2339,6 @@
       "domain": "localization",
       "http_method": "PATCH",
       "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}",
-      "path_parameters": [
-        "gameId"
-      ],
-      "summary": "Add or remove supported languages for a game.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::add_or_remove_supported_languages_for_a_game",
-      "rust_method": "add_or_remove_supported_languages_for_a_game",
-      "constant": "ADD_OR_REMOVE_SUPPORTED_LANGUAGES_FOR_A_GAME"
-    },
-    {
-      "domain": "localization",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-icon/games/{gameId}/language-codes/{languageCode}",
-      "path_parameters": [
-        "gameId",
-        "languageCode"
-      ],
-      "summary": "Delete a localized icon from a game",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::delete_a_localized_icon_from_a_game",
-      "rust_method": "delete_a_localized_icon_from_a_game",
-      "constant": "DELETE_A_LOCALIZED_ICON_FROM_A_GAME"
-    },
-    {
-      "domain": "localization",
-      "http_method": "DELETE",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/images/{imageId}",
-      "path_parameters": [
-        "gameId",
-        "languageCode",
-        "imageId"
-      ],
-      "summary": "Deletes the game thumbnail.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::deletes_the_game_thumbnail",
-      "rust_method": "deletes_the_game_thumbnail",
-      "constant": "DELETES_THE_GAME_THUMBNAIL"
-    },
-    {
-      "domain": "localization",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/languages/{languageCode}/automatic-translation-status",
-      "path_parameters": [
-        "gameId",
-        "languageCode"
-      ],
-      "summary": "Enable or disable automatic translation for a game and language.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::enable_or_disable_automatic_translation_for_a_game_and_language",
-      "rust_method": "enable_or_disable_automatic_translation_for_a_game_and_language",
-      "constant": "ENABLE_OR_DISABLE_AUTOMATIC_TRANSLATION_FOR_A_GAME_AND_LANGUAGE"
-    },
-    {
-      "domain": "localization",
-      "http_method": "PATCH",
-      "operation_id": "",
       "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/languages/{languageCode}/image-translation-status",
       "path_parameters": [
         "gameId",
@@ -2964,27 +2354,6 @@
       "id": "localization::enable_or_disable_image_translation_for_a_game_and_language",
       "rust_method": "enable_or_disable_image_translation_for_a_game_and_language",
       "constant": "ENABLE_OR_DISABLE_IMAGE_TRANSLATION_FOR_A_GAME_AND_LANGUAGE"
-    },
-    {
-      "domain": "localization",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-icon/games/{gameId}",
-      "path_parameters": [
-        "gameId"
-      ],
-      "summary": "Get all icons for a game",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::get_all_icons_for_a_game",
-      "rust_method": "get_all_icons_for_a_game",
-      "constant": "GET_ALL_ICONS_FOR_A_GAME"
     },
     {
       "domain": "localization",
@@ -3030,48 +2399,6 @@
       "domain": "localization",
       "http_method": "GET",
       "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/automatic-translation-status",
-      "path_parameters": [
-        "gameId"
-      ],
-      "summary": "Get the automatic translation status of supported languages for a game.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::get_the_automatic_translation_status_of_supported_languages_for_a_game",
-      "rust_method": "get_the_automatic_translation_status_of_supported_languages_for_a_game",
-      "constant": "GET_THE_AUTOMATIC_TRANSLATION_STATUS_OF_SUPPORTED_LANGUAGES_FOR_A_GAME"
-    },
-    {
-      "domain": "localization",
-      "http_method": "GET",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/universe-display-info-automatic-translation-settings",
-      "path_parameters": [
-        "gameId"
-      ],
-      "summary": "Get UniverseDisplayInfo automatic translation settings.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::get_universe_display_info_automatic_translation_settings",
-      "rust_method": "get_universe_display_info_automatic_translation_settings",
-      "constant": "GET_UNIVERSE_DISPLAY_INFO_AUTOMATIC_TRANSLATION_SETTINGS"
-    },
-    {
-      "domain": "localization",
-      "http_method": "GET",
-      "operation_id": "",
       "path": "/legacy-localization-tables/v1/localization-table/tables/{tableId}/entries",
       "path_parameters": [
         "tableId"
@@ -3088,25 +2415,6 @@
       "id": "localization::gets_a_batch_of_entries_for_a_table",
       "rust_method": "gets_a_batch_of_entries_for_a_table",
       "constant": "GETS_A_BATCH_OF_ENTRIES_FOR_A_TABLE"
-    },
-    {
-      "domain": "localization",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/name-description/games/translation-history",
-      "path_parameters": [],
-      "summary": "Gets the history for name or description in a provided language.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::gets_the_history_for_name_or_description_in_a_provided_language",
-      "rust_method": "gets_the_history_for_name_or_description_in_a_provided_language",
-      "constant": "GETS_THE_HISTORY_FOR_NAME_OR_DESCRIPTION_IN_A_PROVIDED_LANGUAGE"
     },
     {
       "domain": "localization",
@@ -3173,50 +2481,6 @@
       "domain": "localization",
       "http_method": "POST",
       "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/images/order",
-      "path_parameters": [
-        "gameId",
-        "languageCode"
-      ],
-      "summary": "Orders the specified image Ids for the game thumbnails.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::orders_the_specified_image_ids_for_the_game_thumbnails",
-      "rust_method": "orders_the_specified_image_ids_for_the_game_thumbnails",
-      "constant": "ORDERS_THE_SPECIFIED_IMAGE_IDS_FOR_THE_GAME_THUMBNAILS"
-    },
-    {
-      "domain": "localization",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/supported-languages/games/{gameId}/languages/{languageCode}/universe-display-info-automatic-translation-settings",
-      "path_parameters": [
-        "gameId",
-        "languageCode"
-      ],
-      "summary": "Update the switch which controls if the UniverseDisplayInformation should be automatically translated.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::patch_language_code_universe_display_info_automatic_translation_settings",
-      "rust_method": "patch_language_code_universe_display_info_automatic_translation_settings",
-      "constant": "PATCH_LANGUAGE_CODE_UNIVERSE_DISPLAY_INFO_AUTOMATIC_TRANSLATION_SETTINGS"
-    },
-    {
-      "domain": "localization",
-      "http_method": "POST",
-      "operation_id": "",
       "path": "/legacy-localization-tables/v1/autolocalization/games/{gameId}/autolocalizationtable",
       "path_parameters": [
         "gameId"
@@ -3259,92 +2523,6 @@
       "domain": "localization",
       "http_method": "PATCH",
       "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/source-language/games/{gameId}",
-      "path_parameters": [
-        "gameId"
-      ],
-      "summary": "Sets the source language of a game",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::sets_the_source_language_of_a_game",
-      "rust_method": "sets_the_source_language_of_a_game",
-      "constant": "SETS_THE_SOURCE_LANGUAGE_OF_A_GAME"
-    },
-    {
-      "domain": "localization",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-icon/games/{gameId}/language-codes/{languageCode}",
-      "path_parameters": [
-        "gameId",
-        "languageCode"
-      ],
-      "summary": "Update a game's icon",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::update_a_game_s_icon",
-      "rust_method": "update_a_game_s_icon",
-      "constant": "UPDATE_A_GAME_S_ICON"
-    },
-    {
-      "domain": "localization",
-      "http_method": "PATCH",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/name-description/games/{gameId}",
-      "path_parameters": [
-        "gameId"
-      ],
-      "summary": "Updates a game's name and/or description in multiple languages.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::updates_a_game_s_name_and_or_description_in_multiple_languages",
-      "rust_method": "updates_a_game_s_name_and_or_description_in_multiple_languages",
-      "constant": "UPDATES_A_GAME_S_NAME_AND_OR_DESCRIPTION_IN_MULTIPLE_LANGUAGES"
-    },
-    {
-      "domain": "localization",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/alt-text",
-      "path_parameters": [
-        "gameId",
-        "languageCode"
-      ],
-      "summary": "Updates the game thumbnail alt text.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::updates_the_game_thumbnail_alt_text",
-      "rust_method": "updates_the_game_thumbnail_alt_text",
-      "constant": "UPDATES_THE_GAME_THUMBNAIL_ALT_TEXT"
-    },
-    {
-      "domain": "localization",
-      "http_method": "PATCH",
-      "operation_id": "",
       "path": "/legacy-localization-tables/v1/localization-table/tables/{tableId}",
       "path_parameters": [
         "tableId"
@@ -3361,28 +2539,6 @@
       "id": "localization::updates_the_tables_contents_based_on_what_is_provided",
       "rust_method": "updates_the_tables_contents_based_on_what_is_provided",
       "constant": "UPDATES_THE_TABLES_CONTENTS_BASED_ON_WHAT_IS_PROVIDED"
-    },
-    {
-      "domain": "localization",
-      "http_method": "POST",
-      "operation_id": "",
-      "path": "/legacy-game-internationalization/v1/game-thumbnails/games/{gameId}/language-codes/{languageCode}/image",
-      "path_parameters": [
-        "gameId",
-        "languageCode"
-      ],
-      "summary": "Uploads the game thumbnail.",
-      "tag": "Localization",
-      "stability": "legacy-beta",
-      "api_key": true,
-      "oauth": true,
-      "unauthenticated": false,
-      "scopes": [
-        "legacy-universe:manage"
-      ],
-      "id": "localization::uploads_the_game_thumbnail",
-      "rust_method": "uploads_the_game_thumbnail",
-      "constant": "UPLOADS_THE_GAME_THUMBNAIL"
     },
     {
       "domain": "luau",

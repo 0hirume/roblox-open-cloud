@@ -9,43 +9,6 @@ pub const CREATE_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
     crate::AuthenticationSupport::new(true, true, false),
     &["game-pass:write"],
 );
-///Delete a localized icon from a game pass
-pub const DELETE_A_LOCALIZED_ICON_FROM_A_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
-    crate::HttpMethod::Delete,
-    "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons/language-codes/{languageCode}",
-    "Delete a localized icon from a game pass",
-    crate::Stability::LegacyBeta,
-    crate::AuthenticationSupport::new(true, true, false),
-    &["legacy-game-pass:manage"],
-);
-///Delete localized name and description of a game pass
-pub const DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS: crate::Endpoint =
-    crate::Endpoint::new(
-        crate::HttpMethod::Delete,
-        "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description/language-codes/{languageCode}",
-        "Delete localized name and description of a game pass",
-        crate::Stability::LegacyBeta,
-        crate::AuthenticationSupport::new(true, true, false),
-        &["legacy-game-pass:manage"],
-    );
-///Get all icons for a game pass
-pub const GET_ALL_ICONS_FOR_A_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
-    crate::HttpMethod::Get,
-    "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons",
-    "Get all icons for a game pass",
-    crate::Stability::LegacyBeta,
-    crate::AuthenticationSupport::new(true, true, false),
-    &["legacy-game-pass:manage"],
-);
-///Get all names and descriptions of a game pass
-pub const GET_ALL_NAMES_AND_DESCRIPTIONS_OF_A_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
-    crate::HttpMethod::Get,
-    "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description",
-    "Get all names and descriptions of a game pass",
-    crate::Stability::LegacyBeta,
-    crate::AuthenticationSupport::new(true, true, false),
-    &["legacy-game-pass:manage"],
-);
 ///Get game pass with configuration details
 pub const GET_GAME_PASS_WITH_CONFIGURATION_DETAILS: crate::Endpoint = crate::Endpoint::new(
     crate::HttpMethod::Get,
@@ -74,15 +37,6 @@ pub const THUMBNAILS_GAME_PASS_ICONS: crate::Endpoint = crate::Endpoint::new(
     crate::AuthenticationSupport::new(false, false, true),
     &[],
 );
-///Update a game pass's icon
-pub const UPDATE_A_GAME_PASS_S_ICON: crate::Endpoint = crate::Endpoint::new(
-    crate::HttpMethod::Post,
-    "/legacy-game-internationalization/v1/game-passes/{gamePassId}/icons/language-codes/{languageCode}",
-    "Update a game pass's icon",
-    crate::Stability::LegacyBeta,
-    crate::AuthenticationSupport::new(true, true, false),
-    &["legacy-game-pass:manage"],
-);
 ///Update game pass
 pub const UPDATE_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
     crate::HttpMethod::Patch,
@@ -92,65 +46,18 @@ pub const UPDATE_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
     crate::AuthenticationSupport::new(true, true, false),
     &["game-pass:write"],
 );
-///Update localized description of a game pass
-pub const UPDATE_LOCALIZED_DESCRIPTION_OF_A_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
-    crate::HttpMethod::Patch,
-    "/legacy-game-internationalization/v1/game-passes/{gamePassId}/description/language-codes/{languageCode}",
-    "Update localized description of a game pass",
-    crate::Stability::LegacyBeta,
-    crate::AuthenticationSupport::new(true, true, false),
-    &["legacy-game-pass:manage"],
-);
-///Update localized name and description of a game pass
-pub const UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS: crate::Endpoint =
-    crate::Endpoint::new(
-        crate::HttpMethod::Patch,
-        "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name-description/language-codes/{languageCode}",
-        "Update localized name and description of a game pass",
-        crate::Stability::LegacyBeta,
-        crate::AuthenticationSupport::new(true, true, false),
-        &["legacy-game-pass:manage"],
-    );
-///Update localized name of a game pass
-pub const UPDATE_LOCALIZED_NAME_OF_A_GAME_PASS: crate::Endpoint = crate::Endpoint::new(
-    crate::HttpMethod::Patch,
-    "/legacy-game-internationalization/v1/game-passes/{gamePassId}/name/language-codes/{languageCode}",
-    "Update localized name of a game pass",
-    crate::Stability::LegacyBeta,
-    crate::AuthenticationSupport::new(true, true, false),
-    &["legacy-game-pass:manage"],
-);
 /// Every supported endpoint in this domain.
 pub const ENDPOINTS: &[crate::Endpoint] = &[
     CREATE_GAME_PASS,
-    DELETE_A_LOCALIZED_ICON_FROM_A_GAME_PASS,
-    DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS,
-    GET_ALL_ICONS_FOR_A_GAME_PASS,
-    GET_ALL_NAMES_AND_DESCRIPTIONS_OF_A_GAME_PASS,
     GET_GAME_PASS_WITH_CONFIGURATION_DETAILS,
     LIST_GAME_PASSES_BY_UNIVERSE_WITH_CONFIGURATION_DETAILS,
     THUMBNAILS_GAME_PASS_ICONS,
-    UPDATE_A_GAME_PASS_S_ICON,
     UPDATE_GAME_PASS,
-    UPDATE_LOCALIZED_DESCRIPTION_OF_A_GAME_PASS,
-    UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS,
-    UPDATE_LOCALIZED_NAME_OF_A_GAME_PASS,
 ];
 ///Request body for [`CreateGamePassRequest`].
 pub type CreateGamePassBody = crate::types::GamePassesCreateGamePassBody;
-///Request body for [`UpdateAGamePassSIconRequest`].
-pub type UpdateAGamePassSIconBody = crate::types::GamePassesUpdateAGamePassSIconBody;
 ///Request body for [`UpdateGamePassRequest`].
 pub type UpdateGamePassBody = crate::types::GamePassesUpdateGamePassBody;
-///Request body for [`UpdateLocalizedDescriptionOfAGamePassRequest`].
-pub type UpdateLocalizedDescriptionOfAGamePassBody =
-    crate::types::RobloxGameInternationalizationApiUpdateGamePassDescriptionRequest;
-///Request body for [`UpdateLocalizedNameAndDescriptionOfAGamePassRequest`].
-pub type UpdateLocalizedNameAndDescriptionOfAGamePassBody =
-    crate::types::RobloxGameInternationalizationApiUpdateGamePassNameDescriptionRequest;
-///Request body for [`UpdateLocalizedNameOfAGamePassRequest`].
-pub type UpdateLocalizedNameOfAGamePassBody =
-    crate::types::RobloxGameInternationalizationApiUpdateGamePassNameRequest;
 ///Input for [`CreateGamePassRequest`].
 #[derive(Debug, Clone)]
 pub struct CreateGamePassRequest {
@@ -173,90 +80,6 @@ impl CreateGamePassRequest {
     pub fn body(mut self, body: impl Into<CreateGamePassBody>) -> Self {
         self.body = Some(body.into());
         self
-    }
-}
-///Input for [`DeleteALocalizedIconFromAGamePassRequest`].
-#[derive(Debug, Clone)]
-pub struct DeleteALocalizedIconFromAGamePassRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-    ///Value for `languageCode`.
-    pub language_code: String,
-}
-impl DeleteALocalizedIconFromAGamePassRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(game_pass_id: impl Into<i64>, language_code: impl Into<String>) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-            language_code: language_code.into(),
-        }
-    }
-}
-///Input for [`DeleteLocalizedNameAndDescriptionOfAGamePassRequest`].
-#[derive(Debug, Clone)]
-pub struct DeleteLocalizedNameAndDescriptionOfAGamePassRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-    ///Value for `languageCode`.
-    pub language_code: String,
-}
-impl DeleteLocalizedNameAndDescriptionOfAGamePassRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(game_pass_id: impl Into<i64>, language_code: impl Into<String>) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-            language_code: language_code.into(),
-        }
-    }
-}
-///Input for [`GetAllIconsForAGamePassRequest`].
-#[derive(Debug, Clone)]
-pub struct GetAllIconsForAGamePassRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-    ///Value for `height`.
-    pub height: Option<i32>,
-    ///Value for `width`.
-    pub width: Option<i32>,
-}
-impl GetAllIconsForAGamePassRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(game_pass_id: impl Into<i64>) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-            height: None,
-            width: None,
-        }
-    }
-    ///Sets `height`.
-    #[must_use]
-    pub fn height(mut self, height: impl Into<i32>) -> Self {
-        self.height = Some(height.into());
-        self
-    }
-    ///Sets `width`.
-    #[must_use]
-    pub fn width(mut self, width: impl Into<i32>) -> Self {
-        self.width = Some(width.into());
-        self
-    }
-}
-///Input for [`GetAllNamesAndDescriptionsOfAGamePassRequest`].
-#[derive(Debug, Clone)]
-pub struct GetAllNamesAndDescriptionsOfAGamePassRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-}
-impl GetAllNamesAndDescriptionsOfAGamePassRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(game_pass_id: impl Into<i64>) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-        }
     }
 }
 ///Input for [`GetGamePassWithConfigurationDetailsRequest`].
@@ -361,33 +184,6 @@ impl ThumbnailsGamePassIconsRequest {
         self
     }
 }
-///Input for [`UpdateAGamePassSIconRequest`].
-#[derive(Debug, Clone)]
-pub struct UpdateAGamePassSIconRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-    ///Value for `languageCode`.
-    pub language_code: String,
-    /// The request body.
-    pub body: Option<UpdateAGamePassSIconBody>,
-}
-impl UpdateAGamePassSIconRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(game_pass_id: impl Into<i64>, language_code: impl Into<String>) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-            language_code: language_code.into(),
-            body: None,
-        }
-    }
-    ///Sets `body`.
-    #[must_use]
-    pub fn body(mut self, body: impl Into<UpdateAGamePassSIconBody>) -> Self {
-        self.body = Some(body.into());
-        self
-    }
-}
 ///Input for [`UpdateGamePassRequest`].
 #[derive(Debug, Clone)]
 pub struct UpdateGamePassRequest {
@@ -415,97 +211,8 @@ impl UpdateGamePassRequest {
         self
     }
 }
-///Input for [`UpdateLocalizedDescriptionOfAGamePassRequest`].
-#[derive(Debug, Clone)]
-pub struct UpdateLocalizedDescriptionOfAGamePassRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-    ///Value for `languageCode`.
-    pub language_code: String,
-    /// The request body.
-    pub body: UpdateLocalizedDescriptionOfAGamePassBody,
-}
-impl UpdateLocalizedDescriptionOfAGamePassRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(
-        game_pass_id: impl Into<i64>,
-        language_code: impl Into<String>,
-        body: impl Into<UpdateLocalizedDescriptionOfAGamePassBody>,
-    ) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-            language_code: language_code.into(),
-            body: body.into(),
-        }
-    }
-}
-///Input for [`UpdateLocalizedNameAndDescriptionOfAGamePassRequest`].
-#[derive(Debug, Clone)]
-pub struct UpdateLocalizedNameAndDescriptionOfAGamePassRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-    ///Value for `languageCode`.
-    pub language_code: String,
-    /// The request body.
-    pub body: UpdateLocalizedNameAndDescriptionOfAGamePassBody,
-}
-impl UpdateLocalizedNameAndDescriptionOfAGamePassRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(
-        game_pass_id: impl Into<i64>,
-        language_code: impl Into<String>,
-        body: impl Into<UpdateLocalizedNameAndDescriptionOfAGamePassBody>,
-    ) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-            language_code: language_code.into(),
-            body: body.into(),
-        }
-    }
-}
-///Input for [`UpdateLocalizedNameOfAGamePassRequest`].
-#[derive(Debug, Clone)]
-pub struct UpdateLocalizedNameOfAGamePassRequest {
-    ///Value for `gamePassId`.
-    pub game_pass_id: i64,
-    ///Value for `languageCode`.
-    pub language_code: String,
-    /// The request body.
-    pub body: UpdateLocalizedNameOfAGamePassBody,
-}
-impl UpdateLocalizedNameOfAGamePassRequest {
-    /// Creates a request from its required fields.
-    #[must_use]
-    pub fn new(
-        game_pass_id: impl Into<i64>,
-        language_code: impl Into<String>,
-        body: impl Into<UpdateLocalizedNameOfAGamePassBody>,
-    ) -> Self {
-        Self {
-            game_pass_id: game_pass_id.into(),
-            language_code: language_code.into(),
-            body: body.into(),
-        }
-    }
-}
 /// Successful response from this operation.
 pub type CreateGamePassResponse = crate::Response<crate::types::GamePassConfigV2>;
-/// Successful response from this operation.
-pub type DeleteALocalizedIconFromAGamePassResponse =
-    crate::Response<crate::types::RobloxWebWebApiApiEmptyResponseModel>;
-/// Successful response from this operation.
-pub type DeleteLocalizedNameAndDescriptionOfAGamePassResponse =
-    crate::Response<crate::types::RobloxWebWebApiApiEmptyResponseModel>;
-/// Successful response from this operation.
-pub type GetAllIconsForAGamePassResponse = crate::Response<
-    crate::types::RobloxWebWebApiModelsApiArrayResponseRobloxGameInternationalizationApiGetGamePassIconResponse,
->;
-/// Successful response from this operation.
-pub type GetAllNamesAndDescriptionsOfAGamePassResponse = crate::Response<
-    crate::types::RobloxWebWebApiModelsApiArrayResponseRobloxGameInternationalizationApiNameDescription,
->;
 /// Successful response from this operation.
 pub type GetGamePassWithConfigurationDetailsResponse =
     crate::Response<crate::types::GamePassConfigV2>;
@@ -515,58 +222,12 @@ pub type ListGamePassesByUniverseWithConfigurationDetailsResponse =
 /// Successful response from this operation.
 pub type ThumbnailsGamePassIconsResponse = crate::Response<()>;
 /// Successful response from this operation.
-pub type UpdateAGamePassSIconResponse =
-    crate::Response<crate::types::RobloxWebWebApiApiEmptyResponseModel>;
-/// Successful response from this operation.
 pub type UpdateGamePassResponse = crate::Response<()>;
-/// Successful response from this operation.
-pub type UpdateLocalizedDescriptionOfAGamePassResponse = crate::Response<
-    crate::types::RobloxGameInternationalizationApiUpdateGamePassDescriptionResponse,
->;
-/// Successful response from this operation.
-pub type UpdateLocalizedNameAndDescriptionOfAGamePassResponse = crate::Response<
-    crate::types::RobloxGameInternationalizationApiUpdateGamePassNameDescriptionResponse,
->;
-/// Successful response from this operation.
-pub type UpdateLocalizedNameOfAGamePassResponse =
-    crate::Response<crate::types::RobloxGameInternationalizationApiUpdateGamePassNameResponse>;
 fn create_game_pass_parameters_1<'client>(
     operation: crate::OperationRequest<'client>,
     request: &CreateGamePassRequest,
 ) -> crate::Result<crate::OperationRequest<'client>> {
     let operation = operation.path_serialized("universeId", &request.universe_id)?;
-    Ok(operation)
-}
-fn delete_a_localized_icon_from_a_game_pass_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &DeleteALocalizedIconFromAGamePassRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
-    let operation = operation.path_serialized("languageCode", &request.language_code)?;
-    Ok(operation)
-}
-fn delete_localized_name_and_description_of_a_game_pass_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &DeleteLocalizedNameAndDescriptionOfAGamePassRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
-    let operation = operation.path_serialized("languageCode", &request.language_code)?;
-    Ok(operation)
-}
-fn get_all_icons_for_a_game_pass_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &GetAllIconsForAGamePassRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
-    let operation = operation.query_optional_serialized("height", request.height.as_ref(), true)?;
-    let operation = operation.query_optional_serialized("width", request.width.as_ref(), true)?;
-    Ok(operation)
-}
-fn get_all_names_and_descriptions_of_a_game_pass_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &GetAllNamesAndDescriptionsOfAGamePassRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
     Ok(operation)
 }
 fn get_game_pass_with_configuration_details_parameters_1<'client>(
@@ -599,44 +260,12 @@ fn thumbnails_game_pass_icons_parameters_1<'client>(
     let operation = operation.query_optional_serialized("size", request.size.as_ref(), true)?;
     Ok(operation)
 }
-fn update_a_game_pass_s_icon_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &UpdateAGamePassSIconRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
-    let operation = operation.path_serialized("languageCode", &request.language_code)?;
-    Ok(operation)
-}
 fn update_game_pass_parameters_1<'client>(
     operation: crate::OperationRequest<'client>,
     request: &UpdateGamePassRequest,
 ) -> crate::Result<crate::OperationRequest<'client>> {
     let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
     let operation = operation.path_serialized("universeId", &request.universe_id)?;
-    Ok(operation)
-}
-fn update_localized_description_of_a_game_pass_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &UpdateLocalizedDescriptionOfAGamePassRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
-    let operation = operation.path_serialized("languageCode", &request.language_code)?;
-    Ok(operation)
-}
-fn update_localized_name_and_description_of_a_game_pass_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &UpdateLocalizedNameAndDescriptionOfAGamePassRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
-    let operation = operation.path_serialized("languageCode", &request.language_code)?;
-    Ok(operation)
-}
-fn update_localized_name_of_a_game_pass_parameters_1<'client>(
-    operation: crate::OperationRequest<'client>,
-    request: &UpdateLocalizedNameOfAGamePassRequest,
-) -> crate::Result<crate::OperationRequest<'client>> {
-    let operation = operation.path_serialized("gamePassId", &request.game_pass_id)?;
-    let operation = operation.path_serialized("languageCode", &request.language_code)?;
     Ok(operation)
 }
 /// Operations in this Roblox Open Cloud domain.
@@ -694,106 +323,6 @@ impl GamePasses<'_> {
         } else {
             operation
         };
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
-        Ok(crate::Response::new(status, headers, body))
-    }
-    ///Delete a localized icon from a game pass
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn delete_a_localized_icon_from_a_game_pass(
-        &self,
-        request: DeleteALocalizedIconFromAGamePassRequest,
-    ) -> crate::Result<DeleteALocalizedIconFromAGamePassResponse> {
-        let operation = self
-            .client
-            .operation(DELETE_A_LOCALIZED_ICON_FROM_A_GAME_PASS);
-        let operation = delete_a_localized_icon_from_a_game_pass_parameters_1(operation, &request)?;
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
-        Ok(crate::Response::new(status, headers, body))
-    }
-    ///Delete localized name and description of a game pass
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn delete_localized_name_and_description_of_a_game_pass(
-        &self,
-        request: DeleteLocalizedNameAndDescriptionOfAGamePassRequest,
-    ) -> crate::Result<DeleteLocalizedNameAndDescriptionOfAGamePassResponse> {
-        let operation = self
-            .client
-            .operation(DELETE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS);
-        let operation =
-            delete_localized_name_and_description_of_a_game_pass_parameters_1(operation, &request)?;
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
-        Ok(crate::Response::new(status, headers, body))
-    }
-    ///Get all icons for a game pass
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn get_all_icons_for_a_game_pass(
-        &self,
-        request: GetAllIconsForAGamePassRequest,
-    ) -> crate::Result<GetAllIconsForAGamePassResponse> {
-        let operation = self.client.operation(GET_ALL_ICONS_FOR_A_GAME_PASS);
-        let operation = get_all_icons_for_a_game_pass_parameters_1(operation, &request)?;
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
-        Ok(crate::Response::new(status, headers, body))
-    }
-    ///Get all names and descriptions of a game pass
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn get_all_names_and_descriptions_of_a_game_pass(
-        &self,
-        request: GetAllNamesAndDescriptionsOfAGamePassRequest,
-    ) -> crate::Result<GetAllNamesAndDescriptionsOfAGamePassResponse> {
-        let operation = self
-            .client
-            .operation(GET_ALL_NAMES_AND_DESCRIPTIONS_OF_A_GAME_PASS);
-        let operation =
-            get_all_names_and_descriptions_of_a_game_pass_parameters_1(operation, &request)?;
         let response = operation.send().await?;
         let status = response.status();
         let headers = response.headers().clone();
@@ -881,38 +410,6 @@ impl GamePasses<'_> {
         let body = ();
         Ok(crate::Response::new(status, headers, body))
     }
-    ///Update a game pass's icon
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn update_a_game_pass_s_icon(
-        &self,
-        request: UpdateAGamePassSIconRequest,
-    ) -> crate::Result<UpdateAGamePassSIconResponse> {
-        let operation = self.client.operation(UPDATE_A_GAME_PASS_S_ICON);
-        let operation = update_a_game_pass_s_icon_parameters_1(operation, &request)?;
-        let operation = if let Some(body) = request.body {
-            let mut form = reqwest::multipart::Form::new();
-            if let Some(value) = body.files {
-                form = form.part("Files", value.into_part()?);
-            }
-            operation.multipart(form)
-        } else {
-            operation
-        };
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
-        Ok(crate::Response::new(status, headers, body))
-    }
     ///Update game pass
     ///
     /// # Errors
@@ -970,84 +467,6 @@ impl GamePasses<'_> {
             )));
         }
         let body = ();
-        Ok(crate::Response::new(status, headers, body))
-    }
-    ///Update localized description of a game pass
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn update_localized_description_of_a_game_pass(
-        &self,
-        request: UpdateLocalizedDescriptionOfAGamePassRequest,
-    ) -> crate::Result<UpdateLocalizedDescriptionOfAGamePassResponse> {
-        let operation = self
-            .client
-            .operation(UPDATE_LOCALIZED_DESCRIPTION_OF_A_GAME_PASS);
-        let operation =
-            update_localized_description_of_a_game_pass_parameters_1(operation, &request)?;
-        let operation = operation.json(&request.body)?;
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
-        Ok(crate::Response::new(status, headers, body))
-    }
-    ///Update localized name and description of a game pass
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn update_localized_name_and_description_of_a_game_pass(
-        &self,
-        request: UpdateLocalizedNameAndDescriptionOfAGamePassRequest,
-    ) -> crate::Result<UpdateLocalizedNameAndDescriptionOfAGamePassResponse> {
-        let operation = self
-            .client
-            .operation(UPDATE_LOCALIZED_NAME_AND_DESCRIPTION_OF_A_GAME_PASS);
-        let operation =
-            update_localized_name_and_description_of_a_game_pass_parameters_1(operation, &request)?;
-        let operation = operation.json(&request.body)?;
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
-        Ok(crate::Response::new(status, headers, body))
-    }
-    ///Update localized name of a game pass
-    ///
-    /// # Errors
-    ///
-    /// Returns an error if the request fails or its response is invalid.
-    pub async fn update_localized_name_of_a_game_pass(
-        &self,
-        request: UpdateLocalizedNameOfAGamePassRequest,
-    ) -> crate::Result<UpdateLocalizedNameOfAGamePassResponse> {
-        let operation = self.client.operation(UPDATE_LOCALIZED_NAME_OF_A_GAME_PASS);
-        let operation = update_localized_name_of_a_game_pass_parameters_1(operation, &request)?;
-        let operation = operation.json(&request.body)?;
-        let response = operation.send().await?;
-        let status = response.status();
-        let headers = response.headers().clone();
-        if status.as_u16() != 200 {
-            return Err(crate::Error::InvalidResponse(format!(
-                "unexpected successful status {}",
-                status.as_u16()
-            )));
-        }
-        let body = response.json()?;
         Ok(crate::Response::new(status, headers, body))
     }
 }
